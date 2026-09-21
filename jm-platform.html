@@ -237,6 +237,7 @@ section.block{padding-block:70px;}
 }
 .form-field textarea{resize:vertical;min-height:88px;}
 .form-field input:focus, .form-field select:focus, .form-field textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
+.form-status{margin:12px 0 0;font-size:13px;font-weight:700;color:var(--accent-2);}
 .form-note{margin-top:14px;font-size:11.5px;color:var(--ink-soft);}
 .form-submit{margin-top:6px;width:100%;justify-content:center;padding-block:13px;}
 @media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
@@ -729,8 +730,9 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
       <div class="contact-grid">
         <div class="contact-info">
           <h2 style="font-size:22px;">문의 전 안내</h2>
-          <p>현재 운영 방식과 데이터 환경을 확인한 뒤, 학원에 맞는 AI 모듈과 도입 일정을 함께 설계합니다. 아래 양식을 제출하면 작성하신 메일 프로그램이 열리며, 내용을 확인 후 보내주시면 접수됩니다.</p>
+          <p>현재 운영 방식과 데이터 환경을 확인한 뒤, 학원에 맞는 AI 모듈과 도입 일정을 함께 설계합니다. 아래 양식을 작성하고 버튼을 누르면 문의 내용이 복사되고 카카오톡 오픈채팅이 열립니다. 채팅창에 붙여넣어 보내주시면 접수됩니다.</p>
           <ul class="contact-list">
+            <li><span>KAKAO</span><b><a href="https://open.kakao.com/o/ssj1FMOi" target="_blank" rel="noopener" style="color:inherit;">오픈채팅 문의</a></b></li>
             <li><span>PHONE</span><b><a href="tel:01024617182" style="color:inherit;text-decoration:none;">010-2461-7182</a></b></li>
             <li><span>CONTACT</span><b>jigmmini@naver.com</b></li>
             <li><span>HOURS</span><b>MON–FRI 09:00–17:00</b></li>
@@ -770,8 +772,9 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
               <textarea id="f-msg" name="message" placeholder="현재 운영 규모, 궁금한 점을 자유롭게 남겨주세요."></textarea>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary form-submit">상담 신청 메일 보내기</button>
-          <p class="form-note">* 제출 시 이 기기에 설정된 메일 프로그램이 새 메일 작성 화면으로 열립니다. 메일이 열리지 않으면 위 이메일로 직접 보내주세요.</p>
+          <button type="submit" class="btn btn-primary form-submit">카카오톡으로 상담 신청</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
+          <p class="form-note">* 카카오톡 링크는 문구를 미리 채워 보낼 수 없어, 문의 내용을 복사해 드립니다. 채팅창을 길게 눌러 붙여넣기 후 전송해 주세요. 카카오톡이 어려우면 전화(010-2461-7182)나 이메일로 문의하셔도 됩니다.</p>
         </form>
       </div>
     </div>
@@ -904,10 +907,25 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     var academy = document.getElementById('f-academy').value.trim();
     var type = document.getElementById('f-type').value;
     var msg = document.getElementById('f-msg').value.trim();
-    var subject = '[도입상담신청] ' + academy + ' (' + type + ')';
-    var body = '이름: ' + name + '\n연락처: ' + phone + '\n학원/교습소명: ' + academy + '\n운영 형태: ' + type + '\n\n문의 내용:\n' + msg;
-    var mailto = 'mailto:jigmmini@naver.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    window.location.href = mailto;
+    var text = ['[상담 신청]', '이름: ' + name, '연락처: ' + phone, '학원/교습소명: ' + academy, '운영 형태: ' + type, '', '문의 내용:', msg].join('\n');
+    var status = document.getElementById('formStatus');
+    function done(ok){
+      status.hidden = false;
+      status.textContent = ok ? '문의 내용이 복사되었습니다. 카카오톡 채팅창에 붙여넣기 후 전송해 주세요.' : '카카오톡이 열립니다. 채팅창에 이름·연락처·학원명·문의 내용을 남겨주세요.';
+    }
+    function fallbackCopy(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch(err) {}
+      document.body.removeChild(ta);
+      done(ok);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ done(true); }, fallbackCopy);
+    } else { fallbackCopy(); }
+    window.open('https://open.kakao.com/o/ssj1FMOi', '_blank', 'noopener');
   });
 })();
 </script>
