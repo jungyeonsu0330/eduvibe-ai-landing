@@ -1,4 +1,18 @@
-<title>에듀바이브 AI 러닝엔진</title>
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에듀바이브 AI | AI 맞춤수업 시스템</title>
+<meta name="description" content="과목에 상관없이 학생 개개인에게 맞는 수업을 AI가 직접 설계하는 AI 맞춤수업 시스템. 학원·교습소·공부방·프랜차이즈·관리형 스터디카페 맞춤 도입 상담.">
+<meta name="theme-color" content="#F5F9FF">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<link rel="canonical" href="https://jungyeonsu0330.github.io/eduvibe-ai-landing/">
+<meta property="og:url" content="https://jungyeonsu0330.github.io/eduvibe-ai-landing/">
+<meta property="og:site_name" content="에듀바이브 AI">
+<meta property="og:title" content="에듀바이브 AI | AI 맞춤수업 시스템">
+<meta property="og:description" content="과목에 상관없이 학생 개개인에게 맞는 수업을 AI가 직접 설계하는 AI 맞춤수업 시스템. 학원·교습소·공부방·프랜차이즈·관리형 스터디카페 맞춤 도입 상담.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22%232F6BFF%22%2F%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%226%22%20fill%3D%22%2312B39A%22%2F%3E%3C%2Fsvg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
@@ -107,7 +121,7 @@ section.block{padding-block:70px;}
 @media (max-width:560px){.bento .card,.bento .card.wide{grid-column:span 6;}}
 
 /* expert duo highlight */
-.expert-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 8px;}
+.expert-duo{display:grid;grid-template-columns:1fr;gap:18px;margin:0 0 32px;}
 .expert-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;}
 .expert-card.highlight{border-color:var(--accent-2);box-shadow:0 0 0 1px var(--accent-2),0 16px 40px -24px rgba(47,107,255,.35);}
 .expert-card h3{font-size:19px;margin:12px 0 0;line-height:1.4;}
@@ -140,6 +154,9 @@ section.block{padding-block:70px;}
 /* pricing */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .price-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;}
+.price-grid.two{grid-template-columns:repeat(2,1fr);}
+.vision-grid{margin-top:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;}
+@media (max-width:900px){.vision-grid{grid-template-columns:1fr;gap:24px;}}
 .price-card.highlight{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent), 0 20px 40px -20px rgba(47,107,255,.38);}
 .price-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--accent-2);text-transform:uppercase;}
 .price-card h3{font-size:20px;margin-top:10px;}
@@ -149,7 +166,7 @@ section.block{padding-block:70px;}
 .price-list li{padding-block:8px;display:flex;gap:8px;}
 .price-list li::before{content:"+";color:var(--accent-2);font-weight:700;}
 .price-card .btn{margin-top:22px;justify-content:center;}
-@media (max-width:900px){.price-grid{grid-template-columns:1fr;}}
+@media (max-width:900px){.price-grid,.price-grid.two{grid-template-columns:1fr;}}
 
 /* case scenarios */
 .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
@@ -390,7 +407,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         <p class="body">과거의 획일화된 시험 중심 교육은 학생마다 다른 진로와 성향에 맞춘 <b>‘초개인화 교육’</b>으로 변화하고 있습니다. 에듀바이브 AI는 이 변화를 실제 수업으로 구현하는 <b>AI 맞춤수업 시스템</b>이며, 과목과 무관하게 학생마다 다른 특성을 반영하는 <b>‘초개인화·초지능 교육 특화 모델’</b>로 계속 고도화하고 있습니다.</p>
       </div>
 
-      <div style="margin-top:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;">
+      <div class="vision-grid">
         <div>
           <h3 style="font-size:19px;">비전과 방향</h3>
           <p style="font-size:14px;color:var(--ink-soft);margin-top:12px;max-width:56ch;">학생 개개인의 학습 데이터를 이해하는 선생님이 더 많아지는 것 — 에듀바이브 AI가 만들고자 하는 변화입니다. 행정과 기록에 쓰이던 시간을 줄여, 선생님이 학생을 더 깊이 관찰할 수 있는 여유를 만드는 데 집중합니다.</p>
@@ -407,8 +424,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
             <div style="display:flex;gap:12px;"><b style="font-family:var(--font-mono);color:var(--accent-2);">NEXT</b><span style="color:var(--ink-soft);">파일럿 학원 확대 및 초개인화 모델 고도화</span></div>
             <div style="display:flex;gap:12px;"><b style="font-family:var(--font-mono);color:var(--accent-2);">NEXT</b><span style="color:var(--ink-soft);">프랜차이즈 표준 매뉴얼 체계 확장</span></div>
           </div>
-          <p style="margin-top:16px;font-size:11.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;">파트너·인증 로고 영역 (추후 확보 시 게재 예정)</p>
-        </div>
+          </div>
       </div>
     </div>
   </section>
@@ -478,22 +494,11 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
       </div>
 
       <div class="expert-duo">
-        <div class="expert-card">
-          <p class="tool-tag">예정 · Case</p>
-          <h3>학원 운영 시간을 되찾는 법</h3>
-          <p>관리 업무 자동화로 줄어든 실제 시간 사례를 다룹니다.</p>
-        </div>
         <div class="expert-card highlight">
-          <p class="tool-tag">R&D · 개발 중</p>
+          <p class="tool-tag">Program · 제공 가능</p>
           <h3>입시컨설팅 트렌드 프로그램</h3>
-          <p>초개인화 수업 설계는 물론, 학원별·업체별 입시컨설팅 자료와 흐름·동향까지 한눈에 파악할 수 있는 프로그램도 함께 제작하고 있으며, 실현 가능한 형태로 준비하고 있습니다.</p>
+          <p>초개인화 수업 설계는 물론, 학원별·업체별 입시컨설팅 자료와 흐름·동향까지 한눈에 파악할 수 있는 프로그램을 제작해 제공합니다.</p>
         </div>
-      </div>
-
-      <p class="eyebrow" style="margin:32px 0 16px;">Video</p>
-      <div class="bento" style="margin-bottom:24px;">
-        <div class="card wide"><p class="tool-tag">예정 · Tutorial</p><h4>에듀바이브 AI 대시보드 3분 사용법</h4><p>첫 로그인부터 수업 모델 확인까지 핵심 화면을 빠르게 안내합니다.</p></div>
-        <div class="card wide"><p class="tool-tag">예정 · Demo</p><h4>AI 수업 모델링 과정</h4><p>학생 데이터가 수업안으로 만들어지는 과정을 시연합니다.</p></div>
       </div>
 
       <p class="eyebrow" style="margin-bottom:16px;">Interview</p>
@@ -595,7 +600,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         <div><p class="eyebrow">Plan</p><h2>운영 규모에 맞는 두 가지 패키지</h2></div>
         <p class="head-note">정확한 견적은 진단 결과에 따라 상담 시 안내드립니다.</p>
       </div>
-      <div class="price-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="price-grid two">
         <div class="price-card">
           <p class="price-tag">Base</p>
           <h3>베이직 패키지</h3>
@@ -632,7 +637,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
       <div class="head-row"><div><p class="eyebrow">Team</p><h2>엔진을 만드는 사람들</h2></div></div>
       <div class="team-grid">
         <div class="team-card">
-          <div class="avatar" data-fallback="정"><img src="img/team-jeong-yeonsu.png" alt="정연수 CTO" onerror="this.remove();"></div>
+          <div class="avatar" data-fallback="정"><img src="img/team-jeong-yeonsu.jpg" alt="정연수 CTO" onerror="this.remove();"></div>
           <div>
             <p class="team-role">Chief Technology Officer</p>
             <h3>정연수 · 최고기술책임자</h3>
@@ -640,7 +645,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           </div>
         </div>
         <div class="team-card">
-          <div class="avatar" data-fallback="문"><img src="img/team-mun-chanhwi.png" alt="문찬휘 CPO" onerror="this.remove();"></div>
+          <div class="avatar" data-fallback="문"><img src="img/team-mun-chanhwi.jpg" alt="문찬휘 CPO" onerror="this.remove();"></div>
           <div>
             <p class="team-role">Chief Product Officer</p>
             <h3>문찬휘 · 최고제품책임자</h3>
@@ -648,7 +653,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           </div>
         </div>
         <div class="team-card">
-          <div class="avatar" data-fallback="최"><img src="img/team-choi-eunji.png" alt="최은지 CMO" onerror="this.remove();"></div>
+          <div class="avatar" data-fallback="최"><img src="img/team-choi-eunji.jpg" alt="최은지 CMO" onerror="this.remove();"></div>
           <div>
             <p class="team-role">Chief Marketing Officer</p>
             <h3>최은지 · 최고마케팅책임자</h3>
@@ -656,7 +661,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           </div>
         </div>
         <div class="team-card">
-          <div class="avatar" data-fallback="고"><img src="img/team-choi-goeun.png" alt="최고은 프롬프트 엔지니어" onerror="this.remove();"></div>
+          <div class="avatar" data-fallback="고"><img src="img/team-choi-goeun.jpg" alt="최고은 프롬프트 엔지니어" onerror="this.remove();"></div>
           <div>
             <p class="team-role">Prompt Engineer</p>
             <h3>최고은 · 프롬프트 엔지니어</h3>
@@ -721,6 +726,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           <h2 style="font-size:22px;">문의 전 안내</h2>
           <p>현재 운영 방식과 데이터 환경을 확인한 뒤, 학원에 맞는 AI 모듈과 도입 일정을 함께 설계합니다. 아래 양식을 제출하면 작성하신 메일 프로그램이 열리며, 내용을 확인 후 보내주시면 접수됩니다.</p>
           <ul class="contact-list">
+            <li><span>PHONE</span><b><a href="tel:01024617182" style="color:inherit;text-decoration:none;">010-2461-7182</a></b></li>
             <li><span>CONTACT</span><b>jigmmini@naver.com</b></li>
             <li><span>HOURS</span><b>MON–FRI 09:00–18:00</b></li>
             <li><span>REGION</span><b>전국 원격 / 방문</b></li>
