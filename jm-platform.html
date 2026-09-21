@@ -105,8 +105,12 @@ section.block{padding-block:70px;}
 .dev-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;position:relative;overflow:hidden;}
 .dev-card::after{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;background:radial-gradient(circle,var(--accent) 0%,transparent 70%);opacity:.18;}
 .dev-icon{width:34px;height:34px;color:var(--accent-2);}
-.dev-card h3{font-size:16px;margin-top:16px;}
-.dev-card p{font-size:13.5px;color:var(--ink-soft);margin-top:8px;}
+.dev-label{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--accent-2);margin-top:16px;letter-spacing:.02em;}
+.dev-card h3{font-size:21px;line-height:1.35;margin-top:8px;}
+.dev-card p{font-size:14px;color:var(--ink-soft);margin-top:10px;line-height:1.7;}
+.dev-points{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px;}
+.dev-points li{display:flex;gap:10px;font-size:14px;font-weight:700;color:var(--ink);line-height:1.5;}
+.dev-points li::before{content:"✔";color:var(--accent-2);font-weight:900;flex:none;}
 .dev-tag{font-family:var(--font-mono);font-size:11px;color:var(--ink-soft);margin-top:14px;display:block;}
 @media (max-width:800px){.dev-grid{grid-template-columns:1fr;}}
 
@@ -399,7 +403,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
       </div>
       <div class="stat-row">
         <div class="stat"><b>5 TYPE</b><span>학원 · 교습소 · 공부방 · 프랜차이즈 · 스터디카페 대응</span></div>
-        <div class="stat"><b>3 DEVICE</b><span>테블릿 · 모바일 · PC 완전 연동</span></div>
+        <div class="stat"><b>3 DEVICE</b><span>태블릿 · 모바일 · PC 완전 연동</span></div>
         <div class="stat"><b>1:1</b><span>학생별 초개인화 학습 모델</span></div>
       </div>
     </div>
@@ -458,25 +462,43 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
   <section class="block" id="platform">
     <div class="wrap">
       <div class="head-row">
-        <div><p class="eyebrow">Cross-Device</p><h2>테블릿 · 모바일 · PC, 하나의 데이터로</h2></div>
+        <div><p class="eyebrow">Cross-Device</p><h2>태블릿 · 모바일 · PC, 하나의 데이터로</h2></div>
       </div>
       <div class="dev-grid">
         <div class="dev-card">
           <svg class="dev-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="1.5"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
-          <h3>테블릿</h3>
-          <p>수업 중 실시간 진도·이해도 입력을 AI가 즉시 학습 데이터로 변환합니다.</p>
+          <p class="dev-label">태블릿 · 수업 현장</p>
+          <h3>수업 = 기록</h3>
+          <p>수업하는 동안 AI가 학생의 이해도를 자동으로 데이터로 바꿔 줍니다.</p>
+          <ul class="dev-points">
+            <li>실시간 학생 화면 확인</li>
+            <li>학습 타임라인 자동 기록</li>
+            <li>진도·이해도 즉시 반영</li>
+          </ul>
           <span class="dev-tag">IN_CLASS_CAPTURE</span>
         </div>
         <div class="dev-card">
           <svg class="dev-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2.5" width="10" height="19" rx="2"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"/></svg>
-          <h3>모바일</h3>
-          <p>상담 스크립트·성장 리포트를 학부모에게 전달 가능한 언어로 자동 생성합니다.</p>
+          <p class="dev-label">모바일 · 학부모 소통</p>
+          <h3>리포트가 스스로 완성됩니다</h3>
+          <p>학부모께 드릴 성장 리포트와 상담 스크립트를 AI가 자동으로 만들어 줍니다.</p>
+          <ul class="dev-points">
+            <li>성장 리포트 자동 작성</li>
+            <li>상담 스크립트 자동 생성</li>
+            <li>학부모 눈높이 설명</li>
+          </ul>
           <span class="dev-tag">PARENT_REPORT</span>
         </div>
         <div class="dev-card">
           <svg class="dev-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="4" width="19" height="13" rx="1.5"/><line x1="8" y1="20.5" x2="16" y2="20.5"/><line x1="12" y1="17" x2="12" y2="20.5"/></svg>
-          <h3>PC</h3>
-          <p>내신 프로세스와 성적 데이터를 통합해 운영 전략 리포트를 자동 산출합니다.</p>
+          <p class="dev-label">PC · 운영 관리</p>
+          <h3>숫자를 정리하는 시간에 방향을 고민하세요</h3>
+          <p>흩어져 있던 성적과 내신 데이터를 AI가 하나로 모아, 지금 학원에 필요한 방향을 리포트로 보여 드립니다.</p>
+          <ul class="dev-points">
+            <li>엑셀 정리 없이 한눈에 보는 성적 현황</li>
+            <li>학생별 성장 추이 확인</li>
+            <li>한 번 정리하면 다음 리포트에도 이어짐</li>
+          </ul>
           <span class="dev-tag">STRATEGY_DASHBOARD</span>
         </div>
       </div>
