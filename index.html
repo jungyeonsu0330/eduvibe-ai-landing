@@ -319,12 +319,15 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
 @media (max-width:520px){.wizard-options{grid-template-columns:1fr;}}
 
 /* comparison table */
-.comp-table-wrap{overflow-x:auto;margin-top:32px;border:1px solid var(--line);border-radius:16px;background:var(--surface);box-shadow:var(--shadow-glass);}
-.comp-table{width:100%;border-collapse:collapse;text-align:left;font-size:13.5px;min-width:640px;}
-.comp-table th, .comp-table td{padding:16px 20px;border-bottom:1px solid var(--line);vertical-align:middle;}
+.comp-table-wrap{overflow-x:auto;margin-top:32px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow-glass);}
+.comp-table{width:100%;border-collapse:collapse;table-layout:fixed;text-align:left;font-size:13.5px;min-width:740px;word-break:keep-all;}
+.comp-table th, .comp-table td{padding:16px 18px;border-bottom:1px solid var(--line);vertical-align:middle;line-height:1.6;}
 .comp-table th{background:var(--bg2);font-weight:800;color:var(--ink);font-size:14px;}
-.comp-table th.highlight, .comp-table td.highlight{background:rgba(47,107,255,.06);font-weight:700;color:var(--ink);}
-.comp-table td.highlight b{color:var(--accent-2);}
+.comp-table th:first-child, .comp-table td:first-child{padding-left:24px;}
+.comp-table th.highlight, .comp-table td.highlight{background:rgba(47,107,255,.05);font-weight:700;color:var(--ink);border-left:1px solid rgba(47,107,255,.15);}
+.comp-table td.highlight b{color:var(--accent-2);display:inline;}
+.comp-cell{display:flex;align-items:flex-start;gap:8px;}
+.comp-icon{flex:none;display:inline-block;line-height:1.6;}
 
 /* ROI Calculator */
 .calc-card{background:var(--surface);border:1px solid var(--accent);border-radius:20px;padding:34px;box-shadow:0 16px 40px -20px rgba(47,107,255,.3);margin-top:32px;}
@@ -527,7 +530,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         <div class="head-row" style="margin-bottom:18px;">
           <div>
             <p class="eyebrow">Comparison</p>
-            <h3 style="font-size:clamp(20px,2.5vw,26px);">왜 단순 학원 관리 프로그램이 아닌,<br>‘AI 맞춤수업 엔진’이어야 할까요?</h3>
+            <h3 style="font-size:clamp(20px,2.5vw,26px);">왜 단순 관리 프로그램이 아닌,<br>‘AI 맞춤수업 엔진’이어야 할까요?</h3>
           </div>
           <p class="head-note">단순 출결·문자 발송만 하던 기존 ERP와 에듀바이브 AI의 결정적 차이입니다.</p>
         </div>
@@ -535,42 +538,42 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           <table class="comp-table">
             <thead>
               <tr>
-                <th style="width:20%;">비교 항목</th>
-                <th style="width:26%;">기존 학원 관리 프로그램 (ERP)</th>
-                <th style="width:24%;">단일 과목 AI 문제은행</th>
-                <th style="width:30%;" class="highlight">에듀바이브 AI (EduVibe AI)</th>
+                <th style="width:16%;">비교 항목</th>
+                <th style="width:25%;">기존 관리 프로그램 (ERP)</th>
+                <th style="width:23%;">단일 과목 AI 문제은행</th>
+                <th style="width:36%;" class="highlight">에듀바이브 AI (EduVibe AI)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><b>수업 설계 및 진도</b></td>
-                <td>❌ 불가 (강사가 수기로 수업안 준비)</td>
-                <td>⚠️ 단순 문제 무작위 출제 수준</td>
-                <td class="highlight"><b>✔ 학생 데이터 기반 1:1 맞춤 커리큘럼 자동 설계</b></td>
+                <td><div class="comp-cell"><span class="comp-icon">❌</span><span>불가 (강사가 수기로 수업안 준비)</span></div></td>
+                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>단순 문제 무작위 출제 수준</span></div></td>
+                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>학생 데이터 기반 1:1 맞춤 커리큘럼 자동 설계</b></div></td>
               </tr>
               <tr>
                 <td><b>지원 과목 범위</b></td>
-                <td>❌ 지원 과목 없음 (단순 행정)</td>
-                <td>❌ 수학 또는 영어 단일 과목 한정</td>
-                <td class="highlight"><b>✔ 국·영·수·과·사 전 과목 Multi-Subject 엔진</b></td>
+                <td><div class="comp-cell"><span class="comp-icon">❌</span><span>지원 과목 없음 (단순 행정)</span></div></td>
+                <td><div class="comp-cell"><span class="comp-icon">❌</span><span>수학 또는 영어 단일 과목 한정</span></div></td>
+                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>국·영·수·과·사 전 과목 Multi-Subject 엔진</b></div></td>
               </tr>
               <tr>
                 <td><b>학부모 리포트</b></td>
-                <td>⚠️ 출결 및 점수 단순 SMS 문자</td>
-                <td>⚠️ 단순 점수표/정답률 표</td>
-                <td class="highlight"><b>✔ AI 학습 패턴 분석 & 맞춤 상담 스크립트 자동화</b></td>
+                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>출결 및 점수 단순 SMS 문자</span></div></td>
+                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>단순 점수표/정답률 표</span></div></td>
+                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>AI 학습 패턴 분석 & 맞춤 상담 스크립트 자동화</b></div></td>
               </tr>
               <tr>
                 <td><b>행정 및 세무 자동화</b></td>
-                <td>⚠️ 유료 부가서비스 또는 수기</td>
-                <td>❌ 기능 없음</td>
-                <td class="highlight"><b>✔ 종합소득세 집계 + 교육청 6대 감사서류 자동 생성</b></td>
+                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>유료 부가서비스 또는 수기</span></div></td>
+                <td><div class="comp-cell"><span class="comp-icon">❌</span><span>기능 없음</span></div></td>
+                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>종합소득세 집계 + 교육청 6대 감사서류 자동 생성</b></div></td>
               </tr>
               <tr>
                 <td><b>디바이스 연동</b></td>
-                <td>⚠️ PC 데스크톱 웹 중심</td>
-                <td>⚠️ 학생용 문제풀이 앱 한정</td>
-                <td class="highlight"><b>✔ 태블릿(수업) · 모바일(소통) · PC(운영) 실시간 연동</b></td>
+                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>PC 데스크톱 웹 중심</span></div></td>
+                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>학생용 문제풀이 앱 한정</span></div></td>
+                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>태블릿(수업) · 모바일(소통) · PC(운영) 실시간 연동</b></div></td>
               </tr>
             </tbody>
           </table>
@@ -702,7 +705,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
       <div class="head-row">
         <div>
           <p class="eyebrow">ROI Calculator</p>
-          <h2>우리 학원은 얼마나 시간을 아낄 수 있을까요?</h2>
+          <h2>얼마나 시간을 아낄 수 있을까요?</h2>
         </div>
         <p class="head-note">학생 수와 강사 수를 조절해 에듀바이브 AI 도입 시 절약되는 행정 시간과 효과를 확인해보세요.</p>
       </div>
