@@ -10,8 +10,18 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="에듀바이브 AI">
 <meta property="og:title" content="에듀바이브 AI | AI 맞춤수업 시스템">
-<meta property="og:description" content="과목에 상관없이 학생 개개인에게 맞는 수업을 AI가 직접 설계하는 AI 맞춤수업 시스템. 학원·교습소·공부방·프랜차이즈·관리형 스터디카페 맞춤 도입 상담.">
-<meta property="og:image" content="img/video-poster.jpg">
+<meta property="og:description" content="교육의 본질로 돌아가는 가장 현실적인 방법. 학생 중심 교육을 실현하는 AI 맞춤수업 시스템.">
+<meta property="og:url" content="https://jungyeonsu0330.github.io/eduvibe-ai-landing/">
+<meta property="og:image" content="https://jungyeonsu0330.github.io/eduvibe-ai-landing/img/og-preview.jpg">
+<meta property="og:image:secure_url" content="https://jungyeonsu0330.github.io/eduvibe-ai-landing/img/og-preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="교육의 본질로 돌아가는 가장 현실적인 방법 - 에듀바이브 AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="에듀바이브 AI | AI 맞춤수업 시스템">
+<meta name="twitter:description" content="교육의 본질로 돌아가는 가장 현실적인 방법. 학생 중심 교육을 실현하는 AI">
+<meta name="twitter:image" content="https://jungyeonsu0330.github.io/eduvibe-ai-landing/img/og-preview.jpg">
 <link rel="canonical" href="https://jungyeonsu0330.github.io/eduvibe-ai-landing/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22%232F6BFF%22%2F%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%226%22%20fill%3D%22%2312B39A%22%2F%3E%3C%2Fsvg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap">
@@ -465,6 +475,11 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
       <h2 style="margin-top:12px;">‘가르치는 선생님’이 아니라<br>‘학습하는 학생’을 기준으로 설계합니다</h2>
       <div class="phil-card" style="margin-top:34px;">
         <p class="body">과거의 획일화된 시험 중심 교육은 학생마다 다른 진로와 성향에 맞춘 <b>‘초개인화 교육’</b>으로 변화하고 있습니다. 에듀바이브 AI는 이 변화를 실제 수업으로 구현하는 <b>AI 맞춤수업 시스템</b>이며, 과목과 무관하게 학생마다 다른 특성을 반영하는 <b>‘초개인화·초지능 교육 특화 모델’</b>로 계속 고도화하고 있습니다.</p>
+      </div>
+
+      <!-- 핵심 비주얼 시스템 다이어그램 배너 -->
+      <div style="margin-top:32px;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-glass);background:#07101f;position:relative;">
+        <img src="img/og-preview.jpg" alt="교육의 본질로 돌아가는 가장 현실적인 방법 - 학생 중심 교육을 실현하는 AI 맞춤수업 시스템 (3-디바이스 연동 및 행정 자동화)" style="width:100%;height:auto;display:block;" loading="lazy">
       </div>
 
       <div class="vision-grid">
@@ -1266,6 +1281,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
 
 <!-- Floating CTA Bar -->
 <div class="floating-bar" id="floatingBar">
+  <button type="button" class="float-btn float-btn-share" id="btnShareKakao" style="background:#fff;color:var(--ink);border:1px solid var(--line);">📢 공유하기</button>
   <button type="button" class="float-btn float-btn-primary" id="btnFloatWizard">⚡ 1분 맞춤 진단</button>
   <a href="https://open.kakao.com/o/ssj1FMOi" target="_blank" rel="noopener" class="float-btn float-btn-kakao">💬 카카오 상담</a>
 </div>
@@ -1507,6 +1523,38 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
       if(confirm('접수된 모든 백업 리드를 삭제하시겠습니까?')){
         localStorage.removeItem('eduvibe_leads');
         renderAdminLeads();
+      }
+    });
+  }
+})();
+</script>
+
+
+<script>
+// 카카오톡 및 링크 공유하기 (Web Share API & 클립보드 복사)
+(function(){
+  var shareBtn = document.getElementById('btnShareKakao');
+  if(shareBtn){
+    shareBtn.addEventListener('click', function(){
+      var shareData = {
+        title: '에듀바이브 AI | AI 맞춤수업 시스템',
+        text: '교육의 본질로 돌아가는 가장 현실적인 방법. 학생 중심 교육을 실현하는 AI 맞춤수업 시스템',
+        url: 'https://jungyeonsu0330.github.io/eduvibe-ai-landing/'
+      };
+      if(navigator.share){
+        navigator.share(shareData).catch(function(){});
+      } else {
+        var dummy = document.createElement('textarea');
+        dummy.value = shareData.url;
+        document.body.appendChild(dummy);
+        dummy.select();
+        try {
+          document.execCommand('copy');
+          alert('에듀바이브 AI 링크가 복사되었습니다!\n\n카카오톡이나 문자 메시지에 붙여넣으시면, 등록하신 [대표 이미지 미리보기 카드]가 함께 전송됩니다.');
+        } catch(e) {
+          prompt('아래 링크를 복사하여 카카오톡이나 문자로 공유해 보세요:', shareData.url);
+        }
+        document.body.removeChild(dummy);
       }
     });
   }
