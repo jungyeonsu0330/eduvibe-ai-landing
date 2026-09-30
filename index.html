@@ -357,6 +357,145 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
 .admin-table th,.admin-table td{padding:10px 12px;border-bottom:1px solid var(--line);}
 .admin-table th{background:var(--bg2);color:var(--ink);font-weight:700;}
 
+/* module expansion grid & cards (16 features + free custom dev) */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.module-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  transition: all .24s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px -6px rgba(47,107,255,.07);
+}
+.module-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 122, 69, 0.5);
+  box-shadow: 0 12px 28px -8px rgba(255, 107, 47, 0.18);
+  background: rgba(255, 255, 255, 0.95);
+}
+.module-card.featured-card {
+  border: 1.5px solid #ff7a45;
+  box-shadow: 0 8px 24px -6px rgba(255, 122, 69, 0.22);
+}
+.module-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.module-title-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.module-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 122, 69, 0.1);
+  color: #ff7a45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.module-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+}
+.module-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.module-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: #5a6e85;
+  background: rgba(40, 70, 130, 0.06);
+  border: 1px solid rgba(40, 70, 130, 0.1);
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.module-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* free custom dev highlight banner */
+.free-custom-banner {
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.95) 0%, rgba(240, 249, 255, 0.95) 100%);
+  border: 2px solid #ff7a45;
+  border-radius: 20px;
+  padding: 32px 36px;
+  margin-top: 36px;
+  box-shadow: 0 16px 40px -16px rgba(255, 122, 69, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.free-custom-content h3 {
+  font-size: clamp(20px, 2.4vw, 25px);
+  font-weight: 900;
+  color: #12203B;
+  line-height: 1.35;
+  margin: 0 0 10px;
+}
+.free-custom-content p {
+  font-size: 14.5px;
+  color: #4A5B7A;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 68ch;
+}
+.free-custom-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.free-custom-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid rgba(255, 122, 69, 0.35);
+  color: #d9480f;
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(255, 122, 69, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .module-grid { grid-template-columns: repeat(2, 1fr); }
+  .free-custom-banner { padding: 26px 24px; }
+}
+@media (max-width: 600px) {
+  .module-grid { grid-template-columns: 1fr; }
+  .free-custom-banner { flex-direction: column; align-items: flex-start; }
+  .free-custom-banner .btn { width: 100%; justify-content: center; }
+}
+
 </style>
 
 <header>
@@ -365,9 +504,10 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     <ul class="navlinks">
       <li><a href="#philosophy">회사소개</a></li>
       <li><a href="#segments">서비스안내</a></li>
+      <li><a href="#operations">행정관리</a></li>
+      <li><a href="#custom-features">맞춤기능무료개발</a></li>
       <li><a href="#calculator">효과계산기</a></li>
       <li><a href="#pricing">요금안내</a></li>
-      <li><a href="#operations">행정관리</a></li>
       <li><a href="#tools">자료실</a></li>
       <li><a href="#intro">소개영상</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -634,24 +774,9 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
   <section class="block" id="tools" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
     <div class="wrap">
       <div class="head-row">
-        <div><p class="eyebrow">Resource Library</p><h2>읽고 보면서 이해하는 에듀바이브 AI</h2></div>
+        <div><p class="eyebrow">Pilot Case Study</p><h2>실증 파일럿 도입 후기</h2></div>
+        <p class="head-note">현장에서 직접 에듀바이브 AI를 도입하고 검증한 원장님들의 생생한 후기입니다.</p>
       </div>
-      <p class="eyebrow" style="margin-bottom:16px;">Article</p>
-      <div class="bento" style="margin-bottom:24px;">
-        <div class="card wide"><p class="tool-tag">Insight</p><h4>초개인화 학습, 이렇게 설계합니다</h4><p>학생마다 다른 수업을 만드는 과정을 세 단계로 쉽게 풀어 드립니다.</p><ul class="dev-points"><li>1단계 · 학생의 성취도, 이해도, 학습 패턴을 데이터로 파악</li><li>2단계 · 그 데이터를 바탕으로 학생에게 맞는 수업 모델 설계</li><li>3단계 · 수업 결과가 다시 데이터가 되어 다음 수업에 반영</li></ul></div>
-        <div class="card wide"><p class="tool-tag">Guide</p><h4>왜 과목이 아니라 학생 기준일까요?</h4><p>같은 반, 같은 과목이라도 학생마다 필요한 수업은 다릅니다. 그 이유를 세 가지로 설명합니다.</p><ul class="dev-points"><li>같은 진도라도 이해하는 속도와 방식이 서로 다름</li><li>과목이 달라도 학생의 학습 습관은 이어짐</li><li>학생 단위로 보면 국어·영어·수학·과학·사회를 한 흐름으로 관리 가능</li></ul></div>
-      </div>
-
-      <div class="expert-duo">
-        <div class="expert-card highlight">
-          <p class="tool-tag">Program</p>
-          <h3>상담 자리에서 바로 쓰는 입시 자료</h3>
-          <p>진학 상담 때 필요한 자료와 최근 흐름을 한 번에 찾아, 학부모께 근거 있게 설명하실 수 있습니다.</p>
-          <ul class="dev-points"><li>상담 전에 자료를 일일이 찾지 않아도 됨</li><li>학생의 학습 데이터와 입시 흐름을 함께 보며 설명</li><li>학원마다 필요한 형태로 맞춤 제작</li></ul>
-        </div>
-      </div>
-
-            <p class="eyebrow" style="margin-bottom:16px;">Pilot Case Study</p>
       <div class="interview-grid">
         <div class="interview-card">
           <p class="tool-tag" style="color:var(--accent-2);font-weight:700;">✔ 실증 파일럿 후기</p>
@@ -700,81 +825,269 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     </div>
   </section>
 
-  <section class="block" id="calculator" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <!-- 16대 확장 모듈 및 무료 맞춤 개발 섹션 -->
+  <section class="block" id="custom-features" style="background:var(--bg);border-top:1px solid var(--line);">
     <div class="wrap">
       <div class="head-row">
         <div>
-          <p class="eyebrow">ROI Calculator</p>
-          <h2>얼마나 시간을 아낄 수 있을까요?</h2>
+          <p class="eyebrow">Unlimited Customization</p>
+          <h2>우리 학원에 꼭 필요한 운영 기능,<br><span class="grad">에듀바이블 AI에서 100% 무료로 개발해 반영해 드립니다</span></h2>
         </div>
-        <p class="head-note">학생 수와 강사 수를 조절해 에듀바이브 AI 도입 시 절약되는 행정 시간과 효과를 확인해보세요.</p>
+        <p class="head-note">시험·과제·셔틀·상권분석까지 — 타사의 비싼 추가 개발비나 부가 요금 없이, 원장님 학원에 맞춤형으로 무상 개발·탑재해 드립니다.</p>
       </div>
 
-      <div class="calc-card">
-        <div class="calc-grid">
-          <div class="calc-inputs">
-            <div class="calc-field">
-              <label for="calc-students">
-                <span>관리 학생 수</span>
-                <span class="val" id="calc-students-val">50명</span>
-              </label>
-              <input type="range" id="calc-students" min="10" max="250" step="5" value="50">
+      <!-- 16대 모듈 그리드 (4x4) -->
+      <div class="module-grid">
+        <!-- 1. 시험 관리 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <h4>시험 관리</h4>
             </div>
-            <div class="calc-field">
-              <label for="calc-teachers">
-                <span>담당 강사 / 관리 인원</span>
-                <span class="val" id="calc-teachers-val">3명</span>
-              </label>
-              <input type="range" id="calc-teachers" min="1" max="15" step="1" value="3">
-            </div>
-            <div class="calc-field">
-              <label for="calc-type">
-                <span>운영 형태</span>
-              </label>
-              <select id="calc-type" style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:var(--font-display);font-size:14px;">
-                <option value="학원">학원</option>
-                <option value="개인 교습소">개인 교습소</option>
-                <option value="공부방">공부방</option>
-                <option value="관리형 스터디카페">관리형 스터디카페</option>
-                <option value="프랜차이즈">프랜차이즈</option>
-              </select>
-            </div>
+            <span class="module-tag">성적·OMR</span>
           </div>
+          <p class="module-desc">주간/월간 모의고사, 학교별 내신 기출 OMR 자동 채점 및 취약 유형 성적표 발송</p>
+        </div>
 
-          <div class="calc-results">
-            <div class="calc-res-item">
-              <div>
-                <div class="calc-res-label">월 절약되는 행정·서류 작업 시간</div>
-                <div style="font-size:11.5px;color:var(--ink-soft);margin-top:2px;">출결·성적 정리, 감사/세무 서류 자동화</div>
+        <!-- 2. 과제 관리 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
               </div>
-              <div class="calc-res-val" id="res-admin-hours">약 32시간</div>
+              <h4>과제 관리</h4>
             </div>
-            <div class="calc-res-item">
-              <div>
-                <div class="calc-res-label">월 단축되는 학부모 상담 준비 시간</div>
-                <div style="font-size:11.5px;color:var(--ink-soft);margin-top:2px;">학생당 40분 ➔ 5분으로 단축</div>
-              </div>
-              <div class="calc-res-val" id="res-consult-hours">약 29시간</div>
-            </div>
-            <div class="calc-res-item">
-              <div>
-                <div class="calc-res-label">강사별 기록 편차 해소율</div>
-                <div style="font-size:11.5px;color:var(--ink-soft);margin-top:2px;">AI 통일 양식으로 표준화</div>
-              </div>
-              <div class="calc-res-val" id="res-std-rate">98%</div>
-            </div>
-            <div class="calc-res-item" style="padding-top:6px;">
-              <div>
-                <div class="calc-res-label">추천 패키지</div>
-              </div>
-              <div style="font-family:var(--font-mono);font-size:16px;font-weight:800;color:var(--accent);" id="res-plan">베이직 패키지</div>
-            </div>
-            <button type="button" class="btn btn-primary" id="btnApplyCalc" style="width:100%;justify-content:center;margin-top:6px;">이 조건으로 맞춤 설계 신청하기 →</button>
+            <span class="module-tag">미제출 자동독촉</span>
           </div>
+          <p class="module-desc">단원별 숙제 부여, 온라인 사진 제출 검사 및 미제출 학생 알림톡 자동 독촉</p>
+        </div>
+
+        <!-- 3. 도시락 관리 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              </div>
+              <h4>도시락 관리</h4>
+            </div>
+            <span class="module-tag">식권·식단표</span>
+          </div>
+          <p class="module-desc">방학 특강 및 윈터스쿨 중식/석식 주문 수량 집계, 모바일 식권 및 알레르기 관리</p>
+        </div>
+
+        <!-- 4. 자료실 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><polygon points="12 11 12 17 17 14"/></svg>
+              </div>
+              <h4>자료실</h4>
+            </div>
+            <span class="module-tag">PDF·강의영상</span>
+          </div>
+          <p class="module-desc">주요 학교별 기출 족보, 자체 교재 PDF, 수업 복습 VOD 링크 학생별 권한 공유</p>
+        </div>
+
+        <!-- 5. 학생 질문 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <h4>학생 질문</h4>
+            </div>
+            <span class="module-tag">1:1 질의응답</span>
+          </div>
+          <p class="module-desc">학생이 모르는 문제를 사진 찍어 올리면 담당 조교 및 AI가 단계별 풀이 힌트 제공</p>
+        </div>
+
+        <!-- 6. 배차 관리 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="15" rx="3"/><circle cx="7" cy="18" r="2.5"/><circle cx="17" cy="18" r="2.5"/><path d="M3 10h18"/><line x1="8" y1="6" x2="8.01" y2="6"/><line x1="16" y1="6" x2="16.01" y2="6"/></svg>
+              </div>
+              <h4>배차 관리</h4>
+            </div>
+            <span class="module-tag">셔틀 실시간 위치</span>
+          </div>
+          <p class="module-desc">등하원 셔틀버스 노선 편성, 탑승 학생 실시간 체크 및 기사님 전용 노선도 앱 연동</p>
+        </div>
+
+        <!-- 7. 매출정산 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+              <h4>매출정산</h4>
+            </div>
+            <span class="module-tag">간편결제 청구서</span>
+          </div>
+          <p class="module-desc">카카오페이/카드 모바일 비대면 청구서 원클릭 발송, 미납 자동 리마인드, 현금영수증 연동</p>
+        </div>
+
+        <!-- 8. 문자보내기 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </div>
+              <h4>문자보내기</h4>
+            </div>
+            <span class="module-tag">알림톡·대량SMS</span>
+          </div>
+          <p class="module-desc">반별/학년별 타겟팅 대량 발송, 공지사항 알림톡, 080 수신거부 자동 필터링</p>
+        </div>
+
+        <!-- 9. 업무보드 (강조 스타일) -->
+        <div class="module-card featured-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+              </div>
+              <h4>업무보드</h4>
+            </div>
+            <span class="module-tag" style="background:rgba(255,122,69,0.12);color:#d9480f;border-color:rgba(255,122,69,0.25);">칸반 투두</span>
+          </div>
+          <p class="module-desc">강사/직원간 인수인계, 상담 후속 조치, 시설 보수 등 운영 업무 칸반 보드</p>
+        </div>
+
+        <!-- 10. 수업일지 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <h4>수업일지</h4>
+            </div>
+            <span class="module-tag">AI 자동생성</span>
+          </div>
+          <p class="module-desc">매 수업 진도, 과제, 태도 평가를 AI가 학부모 안심 카카오 알림톡으로 3초 만에 생성</p>
+        </div>
+
+        <!-- 11. 활동 로그 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h4>활동 로그</h4>
+            </div>
+            <span class="module-tag">조작이력 추적</span>
+          </div>
+          <p class="module-desc">출결 상태 수동 변경, 전자서명 일괄, 성적 수정 등 모든 관리자 조작 기록 영구 보관</p>
+        </div>
+
+        <!-- 12. 채팅 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h4>채팅</h4>
+            </div>
+            <span class="module-tag">1:1 실시간 채널</span>
+          </div>
+          <p class="module-desc">개인 카톡 번호 노출 없는 안전한 학원 전용 1:1 채팅 채널 (상담 업무시간 설정 지원)</p>
+        </div>
+
+        <!-- 13. AI 코칭 녹음 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              </div>
+              <h4>AI 코칭 녹음</h4>
+            </div>
+            <span class="module-tag">음성STT 분석</span>
+          </div>
+          <p class="module-desc">상담/수업 음성을 AI가 자동 텍스트 변환하여 핵심 요약, 학생 감정 및 코칭 피드백 도출</p>
+        </div>
+
+        <!-- 14. AI 비서 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="16" y1="16" x2="16.01" y2="16"/></svg>
+              </div>
+              <h4>AI 비서</h4>
+            </div>
+            <span class="module-tag">원장 전담 챗봇</span>
+          </div>
+          <p class="module-desc">학원법 환불 계산, 강사 계약 특약 검토, 민원 응대 화법 등 24시간 원장 경영 질의응답</p>
+        </div>
+
+        <!-- 15. 지역상권 분석 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h4>지역상권 분석</h4>
+            </div>
+            <span class="module-tag">학군·인구데이터</span>
+          </div>
+          <p class="module-desc">반경 2km 내 초/중/고 학년별 학생 수 추이, 학교별 지필평가 일정 및 경쟁 학원 분포 분석</p>
+        </div>
+
+        <!-- 16. 직원 출결관리 -->
+        <div class="module-card">
+          <div class="module-head">
+            <div class="module-title-box">
+              <div class="module-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+              </div>
+              <h4>직원 출결관리</h4>
+            </div>
+            <span class="module-tag">시급·주휴 자동정산</span>
+          </div>
+          <p class="module-desc">전임/파트타임 강사 GPS/WiFi 출퇴근 인증, 특강 시수별 급여 및 3.3% 사업소득 자동 계산</p>
         </div>
       </div>
+
+      <!-- 에듀바이블 AI 맞춤 개발 무료 보증 배너 -->
+      <div class="free-custom-banner">
+        <div class="free-custom-content">
+          <div class="free-custom-pills">
+            <span class="free-custom-pill">🎁 맞춤 커스텀 개발비 0원</span>
+            <span class="free-custom-pill">⚡ 현장 요청 시 100% 무상 개발 반영</span>
+            <span class="free-custom-pill">🔒 원장님 학원 고유 운영 로직 완벽 지원</span>
+          </div>
+          <h3>"우리 학원만의 특별한 방식이나 필요한 기능이 있으신가요?"<br><span style="color:#d9480f;">에듀바이블 AI에서는 필요한 모든 기능을 무료로 직접 개발해 반영해 드립니다.</span></h3>
+          <p>
+            시중의 고정된 프로그램에 학원을 억지로 맞추실 필요가 없습니다.<br>
+            위 16가지 확장 기능은 물론, <b>우리 학원 환경에 꼭 필요한 고유 기능이나 새로운 아이디어가 있다면 말씀해 주세요.</b><br>
+            에듀바이블 AI 전담 개발팀이 추가 비용 일체 없이 <b>무료로 설계 및 개발하여 즉시 시스템에 업데이트</b>해 드립니다.
+          </p>
+        </div>
+        <div>
+          <a href="#contact" class="btn btn-primary" style="padding:15px 30px;font-size:15px;background:linear-gradient(135deg,#ff7a45,#2F6BFF);border:none;box-shadow:0 12px 28px -8px rgba(255,107,47,.55);">
+            우리 학원 맞춤 기능 무료 개발 신청하기 →
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
+
 
   <section class="block" id="pricing">
     <div class="wrap">
@@ -827,12 +1140,12 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           </div>
           <div style="margin-top:20px;padding-bottom:20px;border-bottom:1px solid var(--line);">
             <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">
-              <b style="color:var(--ink);">행정 자동화 모듈</b>
+              <b style="color:var(--ink);">행정 자동화 & 맞춤형 무료 개발 특전</b>
             </p>
             <ul class="dev-points" style="margin:10px 0 0;">
-              <li>내부결재시스템</li>
-              <li>학부모 커뮤니케이션</li>
+              <li>내부결재시스템 및 학부모 안심 소통</li>
               <li>학생 일정·학습 진도 통합 관리</li>
+              <li><b style="color:#d9480f;">[특전] 학원 요청 맞춤 기능 100% 무료 개발 및 즉시 반영</b></li>
             </ul>
           </div>
           <a class="btn btn-primary" href="#contact" style="margin-top:22px;justify-content:center;">맞춤 견적 안내</a>
@@ -845,7 +1158,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
             <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">
               <b style="color:var(--ink);">베이직 패키지 전체 기능 포함</b>
             </p>
-            <p style="font-size:13px;color:var(--ink-soft);margin:12px 0 0;">학생 학습 플랫폼 · 분석 및 인사이트 엔진 · 입시·진로 서비스 · 행정 자동화</p>
+            <p style="font-size:13px;color:var(--ink-soft);margin:12px 0 0;">학생 학습 플랫폼 · 분석 및 인사이트 엔진 · 입시·진로 서비스 · 행정 자동화 · <b>무료 맞춤 개발 특전</b></p>
           </div>
           <div style="margin-top:20px;padding-bottom:20px;border-bottom:1px solid var(--line);">
             <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">
@@ -854,6 +1167,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
             <ul class="dev-points" style="margin:10px 0 0;">
               <li>다중 강사·지점 성적 통합 관리</li>
               <li>본사-지점 통합 대시보드</li>
+              <li><b style="color:#d9480f;">프랜차이즈/다지점 전용 커스텀 기능 무제한 무료 개발</b></li>
             </ul>
           </div>
           <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--line);">
@@ -915,6 +1229,10 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         <details class="faq-item">
           <summary>강사마다 성적 기록 방식이 달라 학부모 리포트 작성에 시간이 많이 걸리나요?<span class="plus">+</span></summary>
           <p><b>에듀바이브 AI는 통일된 데이터 입력 양식으로 모든 강사의 기록을 자동으로 표준화합니다.</b> 강사가 수업 중 학생의 성취도와 이해도만 일관된 기준으로 입력하면, AI가 이를 분석해 월간 성장 곡선, 학부모 맞춤 리포트, 상담 스크립트를 자동으로 생성합니다. 원장님의 기록 취합 업무가 거의 사라지고, 학원 전체의 데이터 품질이 균일해집니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>우리 학원에만 필요한 특수한 운영 기능이나 양식도 추가할 수 있나요?<span class="plus">+</span></summary>
+          <p><b>네, 에듀바이블 AI에서는 필요한 모든 맞춤 기능을 100% 무료로 직접 개발하여 반영해 드립니다.</b> 시험·과제 관리, 도시락·식권 관리, 셔틀버스 배차, 지역상권 분석, 24시 AI 비서 등 학원 현장에서 필요한 16대 확장 모듈은 물론, 원장님 학원 고유의 운영 방식이나 서식까지 추가 개발비나 별도 비용 일체 없이 전담 엔지니어가 무료로 개발하여 즉시 프로그램에 탑재해 드립니다.</p>
         </details>
         <details class="faq-item">
           <summary>과목별로 다른 프로그램을 쓰고 있어서 데이터가 분산되어 있는 상황을 해결할 수 있나요?<span class="plus">+</span></summary>
@@ -1309,76 +1627,6 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
 
 
 <script>
-// ROI Calculator Logic
-(function(){
-  var stInput = document.getElementById('calc-students');
-  var tcInput = document.getElementById('calc-teachers');
-  var typeInput = document.getElementById('calc-type');
-  var stVal = document.getElementById('calc-students-val');
-  var tcVal = document.getElementById('calc-teachers-val');
-  var resAdmin = document.getElementById('res-admin-hours');
-  var resConsult = document.getElementById('res-consult-hours');
-  var resStd = document.getElementById('res-std-rate');
-  var resPlan = document.getElementById('res-plan');
-  var btnApply = document.getElementById('btnApplyCalc');
-
-  function calculate(){
-    var s = parseInt(stInput.value, 10);
-    var t = parseInt(tcInput.value, 10);
-    stVal.textContent = s + '명';
-    tcVal.textContent = t + '명';
-
-    // 행정 절약 시간: 학생 1명당 월 0.4시간 + 강사 1명당 4시간
-    var adminHrs = Math.round(s * 0.4 + t * 4);
-    // 상담 단축 시간: 학생 1명당 35분(0.58시간)
-    var consultHrs = Math.round(s * 0.58);
-    // 표준화율
-    var stdRate = Math.min(99, 90 + Math.floor(t * 1.5));
-    // 플랜 결정
-    var plan = (s > 80 || t >= 5) ? '프리미엄 패키지 (다지점/대규모)' : '베이직 패키지 (맞춤형)';
-
-    resAdmin.textContent = '약 ' + adminHrs + '시간';
-    resConsult.textContent = '약 ' + consultHrs + '시간';
-    resStd.textContent = stdRate + '%';
-    resPlan.textContent = plan;
-  }
-
-  if(stInput && tcInput){
-    stInput.addEventListener('input', calculate);
-    tcInput.addEventListener('input', calculate);
-    typeInput.addEventListener('change', calculate);
-    calculate();
-  }
-
-  if(btnApply){
-    btnApply.addEventListener('click', function(){
-      var s = stInput.value;
-      var t = tcInput.value;
-      var type = typeInput.value;
-      var summary = '[도입효과 계산기 진단 신청]\n'
-        + '운영 형태: ' + type + '\n'
-        + '관리 학생 수: ' + s + '명\n'
-        + '담당 강사 수: ' + t + '명\n'
-        + '예상 절약 시간: 행정 ' + resAdmin.textContent + ' / 상담 ' + resConsult.textContent + '\n'
-        + '추천 플랜: ' + resPlan.textContent + '\n\n'
-        + '세부 견적 및 도입 일정 상담을 희망합니다.';
-      
-      var msgBox = document.getElementById('f-msg');
-      if(msgBox) msgBox.value = summary;
-      var typeBox = document.getElementById('f-type');
-      if(typeBox) typeBox.value = type;
-
-      var contact = document.getElementById('contact');
-      if(contact){
-        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(function(){
-          var nameField = document.getElementById('f-name');
-          if(nameField) nameField.focus();
-        }, 500);
-      }
-    });
-  }
-})();
 
 // Floating CTA & Scroll Visibility
 (function(){
