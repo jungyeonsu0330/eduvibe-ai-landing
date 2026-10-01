@@ -288,6 +288,93 @@ section.block{padding-block:70px;}
 /* intro video */
 .intro-video{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#05070D;}
 .intro-video video{display:block;width:100%;max-height:78vh;background:#000;}
+
+/* Enhanced Sections 1 to 5 */
+.hero-badge-wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+.hero-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:11.5px;font-weight:700;font-family:var(--font-mono);letter-spacing:0.03em;}
+.hero-chip.primary{background:rgba(47,107,255,0.08);color:var(--accent);border:1px solid rgba(47,107,255,0.22);}
+.hero-chip.subtle{background:rgba(18,179,154,0.08);color:var(--accent-2);border:1px solid rgba(18,179,154,0.22);}
+.hero-chip .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 8px var(--accent-2);display:inline-block;}
+.hero-trust-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;font-size:12.5px;color:var(--ink-soft);font-family:var(--font-mono);}
+.hero-trust-bar .sep{color:var(--line);}
+
+.stat-row-enhanced{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;position:relative;z-index:2;}
+.stat-card-pro{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 4px 20px -8px rgba(18,32,59,0.06);transition:transform .2s,border-color .2s;}
+.stat-card-pro:hover{transform:translateY(-2px);border-color:var(--accent);}
+.stat-card-pro .stat-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.stat-card-pro .stat-badge{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.05em;color:var(--accent-2);background:rgba(18,179,154,0.1);border:1px solid rgba(18,179,154,0.2);padding:3px 8px;border-radius:6px;}
+.stat-card-pro b{font-family:var(--font-mono);font-size:28px;color:var(--ink);line-height:1;}
+.stat-card-pro .stat-title{font-size:15px;font-weight:700;color:var(--ink);margin-top:6px;display:block;}
+.stat-card-pro .stat-desc{font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.55;}
+@media (max-width:768px){.stat-row-enhanced{grid-template-columns:1fr;}}
+
+.vision-pro-left{display:flex;flex-direction:column;gap:14px;}
+.vision-pillar-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start;transition:border-color .2s,box-shadow .2s;}
+.vision-pillar-card:hover{border-color:var(--accent);box-shadow:0 8px 24px -10px rgba(47,107,255,0.15);}
+.pillar-num{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-family:var(--font-mono);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 4px 12px rgba(47,107,255,0.3);}
+.pillar-body h4{font-size:15px;font-weight:700;color:var(--ink);margin:0 0 6px;}
+.pillar-body p{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+.roadmap-pro-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 4px 20px -8px rgba(18,32,59,0.06);}
+.roadmap-pro-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:18px;}
+.roadmap-timeline{display:flex;flex-direction:column;gap:14px;}
+.roadmap-step-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;transition:border-color .2s;}
+.roadmap-step-box.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 8px 20px -10px rgba(47,107,255,0.3);}
+.step-meta-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.step-year{font-family:var(--font-mono);font-size:13px;font-weight:800;color:var(--accent);}
+.step-badge-status{font-family:var(--font-mono);font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:999px;}
+.step-badge-status.current{background:rgba(47,107,255,0.1);color:var(--accent);}
+.step-badge-status.upcoming{background:rgba(18,179,154,0.1);color:var(--accent-2);}
+.roadmap-step-box h5{font-size:14px;font-weight:700;color:var(--ink);margin:0 0 4px;}
+.roadmap-step-box p{font-size:12px;color:var(--ink-soft);margin:0;line-height:1.5;}
+
+.dev-flow-banner{background:rgba(47,107,255,0.04);border:1px solid rgba(47,107,255,0.14);border-radius:12px;padding:12px 18px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:10px;font-family:var(--font-mono);font-size:12px;}
+.dev-flow-banner .step{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);}
+.dev-flow-banner .arrow-sep{color:var(--accent);font-weight:800;}
+.dev-card-pro{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s;}
+.dev-card-pro:hover{transform:translateY(-3px);border-color:var(--accent);}
+.dev-card-pro .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.dev-card-pro .device-icon-wrap{width:44px;height:44px;border-radius:12px;background:rgba(47,107,255,0.08);display:flex;align-items:center;justify-content:center;color:var(--accent);}
+.dev-card-pro .device-pill{font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--accent-2);background:rgba(18,179,154,0.1);border:1px solid rgba(18,179,154,0.22);padding:3px 8px;border-radius:999px;}
+.dev-card-pro .dev-cat{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:0.03em;}
+.dev-card-pro h3{font-size:19px;line-height:1.35;margin:6px 0 8px;color:var(--ink);}
+.dev-card-pro .dev-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin:0 0 18px;}
+.dev-card-pro .feature-pill-box{background:rgba(47,107,255,0.05);border:1px solid rgba(47,107,255,0.12);border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:6px;}
+.dev-checklist{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px;}
+.dev-checklist li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--ink);line-height:1.5;font-weight:500;}
+.dev-checklist li .chk{color:var(--accent-2);font-weight:900;flex:none;font-size:13px;}
+
+.ops-grid-pro{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media (max-width:1024px){.ops-grid-pro{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:580px){.ops-grid-pro{grid-template-columns:1fr;}}
+.ops-card-pro{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s;}
+.ops-card-pro:hover{transform:translateY(-3px);border-color:var(--accent);}
+.ops-head-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.ops-tag{font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--accent);background:rgba(47,107,255,0.08);border:1px solid rgba(47,107,255,0.18);padding:3px 8px;border-radius:6px;}
+.ops-metric-pill{font-size:11px;font-weight:700;color:var(--accent-2);background:rgba(18,179,154,0.1);border:1px solid rgba(18,179,154,0.22);padding:3px 8px;border-radius:999px;}
+.ops-card-pro h3{font-size:17.5px;font-weight:700;color:var(--ink);margin:0 0 4px;line-height:1.35;}
+.ops-card-pro .ops-subtitle{font-family:var(--font-mono);font-size:11px;color:var(--ink-soft);margin-bottom:14px;display:block;}
+.ops-card-pro .ops-core-box{background:rgba(47,107,255,0.04);border-radius:10px;padding:10px 12px;margin-bottom:16px;border:1px solid rgba(47,107,255,0.1);font-size:12.5px;color:var(--ink);line-height:1.5;font-weight:600;}
+.ops-bullet-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;flex:1;}
+.ops-bullet-list li{font-size:12.5px;color:var(--ink-soft);line-height:1.55;display:flex;align-items:flex-start;gap:6px;}
+.ops-bullet-list li b{color:var(--ink);font-weight:600;}
+.ops-bullet-list li::before{content:"•";color:var(--accent);font-weight:900;}
+
+.interview-grid-pro{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media (max-width:1024px){.interview-grid-pro{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:580px){.interview-grid-pro{grid-template-columns:1fr;}}
+.interview-card-pro{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s;}
+.interview-card-pro:hover{transform:translateY(-3px);border-color:var(--accent-2);}
+.interview-top-kpi{background:linear-gradient(135deg,rgba(47,107,255,0.08),rgba(18,179,154,0.12));border:1px solid rgba(18,179,154,0.25);border-radius:8px;padding:7px 10px;font-size:11.5px;font-weight:800;color:var(--accent-2);margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+.interview-stars{color:#f59e0b;font-size:11px;letter-spacing:2px;margin-bottom:12px;}
+.interview-profile-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.interview-pro-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2F6BFF,#12B39A);color:#fff;font-family:var(--font-mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 4px 10px rgba(47,107,255,0.25);}
+.interview-profile-info h4{font-size:14px;font-weight:700;color:var(--ink);margin:0;line-height:1.3;}
+.interview-profile-info .loc-tag{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-soft);display:block;margin-top:2px;}
+.interview-quote-box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.65;flex:1;margin-bottom:12px;position:relative;}
+.interview-quote-box b{color:var(--ink);font-weight:700;}
+.interview-takeaway-pill{font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--accent);background:rgba(47,107,255,0.06);border:1px solid rgba(47,107,255,0.15);padding:4px 8px;border-radius:6px;text-align:center;}
+
 footer{border-top:1px solid var(--line);padding-block:26px;}
 .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--ink-soft);font-family:var(--font-mono);}
 .foot-links{display:flex;gap:16px;flex-wrap:wrap;}
@@ -502,15 +589,15 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
   <div class="wrap nav">
     <a class="logo" href="#" aria-label="에듀바이브 AI 홈으로 이동"><span class="dot"></span>EduVibe AI<span>AI LEARNING ENGINE</span></a>
     <ul class="navlinks">
-      <li><a href="#philosophy">회사소개</a></li>
+      <li><a href="#philosophy">핵심비전</a></li>
       <li><a href="#segments">서비스안내</a></li>
-      <li><a href="#operations">행정관리</a></li>
-      <li><a href="#custom-features">맞춤기능무료개발</a></li>
-      <li><a href="#calculator">효과계산기</a></li>
-      <li><a href="#pricing">요금안내</a></li>
-      <li><a href="#tools">자료실</a></li>
+      <li><a href="#platform">디바이스연동</a></li>
       <li><a href="#intro">소개영상</a></li>
+      <li><a href="#operations">행정관리</a></li>
+      <li><a href="#tools">실증후기</a></li>
+      <li><a href="#pricing">요금안내</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#team">팀소개</a></li>
     </ul>
   </div>
 </header>
@@ -597,52 +684,131 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
   <section class="hero">
     <canvas id="net"></canvas>
     <div class="wrap hero-inner">
-      <p class="eyebrow">AI Learning Engine for Education</p>
+      <div class="hero-badge-wrap">
+        <span class="hero-chip primary"><span class="pulse-dot"></span> 2026 차세대 AI 교육 엔진</span>
+        <span class="hero-chip subtle">과목 무관 초개인화 맞춤수업 시스템</span>
+      </div>
       <h1>학생의 데이터를<br><span class="grad">수업으로 설계</span>하는 AI</h1>
-      <p class="hero-lead">에듀바이브 AI는 학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페의 현장 데이터를 실시간으로 분석해, 과목에 상관없이 학생 개개인에게 꼭 맞는 수업을 AI가 직접 설계하는 <b>AI 맞춤수업 시스템</b>입니다. 운영 방식을 진단해드리는 컨설팅이 아니라, 실제 수업을 만드는 엔진입니다.</p>
+      <p class="hero-lead">에듀바이브 AI는 학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페의 현장 데이터를 실시간으로 분석해, 과목에 상관없이 학생 개개인에게 꼭 맞는 수업을 AI가 직접 설계하는 <b>AI 맞춤수업 시스템</b>입니다.<br>운영 방식을 진단해드리는 컨설팅이 아니라, <b>실제 수업과 운영 행정을 책임지는 엔진</b>입니다.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#contact" id="btnWizardStart">우리 학원 맞춤설계 시작하기</a>
+        <a class="btn btn-primary" href="#contact" id="btnWizardStart">우리 학원 맞춤설계 시작하기 →</a>
         <a class="btn btn-ghost" href="#segments">AI 맞춤수업 설계 과정 보기</a>
       </div>
-      <div class="stat-row">
-        <div class="stat"><b>5 TYPE</b><span>학원 · 교습소 · 공부방 · 프랜차이즈 · 스터디카페 대응</span></div>
-        <div class="stat"><b>3 DEVICE</b><span>태블릿 · 모바일 · PC 완전 연동</span></div>
-        <div class="stat"><b>1:1</b><span>학생별 초개인화 학습 모델</span></div>
+      <div class="hero-trust-bar">
+        <span>⚡ 1분 무료 자가진단</span>
+        <span class="sep">•</span>
+        <span>📱 별도 전용 단말기 구매 ZERO</span>
+        <span class="sep">•</span>
+        <span>🔒 학생 개인정보 보안 규격 완벽 준수</span>
+      </div>
+      <div class="stat-row-enhanced">
+        <div class="stat-card-pro">
+          <div class="stat-meta">
+            <span class="stat-badge">SPACE FIT</span>
+            <b>5 TYPE</b>
+          </div>
+          <span class="stat-title">5대 교육 공간 완벽 대응</span>
+          <p class="stat-desc">학원 · 개인교습소 · 공부방 · 프랜차이즈 · 관리형 스터디카페</p>
+        </div>
+        <div class="stat-card-pro">
+          <div class="stat-meta">
+            <span class="stat-badge">3-WAY SYNC</span>
+            <b>3 DEVICE</b>
+          </div>
+          <span class="stat-title">태블릿 · 모바일 · PC 실시간 연동</span>
+          <p class="stat-desc">학생 수업 태블릿부터 학부모 알림톡, 원장 PC 행정까지 하나로</p>
+        </div>
+        <div class="stat-card-pro">
+          <div class="stat-meta">
+            <span class="stat-badge">HYPER-PERSONAL</span>
+            <b>1:1</b>
+          </div>
+          <span class="stat-title">학생별 초개인화 맞춤 엔진</span>
+          <p class="stat-desc">오답 패턴과 이해 속도를 실시간 반영한 개별 맞춤 커리큘럼</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="block philosophy" id="philosophy">
     <div class="wrap">
-      <p class="eyebrow">System Philosophy</p>
-      <h2 style="margin-top:12px;">‘가르치는 선생님’이 아니라<br>‘학습하는 학생’을 기준으로 설계합니다</h2>
-      <div class="phil-card" style="margin-top:34px;">
-        <p class="body">과거의 획일화된 시험 중심 교육은 학생마다 다른 진로와 성향에 맞춘 <b>‘초개인화 교육’</b>으로 변화하고 있습니다. 에듀바이브 AI는 이 변화를 실제 수업으로 구현하는 <b>AI 맞춤수업 시스템</b>이며, 과목과 무관하게 학생마다 다른 특성을 반영하는 <b>‘초개인화·초지능 교육 특화 모델’</b>로 계속 고도화하고 있습니다.</p>
-      </div>
-
+      <p class="eyebrow" style="margin-bottom:18px;">Vision & Philosophy</p>
       <!-- 핵심 비주얼 시스템 다이어그램 배너 -->
-      <div style="margin-top:32px;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-glass);background:#07101f;position:relative;">
+      <div style="border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-glass);background:#07101f;position:relative;">
         <img src="img/og-preview.jpg" alt="교육의 본질로 돌아가는 가장 현실적인 방법 - 학생 중심 교육을 실현하는 AI 맞춤수업 시스템 (3-디바이스 연동 및 행정 자동화)" style="width:100%;height:auto;display:block;" loading="lazy">
       </div>
 
       <div class="vision-grid">
-        <div>
-          <h3 style="font-size:19px;">비전과 방향</h3>
-          <p style="font-size:14px;color:var(--ink-soft);margin-top:12px;max-width:56ch;">학생 개개인의 학습 데이터를 이해하는 선생님이 더 많아지는 것 — 에듀바이브 AI가 만들고자 하는 변화입니다. 행정과 기록에 쓰이던 시간을 줄여, 선생님이 학생을 더 깊이 관찰할 수 있는 여유를 만드는 데 집중합니다.</p>
-          <ul style="margin-top:16px;padding-left:18px;font-size:13.5px;color:var(--ink-soft);line-height:1.9;">
-            <li>데이터 기반 초개인화 학습 설계의 대중화</li>
-            <li>현장 강사의 반복 행정 업무를 AI로 대체</li>
-            <li>학원 운영 노하우의 체계적 문서화</li>
-          </ul>
+        <div class="vision-pro-left">
+          <div style="margin-bottom:8px;">
+            <p class="eyebrow" style="margin-bottom:8px;">Core Philosophy</p>
+            <h3 style="font-size:22px;color:var(--ink);">비전과 방향</h3>
+            <p style="font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.65;max-width:56ch;">학생 개개인의 학습 데이터를 이해하는 선생님이 더 많아지는 것 — 에듀바이브 AI가 현장에서 실현하는 변화입니다. 기록과 행정에 쓰이던 야근을 줄여, 선생님이 학생을 더 깊이 관찰할 수 있는 온전한 여유를 만듭니다.</p>
+          </div>
+
+          <div class="vision-pillar-card">
+            <div class="pillar-num">01</div>
+            <div class="pillar-body">
+              <h4>데이터 기반 초개인화 맞춤학습의 대중화</h4>
+              <p>과목과 점수에 상관없이 학생의 풀이 속도, 오답 원인, 개념 결손을 AI가 정밀 진단해 맞춤형 수업 자료를 매일 자동 생성합니다.</p>
+            </div>
+          </div>
+
+          <div class="vision-pillar-card">
+            <div class="pillar-num">02</div>
+            <div class="pillar-body">
+              <h4>현장 강사의 반복 행정 업무 완전 자동화</h4>
+              <p>출결 체크, 상담 일지, 리포트 작성 등 매일 2~3시간씩 소모되던 단순 반복 작업을 AI가 대신 처리해 수업 본질에 집중합니다.</p>
+            </div>
+          </div>
+
+          <div class="vision-pillar-card">
+            <div class="pillar-num">03</div>
+            <div class="pillar-body">
+              <h4>학원 운영 노하우와 커리큘럼의 자산화</h4>
+              <p>원장님의 고유 교육 철학과 검증된 수업 노하우를 AI 프롬프트와 표준 매뉴얼로 시스템화하여 학원의 브랜드 가치를 높입니다.</p>
+            </div>
+          </div>
         </div>
-        <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;">
-          <p class="eyebrow" style="margin-bottom:14px;">Roadmap</p>
-          <div style="display:flex;flex-direction:column;gap:14px;font-size:13.5px;">
-            <div style="display:flex;gap:12px;"><b style="font-family:var(--font-mono);color:var(--accent-2);">2026</b><span style="color:var(--ink-soft);">에듀바이브 AI 출범, AI 맞춤수업 시스템 출시</span></div>
-            <div style="display:flex;gap:12px;"><b style="font-family:var(--font-mono);color:var(--accent-2);">NEXT</b><span style="color:var(--ink-soft);">파일럿 학원 확대 및 초개인화 모델 고도화</span></div>
-            <div style="display:flex;gap:12px;"><b style="font-family:var(--font-mono);color:var(--accent-2);">NEXT</b><span style="color:var(--ink-soft);">프랜차이즈 표준 매뉴얼 체계 확장</span></div>
+
+        <div class="roadmap-pro-card">
+          <div class="roadmap-pro-head">
+            <div>
+              <p class="eyebrow" style="margin:0;">Milestones</p>
+              <h4 style="font-size:17px;margin:4px 0 0;color:var(--ink);">Development Roadmap</h4>
+            </div>
+            <span class="step-badge-status current">VER 2.4 ACTIVE</span>
           </div>
+
+          <div class="roadmap-timeline">
+            <div class="roadmap-step-box active">
+              <div class="step-meta-row">
+                <span class="step-year">2026.01 — CURRENT</span>
+                <span class="step-badge-status current">정식 론칭</span>
+              </div>
+              <h5>에듀바이브 AI 엔진 & 3-디바이스 연동 출시</h5>
+              <p>학생 화면 실시간 분석, AI 맞춤수업 자동 설계 및 학부모 리포트 자동 생성 시스템 정식 배포.</p>
+            </div>
+
+            <div class="roadmap-step-box">
+              <div class="step-meta-row">
+                <span class="step-year">2026.Q3 — IN PROGRESS</span>
+                <span class="step-badge-status upcoming">고도화 진행 중</span>
+              </div>
+              <h5>초개인화·초지능 특화 모델 2.0 고도화</h5>
+              <p>전국 50+ 거점 파일럿 학원의 실증 데이터 기반 학습 및 과목별(수학/영어/국어/과학) 특화 AI 튜닝.</p>
+            </div>
+
+            <div class="roadmap-step-box">
+              <div class="step-meta-row">
+                <span class="step-year">2027+ — PLANNED</span>
+                <span class="step-badge-status upcoming">확장 예정</span>
+              </div>
+              <h5>프랜차이즈 표준 통합 행정·세무 ERP</h5>
+              <p>본사-지사 멀티캠퍼스 표준 커리큘럼 동기화 및 국세청·교육청 감사서류 원클릭 자동 연동 완성.</p>
+            </div>
           </div>
+        </div>
       </div>
     </div>
   </section>
@@ -653,17 +819,29 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         <div><p class="eyebrow">Service</p><h2>학생 개인의 학습 특성에 맞춰<br>AI가 수업을 설계합니다</h2></div>
         <p class="head-note">과목을 가리지 않고, 각 학생의 성취도와 진도에 맞는 맞춤형 수업이 자동으로 구성됩니다.</p>
       </div>
-      <div class="phil-card" style="margin-bottom:32px;">
-        <p class="body">에듀바이브 AI는 "우리 학원이 이렇게 운영하면 좋겠다"고 조언해 드리는 <b>컨설팅이 아닙니다.</b></p>
-        <p class="body" style="margin-top:16px;">학생 한 명 한 명의 성취도와 이해도, 공부하는 습관을 AI가 꼼꼼히 살펴보고, 그 학생에게 꼭 맞는 수업을 직접 설계해 드리는 시스템이에요. <b>국어, 영어, 수학, 과학, 사회, 어떤 과목이든</b> 과목이 달라도 똑같이 쓰실 수 있습니다.</p>
-        <p class="body" style="margin-top:16px;">수업을 하다 보면 자연스럽게 쌓이는 기록과 학부모 리포트, 상담 준비도 AI가 대신 정리해 드립니다. 선생님은 서류 대신 <b>학생을 바라보는 데 시간을 쓰시면 됩니다.</b></p>
+      <!-- 재구성된 초개인화 AI 맞춤수업 핵심 쇼케이스 카드 -->
+      <div class="service-highlight-card" style="margin-bottom:36px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px 32px;position:relative;overflow:hidden;box-shadow:var(--shadow-glass);backdrop-filter:blur(14px);">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
+          <span style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-family:var(--font-mono);font-size:11.5px;font-weight:700;padding:5px 13px;border-radius:999px;box-shadow:0 4px 14px -4px rgba(47,107,255,.6);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            AI 맞춤수업 시스템
+          </span>
+          <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(47,107,255,.07);color:var(--accent-2);border:1px solid rgba(47,107,255,.2);font-family:var(--font-mono);font-size:11.5px;font-weight:600;padding:5px 12px;border-radius:999px;">
+            초개인화 · 초지능 교육 특화 모델
+          </span>
+        </div>
+
+        <div style="border-left:3px solid var(--accent-2);padding-left:18px;">
+          <h3 style="font-size:clamp(19px,2.2vw,24px);line-height:1.45;color:var(--ink);">
+            에듀바이브 AI는 "우리 학원이 이렇게 운영하면 좋겠다"고 조언해 드리는 <span style="color:#e03131;text-decoration:line-through;text-decoration-thickness:2px;">단순 컨설팅</span>이 아닙니다.
+          </h3>
+          <p style="font-size:16px;color:var(--ink-soft);line-height:1.75;margin-top:10px;">
+            과거의 획일화된 시험 중심 교육은 학생마다 다른 진로와 성향에 맞춘 <b>‘초개인화 교육’</b>으로 변화하고 있습니다.<br>
+            에듀바이브 AI는 이 변화를 실제 수업으로 구현하는 <b>AI 맞춤수업 시스템</b>이며, 과목과 무관하게 학생마다 다른 특성을 반영하는 <b>‘초개인화·초지능 교육 특화 모델’</b>로 계속 고도화하고 있습니다.
+          </p>
+        </div>
       </div>
-      <div class="seg-grid">
-        <div class="seg-card"><h3>Multi-Subject Engine<br>과목 무관 AI 엔진</h3><p>국어, 영어, 수학, 과학, 사회 등 모든 과목을 하나의 AI가 학생별로 다르게 설계합니다.</p></div>
-        <div class="seg-card"><h3>Adaptive Modeling<br>개별 최적화 설계</h3><p>같은 반에서도 학생의 성취도와 이해 패턴이 다르면 커리큘럼과 진도가 자동으로 조정됩니다.</p></div>
-        <div class="seg-card"><h3>Process Automation<br>운영 업무 자동화</h3><p>출결, 성적, 상담 기록을 AI가 정리해, 선생님이 수업 설계에만 집중할 수 있게 합니다.</p></div>
-        <div class="seg-card"><h3>Real-time Optimization<br>실시간 커리큘럼 갱신</h3><p>매 수업의 학습 데이터가 즉시 누적되어, 다음 수업 설계에 바로 반영됩니다.</p></div>
-      </div>
+
 
       <!-- 비교표 섹션 -->
       <div style="margin-top:54px;">
@@ -725,41 +903,92 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     <div class="wrap">
       <div class="head-row">
         <div><p class="eyebrow">Cross-Device</p><h2>태블릿 · 모바일 · PC, 하나의 데이터로</h2></div>
+        <p class="head-note">학생 수업부터 학부모 리포트, 원장 PC 행정까지 실시간 하나의 데이터로 동기화됩니다.</p>
       </div>
+
+      <div class="dev-flow-banner">
+        <div class="step"><span>📱 1. 학생 수업 실시간 데이터 수집</span></div>
+        <span class="arrow-sep">➔</span>
+        <div class="step"><span>⚡ 2. AI 실시간 진단 및 리포트 완성</span></div>
+        <span class="arrow-sep">➔</span>
+        <div class="step"><span>💻 3. 학부모 모바일 전송 & PC 통합 관리</span></div>
+      </div>
+
       <div class="dev-grid">
-        <div class="dev-card">
-          <svg class="dev-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="1.5"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
-          <p class="dev-label">태블릿 · 수업 현장</p>
-          <h3>수업 = 기록</h3>
-          <p>수업하는 동안 AI가 학생의 이해도를 자동으로 데이터로 바꿔 줍니다.</p>
-          <ul class="dev-points">
-            <li>실시간 학생 화면 확인</li>
-            <li>학습 타임라인 자동 기록</li>
-            <li>진도·이해도 즉시 반영</li>
+        <div class="dev-card-pro">
+          <div class="top-bar">
+            <div class="device-icon-wrap">
+              <svg style="width:24px;height:24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
+            </div>
+            <span class="device-pill">STUDENT & CLASS</span>
+          </div>
+          <span class="dev-cat">태블릿 · 수업 현장</span>
+          <h3>수업 = 데이터 자동 기록</h3>
+          <p class="dev-desc">학생이 문제를 풀고 필기하는 동안 AI가 실시간 이해도와 풀이 과정을 즉시 데이터화합니다.</p>
+          <div class="feature-pill-box">
+            <span>⚡ 실시간 학생 화면 미러링 & 맞춤 힌트</span>
+          </div>
+          <ul class="dev-checklist">
+            <li><span class="chk">✔</span> <span><b>실시간 화면 확인:</b> 강사 화면에서 개별 학생 진도 실시간 모니터링</span></li>
+            <li><span class="chk">✔</span> <span><b>학습 타임라인:</b> 오답 발생 시점과 재풀이 소요 시간 자동 기록</span></li>
+            <li><span class="chk">✔</span> <span><b>즉각 난이도 조정:</b> 학생의 당일 성취도에 따라 실시간 문항 변형 제공</span></li>
           </ul>
         </div>
-        <div class="dev-card">
-          <svg class="dev-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2.5" width="10" height="19" rx="2"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"/></svg>
-          <p class="dev-label">모바일 · 학부모 소통</p>
+
+        <div class="dev-card-pro">
+          <div class="top-bar">
+            <div class="device-icon-wrap" style="color:var(--accent-2);background:rgba(18,179,154,0.08);">
+              <svg style="width:24px;height:24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2.5" width="10" height="19" rx="2"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"/></svg>
+            </div>
+            <span class="device-pill" style="color:var(--accent);background:rgba(47,107,255,0.08);border-color:rgba(47,107,255,0.2);">PARENT & COMM</span>
+          </div>
+          <span class="dev-cat" style="color:var(--accent);">모바일 · 학부모 소통</span>
           <h3>리포트가 스스로 완성됩니다</h3>
-          <p>학부모께 드릴 성장 리포트와 상담 스크립트를 AI가 자동으로 만들어 줍니다.</p>
-          <ul class="dev-points">
-            <li>성장 리포트 자동 작성</li>
-            <li>상담 스크립트 자동 생성</li>
-            <li>학부모 눈높이 설명</li>
+          <p class="dev-desc">퇴근 전 1~2시간씩 걸리던 학부모 피드백과 상담 스크립트를 AI가 10초 만에 작성합니다.</p>
+          <div class="feature-pill-box" style="color:var(--accent-2);background:rgba(18,179,154,0.05);border-color:rgba(18,179,154,0.15);">
+            <span>💬 카카오 알림톡 & 모바일 웹 리포트 자동 발송</span>
+          </div>
+          <ul class="dev-checklist">
+            <li><span class="chk" style="color:var(--accent);">✔</span> <span><b>학부모 맞춤 리포트:</b> 전문 용어 없는 직관적인 성장 그래프 제공</span></li>
+            <li><span class="chk" style="color:var(--accent);">✔</span> <span><b>상담 스크립트 생성:</b> 전화 상담 전 AI가 추천 대화 포인트 자동 제시</span></li>
+            <li><span class="chk" style="color:var(--accent);">✔</span> <span><b>학부모 만족도 수직 상승:</b> 주간 성취도와 칭찬 키워드 정기 발송</span></li>
           </ul>
         </div>
-        <div class="dev-card">
-          <svg class="dev-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="4" width="19" height="13" rx="1.5"/><line x1="8" y1="20.5" x2="16" y2="20.5"/><line x1="12" y1="17" x2="12" y2="20.5"/></svg>
-          <p class="dev-label">PC · 운영 관리</p>
-          <h3>숫자를 정리하는 시간에 방향을 고민하세요</h3>
-          <p>흩어져 있던 성적과 내신 데이터를 AI가 하나로 모아, 지금 학원에 필요한 방향을 리포트로 보여 드립니다.</p>
-          <ul class="dev-points">
-            <li>엑셀 정리 없이 한눈에 보는 성적 현황</li>
-            <li>학생별 성장 추이 확인</li>
-            <li>한 번 정리하면 다음 리포트에도 이어짐</li>
+
+        <div class="dev-card-pro">
+          <div class="top-bar">
+            <div class="device-icon-wrap" style="color:#6366f1;background:rgba(99,102,241,0.08);">
+              <svg style="width:24px;height:24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="4" width="19" height="13" rx="2"/><line x1="8" y1="20.5" x2="16" y2="20.5"/><line x1="12" y1="17" x2="12" y2="20.5"/></svg>
+            </div>
+            <span class="device-pill" style="color:#6366f1;background:rgba(99,102,241,0.08);border-color:rgba(99,102,241,0.2);">ADMIN & ERP</span>
+          </div>
+          <span class="dev-cat" style="color:#6366f1;">PC · 운영 관리 대시보드</span>
+          <h3>숫자 정리 대신 방향을 고민하세요</h3>
+          <p class="dev-desc">흩어져 있던 내신 성적, 모의고사, 출결, 수납 내역을 AI가 단 하나의 화면으로 통합 집계합니다.</p>
+          <div class="feature-pill-box" style="color:#6366f1;background:rgba(99,102,241,0.05);border-color:rgba(99,102,241,0.15);">
+            <span>📊 엑셀 수식 작업 ZERO · 원클릭 통합 대시보드</span>
+          </div>
+          <ul class="dev-checklist">
+            <li><span class="chk" style="color:#6366f1;">✔</span> <span><b>엑셀 없는 성적 분석:</b> 분기별·학년별 성취 추이와 취약 단원 자동 분석</span></li>
+            <li><span class="chk" style="color:#6366f1;">✔</span> <span><b>퇴원 위험군 감지:</b> 학습 집중도 및 출결 패턴 변화 사전 조기 경보</span></li>
+            <li><span class="chk" style="color:#6366f1;">✔</span> <span><b>강사별 피드백 통합:</b> 학원 전체 학생 데이터를 원클릭으로 일원화</span></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="intro">
+    <div class="wrap">
+      <div class="head-row">
+        <div><h2>에듀바이브 AI 소개영상</h2></div>
+        <p class="head-note">에듀바이브 AI가 하는 일을 영상으로 확인해 보세요.</p>
+      </div>
+      <div class="intro-video">
+        <video controls playsinline preload="none" poster="img/video-poster.jpg" title="에듀바이브 AI 소개 영상">
+          <source src="video/intro-v3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </section>
@@ -771,44 +1000,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     </div>
   </section>
 
-  <section class="block" id="tools" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-    <div class="wrap">
-      <div class="head-row">
-        <div><p class="eyebrow">Pilot Case Study</p><h2>실증 파일럿 도입 후기</h2></div>
-        <p class="head-note">현장에서 직접 에듀바이브 AI를 도입하고 검증한 원장님들의 생생한 후기입니다.</p>
-      </div>
-      <div class="interview-grid">
-        <div class="interview-card">
-          <p class="tool-tag" style="color:var(--accent-2);font-weight:700;">✔ 실증 파일럿 후기</p>
-          <svg class="interview-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M12 15v3M7 3h10a2 2 0 0 1 2 2v5a5 5 0 0 1-10 0"/><path d="M5 8v2a7 7 0 0 0 7 7"/></svg>
-          <h4>힐링수학 원장</h4>
-          <span class="role">1인 교습소 · 학생 38명 운영</span>
-          <p>"원장 혼자 관리하다 보니 학부모 리포트 쓰느라 매일 야근했는데, AI가 학생별 학습 타임라인을 자동 생성해 줘서 <b>상담 준비 시간이 75% 단축</b>되었습니다."</p>
-        </div>
-        <div class="interview-card">
-          <p class="tool-tag" style="color:var(--accent-2);font-weight:700;">✔ 실증 파일럿 후기</p>
-          <svg class="interview-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M12 15v3M7 3h10a2 2 0 0 1 2 2v5a5 5 0 0 1-10 0"/><path d="M5 8v2a7 7 0 0 0 7 7"/></svg>
-          <h4>스테디 잉글리쉬 원장</h4>
-          <span class="role">전문 어학원 · 강사 6인 체제</span>
-          <p>"강사마다 평가 방식과 기록 양식이 달라 취합이 고역이었는데, <b>모든 강사의 평가 기준이 AI로 일원화</b>되어 학원 전체의 리포트 신뢰도가 수직 상승했습니다."</p>
-        </div>
-        <div class="interview-card">
-          <p class="tool-tag" style="color:var(--accent-2);font-weight:700;">✔ 실증 파일럿 후기</p>
-          <svg class="interview-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M12 15v3M7 3h10a2 2 0 0 1 2 2v5a5 5 0 0 1-10 0"/><path d="M5 8v2a7 7 0 0 0 7 7"/></svg>
-          <h4>마일스톤 스터디 대표</h4>
-          <span class="role">관리형 스터디카페 · 80석 규모</span>
-          <p>"학생들의 순공 시간과 과목별 집중도가 실시간 데이터화되어 매주 학부모 모바일로 전송되니, <b>학부모 만족도 98%와 재등록률 35% 상승</b>을 기록했습니다."</p>
-        </div>
-        <div class="interview-card">
-          <p class="tool-tag" style="color:var(--accent-2);font-weight:700;">✔ 실증 파일럿 후기</p>
-          <svg class="interview-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M12 15v3M7 3h10a2 2 0 0 1 2 2v5a5 5 0 0 1-10 0"/><path d="M5 8v2a7 7 0 0 0 7 7"/></svg>
-          <h4>포커스 코칭 대표</h4>
-          <span class="role">1:1 맞춤 코칭 공부방 · 다과목</span>
-          <p>"국어, 영어, 수학 과목이 달라도 한 학생의 성취 패턴을 하나의 AI 엔진이 분석해 주어, <b>과목 간 연계 취약점을 즉각 해결</b>할 수 있었습니다."</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <section class="block" id="operations">
     <div class="wrap">
@@ -816,277 +1008,155 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         <div><p class="eyebrow">Operations</p><h2>사업장 운영의 행정 업무를<br>AI가 자동으로 처리합니다</h2></div>
         <p class="head-note">세무·급여·감사·상담까지 모든 행정 업무를 실시간으로 자동화하고, 원장님은 수업 운영에만 집중합니다.</p>
       </div>
-      <div class="seg-grid">
-        <div class="seg-card"><h3>Tax Automation<br>종합소득세 자동화</h3><p>연간 총수입금액, 강사료 인건비 합계, 사업장 임차료, 교재매입비를 AI가 자동 집계해 국세청 신고 규격으로 변환합니다. 매년 2월 사업장현황신고, 5월 종합소득세 신고용 엑셀(CSV) 다운로드를 지원합니다.</p></div>
-        <div class="seg-card"><h3>Audit Compliance<br>교육청 감사서류</h3><p>교육청 6대 감사서류를 AI가 자동으로 생성하고 관리합니다. 학생 현황, 강사 정보, 교육 과정 등 필요한 모든 데이터가 실시간으로 업데이트되어, 감사 준비에 드는 시간과 인력을 대폭 줄입니다.</p></div>
-        <div class="seg-card"><h3>Payroll Center<br>급여 및 정산 센터</h3><p>매달 강사료, 교육비, 상여금을 자동으로 계산하고 급여명세서를 생성합니다. 연말에는 퇴직금, 4대보험 합계, 연말정산 자료를 한 번에 준비해, 복잡한 급여 관리 업무가 완전히 자동화됩니다.</p></div>
-        <div class="seg-card"><h3>Parent TeleAI<br>학부모 상담 AI</h3><p>학부모의 질문에 AI가 24/7 실시간으로 응답하고, 모든 상담 기록을 자동으로 정리합니다. 학생의 성적, 진도, 상담 내용이 자동으로 학습 기록과 연동되어 한 번의 입력으로 모든 행정 기록이 완성됩니다.</p></div>
+
+      <div class="ops-grid-pro">
+        <div class="ops-card-pro">
+          <div class="ops-head-row">
+            <span class="ops-tag">TAX SYSTEM</span>
+            <span class="ops-metric-pill">세무 비용 70% 절감</span>
+          </div>
+          <h3>종합소득세 자동화</h3>
+          <span class="ops-subtitle">Tax Automation & Filing</span>
+          <div class="ops-core-box">매년 2월 사업장현황신고 & 5월 종합소득세 국세청 서식 즉시 생성</div>
+          <ul class="ops-bullet-list">
+            <li><span><b>매출·비용 실시간 집계:</b> 강사료 인건비, 임차료, 교재비를 세법 규격으로 자동 분류</span></li>
+            <li><span><b>원클릭 엑셀(CSV) 다운:</b> 홈택스 업로드용 전산 규격 파일 원클릭 변환</span></li>
+            <li><span><b>경비 누락 사전 감지:</b> 적격증빙 누락분을 AI가 사전에 검증하여 절세 가이드 제공</span></li>
+          </ul>
+        </div>
+
+        <div class="ops-card-pro">
+          <div class="ops-head-row">
+            <span class="ops-tag" style="color:var(--accent-2);background:rgba(18,179,154,0.08);border-color:rgba(18,179,154,0.2);">COMPLIANCE</span>
+            <span class="ops-metric-pill">과태료 리스크 ZERO</span>
+          </div>
+          <h3>교육청 감사서류 완비</h3>
+          <span class="ops-subtitle">Audit Compliance & Safety</span>
+          <div class="ops-core-box">교육청 6대 필수 법정 감사서식 실시간 자동 업데이트 및 출력</div>
+          <ul class="ops-bullet-list">
+            <li><span><b>6대 법정 대장 자동화:</b> 학생명부, 강사게시대장, 출석부, 수강료게시대장 완벽 구비</span></li>
+            <li><span><b>최신 교육청 조례 반영:</b> 관할 교육지원청 기준 개정 시 양식 즉시 자동 갱신</span></li>
+            <li><span><b>불시 감사 10초 패키징:</b> 교육청 점검 당일 10초 만에 완비된 증빙 PDF 일괄 인쇄</span></li>
+          </ul>
+        </div>
+
+        <div class="ops-card-pro">
+          <div class="ops-head-row">
+            <span class="ops-tag" style="color:#6366f1;background:rgba(99,102,241,0.08);border-color:rgba(99,102,241,0.2);">PAYROLL</span>
+            <span class="ops-metric-pill">원클릭 명세서 발송</span>
+          </div>
+          <h3>급여 및 정산 센터</h3>
+          <span class="ops-subtitle">Payroll Center & Settlement</span>
+          <div class="ops-core-box">비율제·시급제 강사료, 4대보험, 퇴직금 정산까지 자동 처리</div>
+          <ul class="ops-bullet-list">
+            <li><span><b>복합 강사료 자동 계산:</b> 수업 시수, 수강 인원 연동 비율제·인센티브 자동 산출</span></li>
+            <li><span><b>전자 급여명세서 배포:</b> 법정 필수 기재 항목이 반영된 명세서 카카오톡 즉시 전송</span></li>
+            <li><span><b>원천징수 & 퇴직 충당금:</b> 3.3% 원천세, 4대보험 공제액 및 퇴직 충당금 자동 적립</span></li>
+          </ul>
+        </div>
+
+        <div class="ops-card-pro">
+          <div class="ops-head-row">
+            <span class="ops-tag" style="color:#f59e0b;background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.2);">TELE-AI</span>
+            <span class="ops-metric-pill">24/7 즉시 응대</span>
+          </div>
+          <h3>학부모 상담 AI</h3>
+          <span class="ops-subtitle">Parent TeleAI & CS Engine</span>
+          <div class="ops-core-box">야간·주말 24시간 학부모 질문에 학생 진도 기반으로 맞춤 응대</div>
+          <ul class="ops-bullet-list">
+            <li><span><b>실시간 챗봇 상담:</b> 수강료, 수업 일정, 보강 신청 등 반복 문의 3초 내 즉시 회신</span></li>
+            <li><span><b>학습 데이터 연계 응답:</b> 학생의 최근 출결과 단원 성취도를 파악해 맞춤형 답변 제공</span></li>
+            <li><span><b>상담 일지 자동 정리:</b> 상담 핵심 요약본이 학생 프로필 및 원장 PC에 자동 저장</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 16대 확장 모듈 및 무료 맞춤 개발 섹션 -->
-  <section class="block" id="custom-features" style="background:var(--bg);border-top:1px solid var(--line);">
+  <section class="block" id="tools" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
     <div class="wrap">
       <div class="head-row">
-        <div>
-          <p class="eyebrow">Unlimited Customization</p>
-          <h2>우리 학원에 꼭 필요한 운영 기능,<br><span class="grad">에듀바이블 AI에서 100% 무료로 개발해 반영해 드립니다</span></h2>
-        </div>
-        <p class="head-note">시험·과제·셔틀·상권분석까지 — 타사의 비싼 추가 개발비나 부가 요금 없이, 원장님 학원에 맞춤형으로 무상 개발·탑재해 드립니다.</p>
+        <div><p class="eyebrow">Pilot Case Study</p><h2>실증 파일럿 도입 후기</h2></div>
+        <p class="head-note">현장에서 직접 에듀바이브 AI를 도입하고 검증한 원장님들의 생생한 후기입니다.</p>
       </div>
 
-      <!-- 16대 모듈 그리드 (4x4) -->
-      <div class="module-grid">
-        <!-- 1. 시험 관리 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              </div>
-              <h4>시험 관리</h4>
-            </div>
-            <span class="module-tag">성적·OMR</span>
+      <div class="interview-grid-pro">
+        <div class="interview-card-pro">
+          <div class="interview-top-kpi">
+            <span>⚡ 상담 준비 시간 75% 단축</span>
           </div>
-          <p class="module-desc">주간/월간 모의고사, 학교별 내신 기출 OMR 자동 채점 및 취약 유형 성적표 발송</p>
+          <div class="interview-stars">★★★★★ 5.0</div>
+          <div class="interview-profile-row">
+            <div class="interview-pro-avatar">이</div>
+            <div class="interview-profile-info">
+              <h4>힐링수학 이○○ 원장</h4>
+              <span class="loc-tag">세종 1인 교습소 · 학생 38명 운영</span>
+            </div>
+          </div>
+          <div class="interview-quote-box">
+            “원장 혼자 모든 학생을 관리하다 보니 <b>학부모 리포트 쓰느라 매일 밤 11시까지 야근</b>했는데, AI가 학생별 학습 타임라인을 자동 생성해 줘서 <b>상담 준비 시간이 75%나 단축</b>되었습니다. 이제 아이들 수업 준비에만 전념할 수 있어요.”
+          </div>
+          <div class="interview-takeaway-pill">도입 효과: 야근 제로화 & 수업 집중</div>
         </div>
 
-        <!-- 2. 과제 관리 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
-              </div>
-              <h4>과제 관리</h4>
-            </div>
-            <span class="module-tag">미제출 자동독촉</span>
+        <div class="interview-card-pro">
+          <div class="interview-top-kpi" style="color:var(--accent);border-color:rgba(47,107,255,0.25);">
+            <span>📈 전 강사 평가 기준 100% 일원화</span>
           </div>
-          <p class="module-desc">단원별 숙제 부여, 온라인 사진 제출 검사 및 미제출 학생 알림톡 자동 독촉</p>
+          <div class="interview-stars">★★★★★ 5.0</div>
+          <div class="interview-profile-row">
+            <div class="interview-pro-avatar" style="background:linear-gradient(135deg, #2F6BFF, #6366F1);">박</div>
+            <div class="interview-profile-info">
+              <h4>스테디 잉글리쉬 박○○ 원장</h4>
+              <span class="loc-tag">서울 대치 어학원 · 강사 6인 체제</span>
+            </div>
+          </div>
+          <div class="interview-quote-box">
+            “강사마다 학생 평가 방식과 기록 양식이 달라 취합하는 데만 주말이 다 갔습니다. 에듀바이브 도입 후 <b>모든 강사의 평가 기준이 AI 엔진으로 일원화</b>되어 학원 전체 리포트의 신뢰도와 전문성이 크게 올라갔습니다.”
+          </div>
+          <div class="interview-takeaway-pill" style="color:var(--accent);border-color:rgba(47,107,255,0.2);">도입 효과: 학원 리포트 신뢰도 수직 상승</div>
         </div>
 
-        <!-- 3. 도시락 관리 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-              </div>
-              <h4>도시락 관리</h4>
-            </div>
-            <span class="module-tag">식권·식단표</span>
+        <div class="interview-card-pro">
+          <div class="interview-top-kpi" style="color:#059669;border-color:rgba(16,185,129,0.25);">
+            <span>🔥 학부모 만족도 98% · 재등록 35%↑</span>
           </div>
-          <p class="module-desc">방학 특강 및 윈터스쿨 중식/석식 주문 수량 집계, 모바일 식권 및 알레르기 관리</p>
+          <div class="interview-stars">★★★★★ 5.0</div>
+          <div class="interview-profile-row">
+            <div class="interview-pro-avatar" style="background:linear-gradient(135deg, #10B981, #059669);">최</div>
+            <div class="interview-profile-info">
+              <h4>마일스톤 스터디 최○○ 대표</h4>
+              <span class="loc-tag">경기 분당 스터디카페 · 80석 관리형</span>
+            </div>
+          </div>
+          <div class="interview-quote-box">
+            “학생들의 순수 공부 시간과 과목별 집중 패턴이 <b>실시간 데이터화되어 매주 학부모 모바일로 자동 전송</b>되니, 학부모님들의 신뢰가 상상 이상입니다. <b>만족도 98%와 함께 재등록률이 35% 상승</b>했습니다.”
+          </div>
+          <div class="interview-takeaway-pill" style="color:#059669;border-color:rgba(16,185,129,0.2);">도입 효과: 재등록률 급상승 & 퇴원 방지</div>
         </div>
 
-        <!-- 4. 자료실 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><polygon points="12 11 12 17 17 14"/></svg>
-              </div>
-              <h4>자료실</h4>
-            </div>
-            <span class="module-tag">PDF·강의영상</span>
+        <div class="interview-card-pro">
+          <div class="interview-top-kpi" style="color:#8b5cf6;border-color:rgba(139,92,246,0.25);">
+            <span>🎯 과목 간 연계 취약점 즉각 해결</span>
           </div>
-          <p class="module-desc">주요 학교별 기출 족보, 자체 교재 PDF, 수업 복습 VOD 링크 학생별 권한 공유</p>
-        </div>
-
-        <!-- 5. 학생 질문 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              </div>
-              <h4>학생 질문</h4>
+          <div class="interview-stars">★★★★★ 5.0</div>
+          <div class="interview-profile-row">
+            <div class="interview-pro-avatar" style="background:linear-gradient(135deg, #8B5CF6, #6366F1);">정</div>
+            <div class="interview-profile-info">
+              <h4>포커스 코칭 정○○ 대표</h4>
+              <span class="loc-tag">서울 목동 코칭 공부방 · 다과목 1:1</span>
             </div>
-            <span class="module-tag">1:1 질의응답</span>
           </div>
-          <p class="module-desc">학생이 모르는 문제를 사진 찍어 올리면 담당 조교 및 AI가 단계별 풀이 힌트 제공</p>
-        </div>
-
-        <!-- 6. 배차 관리 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="15" rx="3"/><circle cx="7" cy="18" r="2.5"/><circle cx="17" cy="18" r="2.5"/><path d="M3 10h18"/><line x1="8" y1="6" x2="8.01" y2="6"/><line x1="16" y1="6" x2="16.01" y2="6"/></svg>
-              </div>
-              <h4>배차 관리</h4>
-            </div>
-            <span class="module-tag">셔틀 실시간 위치</span>
+          <div class="interview-quote-box">
+            “국어, 영어, 수학 등 과목이 달라도 한 학생의 <b>오답 성향과 개념 이해 패턴을 단 하나의 AI 엔진이 통합 분석</b>해 줍니다. 과목 간 연계 취약점을 즉각 해결하면서 학생들의 평균 성적이 가파르게 올랐습니다.”
           </div>
-          <p class="module-desc">등하원 셔틀버스 노선 편성, 탑승 학생 실시간 체크 및 기사님 전용 노선도 앱 연동</p>
-        </div>
-
-        <!-- 7. 매출정산 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              </div>
-              <h4>매출정산</h4>
-            </div>
-            <span class="module-tag">간편결제 청구서</span>
-          </div>
-          <p class="module-desc">카카오페이/카드 모바일 비대면 청구서 원클릭 발송, 미납 자동 리마인드, 현금영수증 연동</p>
-        </div>
-
-        <!-- 8. 문자보내기 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              </div>
-              <h4>문자보내기</h4>
-            </div>
-            <span class="module-tag">알림톡·대량SMS</span>
-          </div>
-          <p class="module-desc">반별/학년별 타겟팅 대량 발송, 공지사항 알림톡, 080 수신거부 자동 필터링</p>
-        </div>
-
-        <!-- 9. 업무보드 (강조 스타일) -->
-        <div class="module-card featured-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
-              </div>
-              <h4>업무보드</h4>
-            </div>
-            <span class="module-tag" style="background:rgba(255,122,69,0.12);color:#d9480f;border-color:rgba(255,122,69,0.25);">칸반 투두</span>
-          </div>
-          <p class="module-desc">강사/직원간 인수인계, 상담 후속 조치, 시설 보수 등 운영 업무 칸반 보드</p>
-        </div>
-
-        <!-- 10. 수업일지 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              </div>
-              <h4>수업일지</h4>
-            </div>
-            <span class="module-tag">AI 자동생성</span>
-          </div>
-          <p class="module-desc">매 수업 진도, 과제, 태도 평가를 AI가 학부모 안심 카카오 알림톡으로 3초 만에 생성</p>
-        </div>
-
-        <!-- 11. 활동 로그 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              </div>
-              <h4>활동 로그</h4>
-            </div>
-            <span class="module-tag">조작이력 추적</span>
-          </div>
-          <p class="module-desc">출결 상태 수동 변경, 전자서명 일괄, 성적 수정 등 모든 관리자 조작 기록 영구 보관</p>
-        </div>
-
-        <!-- 12. 채팅 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </div>
-              <h4>채팅</h4>
-            </div>
-            <span class="module-tag">1:1 실시간 채널</span>
-          </div>
-          <p class="module-desc">개인 카톡 번호 노출 없는 안전한 학원 전용 1:1 채팅 채널 (상담 업무시간 설정 지원)</p>
-        </div>
-
-        <!-- 13. AI 코칭 녹음 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-              </div>
-              <h4>AI 코칭 녹음</h4>
-            </div>
-            <span class="module-tag">음성STT 분석</span>
-          </div>
-          <p class="module-desc">상담/수업 음성을 AI가 자동 텍스트 변환하여 핵심 요약, 학생 감정 및 코칭 피드백 도출</p>
-        </div>
-
-        <!-- 14. AI 비서 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="16" y1="16" x2="16.01" y2="16"/></svg>
-              </div>
-              <h4>AI 비서</h4>
-            </div>
-            <span class="module-tag">원장 전담 챗봇</span>
-          </div>
-          <p class="module-desc">학원법 환불 계산, 강사 계약 특약 검토, 민원 응대 화법 등 24시간 원장 경영 질의응답</p>
-        </div>
-
-        <!-- 15. 지역상권 분석 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <h4>지역상권 분석</h4>
-            </div>
-            <span class="module-tag">학군·인구데이터</span>
-          </div>
-          <p class="module-desc">반경 2km 내 초/중/고 학년별 학생 수 추이, 학교별 지필평가 일정 및 경쟁 학원 분포 분석</p>
-        </div>
-
-        <!-- 16. 직원 출결관리 -->
-        <div class="module-card">
-          <div class="module-head">
-            <div class="module-title-box">
-              <div class="module-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
-              </div>
-              <h4>직원 출결관리</h4>
-            </div>
-            <span class="module-tag">시급·주휴 자동정산</span>
-          </div>
-          <p class="module-desc">전임/파트타임 강사 GPS/WiFi 출퇴근 인증, 특강 시수별 급여 및 3.3% 사업소득 자동 계산</p>
+          <div class="interview-takeaway-pill" style="color:#8b5cf6;border-color:rgba(139,92,246,0.2);">도입 효과: 다과목 통합 취약점 즉시 개선</div>
         </div>
       </div>
-
-      <!-- 에듀바이블 AI 맞춤 개발 무료 보증 배너 -->
-      <div class="free-custom-banner">
-        <div class="free-custom-content">
-          <div class="free-custom-pills">
-            <span class="free-custom-pill">🎁 맞춤 커스텀 개발비 0원</span>
-            <span class="free-custom-pill">⚡ 현장 요청 시 100% 무상 개발 반영</span>
-            <span class="free-custom-pill">🔒 원장님 학원 고유 운영 로직 완벽 지원</span>
-          </div>
-          <h3>"우리 학원만의 특별한 방식이나 필요한 기능이 있으신가요?"<br><span style="color:#d9480f;">에듀바이블 AI에서는 필요한 모든 기능을 무료로 직접 개발해 반영해 드립니다.</span></h3>
-          <p>
-            시중의 고정된 프로그램에 학원을 억지로 맞추실 필요가 없습니다.<br>
-            위 16가지 확장 기능은 물론, <b>우리 학원 환경에 꼭 필요한 고유 기능이나 새로운 아이디어가 있다면 말씀해 주세요.</b><br>
-            에듀바이블 AI 전담 개발팀이 추가 비용 일체 없이 <b>무료로 설계 및 개발하여 즉시 시스템에 업데이트</b>해 드립니다.
-          </p>
-        </div>
-        <div>
-          <a href="#contact" class="btn btn-primary" style="padding:15px 30px;font-size:15px;background:linear-gradient(135deg,#ff7a45,#2F6BFF);border:none;box-shadow:0 12px 28px -8px rgba(255,107,47,.55);">
-            우리 학원 맞춤 기능 무료 개발 신청하기 →
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
+
+
 
 
   <section class="block" id="pricing">
@@ -1182,6 +1252,46 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     </div>
   </section>
 
+  <section class="block" id="faq" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="head-row"><div><p class="eyebrow">Self-Check</p><h2>이런 고민이 있다면, 에듀바이브 AI가 맞습니다</h2></div></div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>강사마다 성적 기록 방식이 달라 학부모 리포트 작성에 시간이 많이 걸리나요?<span class="plus">+</span></summary>
+          <p><b>에듀바이브 AI는 통일된 데이터 입력 양식으로 모든 강사의 기록을 자동으로 표준화합니다.</b> 강사가 수업 중 학생의 성취도와 이해도만 일관된 기준으로 입력하면, AI가 이를 분석해 월간 성장 곡선, 학부모 맞춤 리포트, 상담 스크립트를 자동으로 생성합니다. 원장님의 기록 취합 업무가 거의 사라지고, 학원 전체의 데이터 품질이 균일해집니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>우리 학원에만 필요한 특수한 운영 기능이나 양식도 추가할 수 있나요?<span class="plus">+</span></summary>
+          <p><b>네, 에듀바이브 AI에서는 필요한 모든 맞춤 기능을 100% 무료로 직접 개발하여 반영해 드립니다.</b> 원장님 학원 고유의 운영 방식이나 서식, 특수한 관리 기능까지 추가 개발비나 별도 비용 일체 없이 전담 엔지니어가 무료로 개발하여 즉시 프로그램에 탑재해 드립니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>과목별로 다른 프로그램을 쓰고 있어서 데이터가 분산되어 있는 상황을 해결할 수 있나요?<span class="plus">+</span></summary>
+          <p><b>에듀바이브 AI의 Multi-Subject Engine은 국어, 영어, 수학, 과학, 사회 등 모든 과목을 하나의 AI 엔진으로 통합 관리합니다.</b> 과목이 달라도 동일한 기준으로 학생 데이터가 누적되어, 전체 학습 패턴을 한눈에 파악할 수 있습니다. 기존의 분산된 프로그램들을 단계적으로 통합하는 방법을 상담 시 구체적으로 안내해 드립니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>학생 수가 많으면 개별 맞춤 수업 설계가 현실적으로 가능한가요?<span class="plus">+</span></summary>
+          <p><b>에듀바이브 AI는 Adaptive Modeling으로 학생 수에 관계없이 1:1 맞춤 수업을 자동으로 설계합니다.</b> 사람이 직접 설계하는 것이 아니라 AI가 각 학생의 성취도, 이해도, 학습 속도를 분석해 맞춤형 커리큘럼과 진도를 자동으로 조정합니다. 학생 100명이든 1,000명이든 동일한 품질의 맞춤 설계가 가능합니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>매 수업마다 학생의 반응과 진도가 달라지는데, 수업안이 실시간으로 업데이트되나요?<span class="plus">+</span></summary>
+          <p><b>에듀바이브 AI의 Real-time Optimization으로 매 수업의 학습 데이터가 즉시 누적되어 다음 수업에 반영됩니다.</b> 오늘 수업에서 학생이 어느 부분에서 막혔는지, 어디까지 이해했는지가 기록되면, AI가 이를 분석해 내일 수업의 설계를 자동으로 조정합니다. 수업이 거듭될수록 학생에게 더 최적화된 학습 경로가 만들어집니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>기존 엑셀, 출결 관리 프로그램과 함께 사용할 수 있나요?<span class="plus">+</span></summary>
+          <p><b>에듀바이브 AI는 기존 시스템과 단계적 통합을 지원합니다.</b> 현재 사용 중인 프로그램의 데이터 구조를 먼저 진단한 후, 병행 운영하거나 단계적으로 전환하는 방안을 상담 시 제시해 드립니다. 무리한 시스템 전환 없이 현재의 운영 방식을 유지하면서 AI 기능을 추가로 활용할 수 있습니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary>학생 개인정보와 학습 데이터의 보안은 어떻게 관리되나요?<span class="plus">+</span></summary>
+          <p><b>데이터 수집 범위를 최소화하고 접근 권한을 엄격하게 제한하는 원칙으로 설계했습니다.</b> 성적, 진도, 이해도 등 학습에 필수적인 데이터만 수집하며, 불필요한 개인정보는 수집하지 않습니다. 자세한 데이터 보안 기준과 개인정보 처리 원칙은 하단의 개인정보처리방침을 참고해 주세요.</p>
+        </details>
+        <details class="faq-item">
+          <summary>위 항목 중 현재 상황에 해당되는 게 있다면?<span class="plus">+</span></summary>
+          <p><b>아래 상담 신청을 통해 학원의 현재 상황과 목표를 말씀해 주세요.</b> 에듀바이브 AI 팀이 학원 규모, 운영 형태, 기존 시스템을 종합적으로 분석한 후, 도입 범위, 단계별 구현 계획, 필요한 준비 사항을 맞춤형으로 안내해 드립니다.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="team">
     <div class="wrap">
       <div class="head-row"><div><p class="eyebrow">Team</p><h2>엔진을 만드는 사람들</h2></div></div>
@@ -1222,60 +1332,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     </div>
   </section>
 
-  <section class="block" id="faq" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-    <div class="wrap">
-      <div class="head-row"><div><p class="eyebrow">Self-Check</p><h2>이런 고민이 있다면, 에듀바이브 AI가 맞습니다</h2></div></div>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>강사마다 성적 기록 방식이 달라 학부모 리포트 작성에 시간이 많이 걸리나요?<span class="plus">+</span></summary>
-          <p><b>에듀바이브 AI는 통일된 데이터 입력 양식으로 모든 강사의 기록을 자동으로 표준화합니다.</b> 강사가 수업 중 학생의 성취도와 이해도만 일관된 기준으로 입력하면, AI가 이를 분석해 월간 성장 곡선, 학부모 맞춤 리포트, 상담 스크립트를 자동으로 생성합니다. 원장님의 기록 취합 업무가 거의 사라지고, 학원 전체의 데이터 품질이 균일해집니다.</p>
-        </details>
-        <details class="faq-item">
-          <summary>우리 학원에만 필요한 특수한 운영 기능이나 양식도 추가할 수 있나요?<span class="plus">+</span></summary>
-          <p><b>네, 에듀바이블 AI에서는 필요한 모든 맞춤 기능을 100% 무료로 직접 개발하여 반영해 드립니다.</b> 시험·과제 관리, 도시락·식권 관리, 셔틀버스 배차, 지역상권 분석, 24시 AI 비서 등 학원 현장에서 필요한 16대 확장 모듈은 물론, 원장님 학원 고유의 운영 방식이나 서식까지 추가 개발비나 별도 비용 일체 없이 전담 엔지니어가 무료로 개발하여 즉시 프로그램에 탑재해 드립니다.</p>
-        </details>
-        <details class="faq-item">
-          <summary>과목별로 다른 프로그램을 쓰고 있어서 데이터가 분산되어 있는 상황을 해결할 수 있나요?<span class="plus">+</span></summary>
-          <p><b>에듀바이브 AI의 Multi-Subject Engine은 국어, 영어, 수학, 과학, 사회 등 모든 과목을 하나의 AI 엔진으로 통합 관리합니다.</b> 과목이 달라도 동일한 기준으로 학생 데이터가 누적되어, 전체 학습 패턴을 한눈에 파악할 수 있습니다. 기존의 분산된 프로그램들을 단계적으로 통합하는 방법을 상담 시 구체적으로 안내해 드립니다.</p>
-        </details>
-        <details class="faq-item">
-          <summary>학생 수가 많으면 개별 맞춤 수업 설계가 현실적으로 가능한가요?<span class="plus">+</span></summary>
-          <p><b>에듀바이브 AI는 Adaptive Modeling으로 학생 수에 관계없이 1:1 맞춤 수업을 자동으로 설계합니다.</b> 사람이 직접 설계하는 것이 아니라 AI가 각 학생의 성취도, 이해도, 학습 속도를 분석해 맞춤형 커리큘럼과 진도를 자동으로 조정합니다. 학생 100명이든 1,000명이든 동일한 품질의 맞춤 설계가 가능합니다.</p>
-        </details>
-        <details class="faq-item">
-          <summary>매 수업마다 학생의 반응과 진도가 달라지는데, 수업안이 실시간으로 업데이트되나요?<span class="plus">+</span></summary>
-          <p><b>에듀바이브 AI의 Real-time Optimization으로 매 수업의 학습 데이터가 즉시 누적되어 다음 수업에 반영됩니다.</b> 오늘 수업에서 학생이 어느 부분에서 막혔는지, 어디까지 이해했는지가 기록되면, AI가 이를 분석해 내일 수업의 설계를 자동으로 조정합니다. 수업이 거듭될수록 학생에게 더 최적화된 학습 경로가 만들어집니다.</p>
-        </details>
-        <details class="faq-item">
-          <summary>기존 엑셀, 출결 관리 프로그램과 함께 사용할 수 있나요?<span class="plus">+</span></summary>
-          <p><b>에듀바이브 AI는 기존 시스템과 단계적 통합을 지원합니다.</b> 현재 사용 중인 프로그램의 데이터 구조를 먼저 진단한 후, 병행 운영하거나 단계적으로 전환하는 방안을 상담 시 제시해 드립니다. 무리한 시스템 전환 없이 현재의 운영 방식을 유지하면서 AI 기능을 추가로 활용할 수 있습니다.</p>
-        </details>
-        <details class="faq-item">
-          <summary>학생 개인정보와 학습 데이터의 보안은 어떻게 관리되나요?<span class="plus">+</span></summary>
-          <p><b>데이터 수집 범위를 최소화하고 접근 권한을 엄격하게 제한하는 원칙으로 설계했습니다.</b> 성적, 진도, 이해도 등 학습에 필수적인 데이터만 수집하며, 불필요한 개인정보는 수집하지 않습니다. 자세한 데이터 보안 기준과 개인정보 처리 원칙은 하단의 개인정보처리방침을 참고해 주세요.</p>
-        </details>
-        <details class="faq-item">
-          <summary>위 항목 중 현재 상황에 해당되는 게 있다면?<span class="plus">+</span></summary>
-          <p><b>아래 상담 신청을 통해 학원의 현재 상황과 목표를 말씀해 주세요.</b> 에듀바이브 AI 팀이 학원 규모, 운영 형태, 기존 시스템을 종합적으로 분석한 후, 도입 범위, 단계별 구현 계획, 필요한 준비 사항을 맞춤형으로 안내해 드립니다.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="intro">
-    <div class="wrap">
-      <div class="head-row">
-        <div><p class="eyebrow">Intro</p><h2>에듀바이브 AI 소개영상</h2></div>
-        <p class="head-note">에듀바이브 AI가 하는 일을 영상으로 확인해 보세요.</p>
-      </div>
-      <div class="intro-video">
-        <video controls playsinline preload="none" poster="img/video-poster.jpg" title="에듀바이브 AI 소개 영상">
-          <source src="video/intro-v3.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </section>
+  
 
   <section class="block" id="contact">
     <div class="wrap">
@@ -1388,13 +1445,15 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
   <div class="wrap foot-row">
     <span>© EDUVIBE AI LEARNING ENGINE. ALL RIGHTS RESERVED.</span>
     <span class="foot-links">
-      <a href="#philosophy">회사소개</a>
+      <a href="#philosophy">핵심비전</a>
       <a href="#segments">서비스안내</a>
-      <a href="#pricing">요금안내</a>
-      <a href="#operations">행정관리</a>
-      <a href="#tools">자료실</a>
+      <a href="#platform">디바이스연동</a>
       <a href="#intro">소개영상</a>
+      <a href="#operations">행정관리</a>
+      <a href="#tools">실증후기</a>
+      <a href="#pricing">요금안내</a>
       <a href="#faq">FAQ</a>
+      <a href="#team">팀소개</a>
       <a href="#legal">약관/개인정보</a>
       <a href="#contact">문의하기</a>
     </span>
