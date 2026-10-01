@@ -41,14 +41,15 @@
   --line:rgba(40,70,130,.16);
   --warn:#B86A10;
   --shadow-glass:0 10px 34px -16px rgba(47,107,255,.32);
-  --font-display:'Gothic A1', sans-serif;
-  --font-mono:'JetBrains Mono', monospace;
+  --font-display:-apple-system, BlinkMacSystemFont, "Pretendard", "Pretendard Variable", "Gothic A1", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono:'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace;
 }
 *{box-sizing:border-box;}
 @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth;} }
 body{
   margin:0;background:var(--bg);color:var(--ink);
-  font-family:var(--font-display);line-height:1.6;
+  font-family:var(--font-display);line-height:1.65;
+  letter-spacing:-0.02em;
   -webkit-font-smoothing:antialiased;
 }
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(520px 420px at 92% 4%,rgba(127,215,255,.55),transparent 70%),radial-gradient(460px 400px at 70% 48%,rgba(185,168,255,.38),transparent 70%),radial-gradient(520px 420px at 4% 96%,rgba(143,240,210,.5),transparent 70%);}
@@ -360,9 +361,8 @@ section.block{padding-block:70px;}
 .ops-bullet-list li b{color:var(--ink);font-weight:600;}
 .ops-bullet-list li::before{content:"•";color:var(--accent);font-weight:900;}
 
-.interview-grid-pro{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-@media (max-width:1024px){.interview-grid-pro{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:580px){.interview-grid-pro{grid-template-columns:1fr;}}
+.interview-grid-pro{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media (max-width:960px){.interview-grid-pro{grid-template-columns:1fr;}}
 .interview-card-pro{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s;}
 .interview-card-pro:hover{transform:translateY(-3px);border-color:var(--accent-2);}
 .interview-top-kpi{background:linear-gradient(135deg,rgba(47,107,255,0.08),rgba(18,179,154,0.12));border:1px solid rgba(18,179,154,0.25);border-radius:8px;padding:7px 10px;font-size:11.5px;font-weight:800;color:var(--accent-2);margin-bottom:14px;display:flex;align-items:center;gap:6px;}
@@ -583,6 +583,397 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
   .free-custom-banner .btn { width: 100%; justify-content: center; }
 }
 
+/* 초개인화 교육 패러다임 도식화 */
+.transform-diagram-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1.25fr;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: 24px;
+}
+.transform-box {
+  border-radius: 16px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+.transform-box.past {
+  background: rgba(240, 243, 248, 0.75);
+  border: 1.5px dashed rgba(40, 70, 130, 0.22);
+}
+.transform-box.future {
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,249,255,0.95));
+  border: 1.5px solid var(--accent);
+  box-shadow: 0 12px 30px -10px rgba(47,107,255,0.22);
+}
+.transform-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+.transform-tag.past-tag {
+  background: rgba(224, 49, 49, 0.08);
+  color: #c92a2a;
+  border: 1px solid rgba(224, 49, 49, 0.2);
+}
+.transform-tag.future-tag {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 4px 12px -2px rgba(47,107,255,0.4);
+}
+.transform-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 12px;
+  line-height: 1.35;
+}
+.transform-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13.5px;
+}
+.transform-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.transform-list.past-list li::before {
+  content: "✕";
+  color: #e03131;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.transform-list.future-list li::before {
+  content: "✔";
+  color: var(--accent);
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.transform-list.future-list li b {
+  color: var(--ink);
+}
+.transform-arrow-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+}
+.transform-arrow-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid var(--accent);
+  box-shadow: 0 6px 18px rgba(47,107,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 900;
+}
+.transform-arrow-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent-2);
+  white-space: nowrap;
+}
+@media (max-width: 860px) {
+  .transform-diagram-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .transform-arrow-box {
+    transform: rotate(90deg);
+    margin: 6px auto;
+  }
+}
+
+/* ========================================================
+   Mobile & Tablet Responsive Auto-Size Scaling Enhancements
+   ======================================================== */
+
+/* 1. Global Viewport & Horizontal Overflow Guard */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, video, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, li, button, a {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 2. Mobile Nav Scroll Bar (900px 이하 모바일/태블릿용 가로 칩 메뉴) */
+.nav-mobile-bar {
+  display: none;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  background: rgba(245,249,255, 0.95);
+  border-top: 1px solid rgba(40,70,130,.08);
+  padding: 8px 16px;
+  gap: 8px;
+  scrollbar-width: none;
+}
+.nav-mobile-bar::-webkit-scrollbar {
+  display: none;
+}
+.nav-mobile-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all .2s;
+}
+.nav-mobile-chip:active, .nav-mobile-chip:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.comp-table-hint {
+  display: none;
+  font-size: 12px;
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* 3. Tablet Breakpoint (1024px 이하) */
+@media (max-width: 1024px) {
+  .wrap {
+    padding-inline: 20px;
+  }
+  section.block {
+    padding-block: 56px;
+  }
+  .head-row {
+    margin-bottom: 24px;
+  }
+  .stat-row-enhanced {
+    gap: 12px;
+  }
+  .dev-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .pricing-grid, .price-grid.two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 4. Small Tablet & Phablet (900px 이하) */
+@media (max-width: 900px) {
+  .nav-mobile-bar {
+    display: flex;
+  }
+  .comp-table-hint {
+    display: block;
+  }
+  .vision-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+/* 5. Mobile & Small Tablet (768px 이하) */
+@media (max-width: 768px) {
+  section.block {
+    padding-block: 44px;
+  }
+  .hero {
+    padding-block: 40px 32px;
+  }
+  .hero h1 {
+    font-size: clamp(25px, 6.8vw, 36px);
+    line-height: 1.3;
+  }
+  .hero-lead {
+    font-size: 14.5px;
+    line-height: 1.68;
+    margin-top: 14px;
+  }
+  .stat-row-enhanced {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 26px;
+  }
+  .stat-card-pro {
+    padding: 18px;
+  }
+  .dev-grid {
+    grid-template-columns: 1fr;
+  }
+  .dev-flow-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 14px;
+  }
+  .dev-flow-banner .arrow-sep {
+    transform: rotate(90deg);
+    text-align: center;
+  }
+  .dev-card-pro {
+    padding: 20px;
+  }
+  .interview-grid-pro {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .interview-card-pro {
+    padding: 20px 18px;
+  }
+  .price-grid.two, .price-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .price-card {
+    padding: 22px 18px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .contact-info, .contact-form {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  /* iOS Safari 폼 포커스 자동 확대 방지 (최소 16px 보장) */
+  .form-field input, .form-field select, .form-field textarea {
+    font-size: 16px !important;
+  }
+  .banner {
+    padding-block: 50px;
+  }
+  .banner h2 {
+    font-size: clamp(20px, 5.2vw, 28px);
+  }
+}
+
+/* 6. Mobile Portrait (600px 이하) */
+@media (max-width: 600px) {
+  .wrap {
+    padding-inline: 16px;
+  }
+  .nav {
+    padding-block: 12px;
+  }
+  .logo {
+    font-size: 17px;
+  }
+  .logo span {
+    font-size: 10.5px;
+  }
+  .head-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .head-row h2 {
+    font-size: clamp(21px, 5.8vw, 25px);
+  }
+  .head-note {
+    text-align: left;
+    max-width: 100%;
+    font-size: 13px;
+  }
+  .btn {
+    padding: 11px 18px;
+    font-size: 13.5px;
+  }
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-card {
+    flex-direction: row;
+    gap: 14px;
+    padding: 16px;
+  }
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+  .calc-card {
+    padding: 20px 16px;
+  }
+  .wizard-card {
+    padding: 22px 16px;
+    border-radius: 14px;
+    max-height: 90vh;
+    max-height: 90dvh;
+    width: 94%;
+  }
+  .wizard-options {
+    grid-template-columns: 1fr;
+  }
+  .floating-bar {
+    left: 10px;
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    gap: 6px;
+  }
+  .float-btn {
+    padding: 11px 8px;
+    font-size: 12px;
+  }
+  /* 인라인 고정 패딩 요소 최적화 */
+  div[style*="padding:36px 32px"] {
+    padding: 20px 16px !important;
+  }
+}
+
+/* 7. Extra Small Mobile (360px 이하) */
+@media (max-width: 360px) {
+  .wrap {
+    padding-inline: 12px;
+  }
+  .float-btn {
+    font-size: 11.5px;
+    padding: 10px 6px;
+  }
+}
+
 </style>
 
 <header>
@@ -600,6 +991,16 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
       <li><a href="#team">팀소개</a></li>
     </ul>
   </div>
+  <nav class="nav-mobile-bar" aria-label="모바일 빠른 메뉴">
+    <a class="nav-mobile-chip" href="#philosophy">핵심비전</a>
+    <a class="nav-mobile-chip" href="#segments">서비스안내</a>
+    <a class="nav-mobile-chip" href="#platform">디바이스연동</a>
+    <a class="nav-mobile-chip" href="#operations">행정관리</a>
+    <a class="nav-mobile-chip" href="#tools">실증후기</a>
+    <a class="nav-mobile-chip" href="#pricing">요금안내</a>
+    <a class="nav-mobile-chip" href="#faq">FAQ</a>
+    <a class="nav-mobile-chip" href="#contact">상담신청</a>
+  </nav>
 </header>
 
 <div class="wizard-overlay" id="wizardOverlay" aria-hidden="true">
@@ -686,21 +1087,9 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     <div class="wrap hero-inner">
       <div class="hero-badge-wrap">
         <span class="hero-chip primary"><span class="pulse-dot"></span> 2026 차세대 AI 교육 엔진</span>
-        <span class="hero-chip subtle">과목 무관 초개인화 맞춤수업 시스템</span>
       </div>
       <h1>학생의 데이터를<br><span class="grad">수업으로 설계</span>하는 AI</h1>
-      <p class="hero-lead">에듀바이브 AI는 학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페의 현장 데이터를 실시간으로 분석해, 과목에 상관없이 학생 개개인에게 꼭 맞는 수업을 AI가 직접 설계하는 <b>AI 맞춤수업 시스템</b>입니다.<br>운영 방식을 진단해드리는 컨설팅이 아니라, <b>실제 수업과 운영 행정을 책임지는 엔진</b>입니다.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#contact" id="btnWizardStart">우리 학원 맞춤설계 시작하기 →</a>
-        <a class="btn btn-ghost" href="#segments">AI 맞춤수업 설계 과정 보기</a>
-      </div>
-      <div class="hero-trust-bar">
-        <span>⚡ 1분 무료 자가진단</span>
-        <span class="sep">•</span>
-        <span>📱 별도 전용 단말기 구매 ZERO</span>
-        <span class="sep">•</span>
-        <span>🔒 학생 개인정보 보안 규격 완벽 준수</span>
-      </div>
+      <p class="hero-lead">에듀바이브 AI는 학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페의 현장 데이터를 실시간으로 분석해, 과목에 상관없이 학생 개개인에게 꼭 맞는 <b>AI 맞춤수업 시스템</b>입니다.<br>운영 방식을 진단해 드리는 컨설팅이 아니라, <b>실제 수업과 운영 행정을 책임지는 엔진</b>입니다.</p>
       <div class="stat-row-enhanced">
         <div class="stat-card-pro">
           <div class="stat-meta">
@@ -720,11 +1109,11 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         </div>
         <div class="stat-card-pro">
           <div class="stat-meta">
-            <span class="stat-badge">HYPER-PERSONAL</span>
-            <b>1:1</b>
+            <span class="stat-badge">CUSTOM FIT</span>
+            <b>ON-SITE</b>
           </div>
-          <span class="stat-title">학생별 초개인화 맞춤 엔진</span>
-          <p class="stat-desc">오답 패턴과 이해 속도를 실시간 반영한 개별 맞춤 커리큘럼</p>
+          <span class="stat-title">사업장 맞춤 과정 설계 · 현장 적용</span>
+          <p class="stat-desc">AI를 통해 우리 사업장에 맞는 과정을 설계하고, 현장에 그대로 적용합니다.</p>
         </div>
       </div>
     </div>
@@ -742,15 +1131,15 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         <div class="vision-pro-left">
           <div style="margin-bottom:8px;">
             <p class="eyebrow" style="margin-bottom:8px;">Core Philosophy</p>
-            <h3 style="font-size:22px;color:var(--ink);">비전과 방향</h3>
-            <p style="font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.65;max-width:56ch;">학생 개개인의 학습 데이터를 이해하는 선생님이 더 많아지는 것 — 에듀바이브 AI가 현장에서 실현하는 변화입니다. 기록과 행정에 쓰이던 야근을 줄여, 선생님이 학생을 더 깊이 관찰할 수 있는 온전한 여유를 만듭니다.</p>
+            <h3 style="font-size:22px;color:var(--ink);letter-spacing:-0.02em;">비전과 방향</h3>
+            <p style="font-family:-apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo', 'NanumSquareRound', sans-serif;font-size:15px;color:#435472;margin-top:10px;line-height:1.85;max-width:58ch;font-weight:400;letter-spacing:-0.01em;word-break:keep-all;">아이마다 다른 배움의 속도와 성향을 따뜻하게 이해하는 선생님이 더 많아지는 것 — 에듀바이브 AI가 현장에서 만들어가는 가장 소중한 변화입니다. 반복되는 서류와 기록 업무의 부담은 AI가 덜어내어, 선생님이 학생 한 명 한 명을 더 깊이 살피고 수업에 온전히 몰입할 수 있는 따뜻한 여유를 만듭니다.</p>
           </div>
 
           <div class="vision-pillar-card">
             <div class="pillar-num">01</div>
             <div class="pillar-body">
               <h4>데이터 기반 초개인화 맞춤학습의 대중화</h4>
-              <p>과목과 점수에 상관없이 학생의 풀이 속도, 오답 원인, 개념 결손을 AI가 정밀 진단해 맞춤형 수업 자료를 매일 자동 생성합니다.</p>
+              <p>과목과 점수에 상관없이 학생의 풀이 속도, 오답 원인, 개념 결손을 AI가 정밀 진단해 수업 결과를 자동 생성합니다.</p>
             </div>
           </div>
 
@@ -783,7 +1172,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           <div class="roadmap-timeline">
             <div class="roadmap-step-box active">
               <div class="step-meta-row">
-                <span class="step-year">2026.01 — CURRENT</span>
+                <span class="step-year">2026.07 — CURRENT</span>
                 <span class="step-badge-status current">정식 론칭</span>
               </div>
               <h5>에듀바이브 AI 엔진 & 3-디바이스 연동 출시</h5>
@@ -792,7 +1181,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
 
             <div class="roadmap-step-box">
               <div class="step-meta-row">
-                <span class="step-year">2026.Q3 — IN PROGRESS</span>
+                <span class="step-year">2026.10 — IN PROGRESS</span>
                 <span class="step-badge-status upcoming">고도화 진행 중</span>
               </div>
               <h5>초개인화·초지능 특화 모델 2.0 고도화</h5>
@@ -833,12 +1222,51 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
 
         <div style="border-left:3px solid var(--accent-2);padding-left:18px;">
           <h3 style="font-size:clamp(19px,2.2vw,24px);line-height:1.45;color:var(--ink);">
-            에듀바이브 AI는 "우리 학원이 이렇게 운영하면 좋겠다"고 조언해 드리는 <span style="color:#e03131;text-decoration:line-through;text-decoration-thickness:2px;">단순 컨설팅</span>이 아닙니다.
+            에듀바이브 AI는 “우리 학원이 이렇게 운영하면 좋겠다”고 조언해 드리는 <span style="color:#e03131;text-decoration:line-through;text-decoration-thickness:2px;">단순 컨설팅</span>이 아닙니다.
           </h3>
-          <p style="font-size:16px;color:var(--ink-soft);line-height:1.75;margin-top:10px;">
-            과거의 획일화된 시험 중심 교육은 학생마다 다른 진로와 성향에 맞춘 <b>‘초개인화 교육’</b>으로 변화하고 있습니다.<br>
-            에듀바이브 AI는 이 변화를 실제 수업으로 구현하는 <b>AI 맞춤수업 시스템</b>이며, 과목과 무관하게 학생마다 다른 특성을 반영하는 <b>‘초개인화·초지능 교육 특화 모델’</b>로 계속 고도화하고 있습니다.
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.7;margin-top:8px;">
+            교육의 패러다임이 <b>‘획일화된 시험 중심’</b>에서 <b>‘초개인화 맞춤 수업’</b>으로 전환되고 있습니다. 에듀바이브 AI는 이 변화를 실제 수업 현장에서 직접 가동하는 엔진입니다.
           </p>
+        </div>
+
+        <!-- 패러다임 전환 비주얼 인포그래픽 도식 -->
+        <div class="transform-diagram-grid">
+          <!-- 1. 과거의 교육 -->
+          <div class="transform-box past">
+            <div>
+              <span class="transform-tag past-tag">PAST · 과거의 교육 방식</span>
+              <h4 class="transform-title">획일화된 시험 중심 교육</h4>
+              <ul class="transform-list past-list">
+                <li>모든 학생에게 동일하게 주어지는 일률적 시험지와 진도</li>
+                <li>학생마다 다른 진로·이해 속도·개념 결손 파악 불가</li>
+                <li>“이렇게 해보세요” 조언만 남기고 끝나는 단순 컨설팅</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 전환 인터랙션 화살표 -->
+          <div class="transform-arrow-box">
+            <div class="transform-arrow-icon">➔</div>
+            <span class="transform-arrow-label">PARADIGM SHIFT</span>
+          </div>
+
+          <!-- 2. 에듀바이브 AI의 초개인화 교육 엔진 -->
+          <div class="transform-box future">
+            <div>
+              <span class="transform-tag future-tag">NOW & FUTURE · 에듀바이브 AI</span>
+              <h4 class="transform-title">초개인화 · 초지능 교육 특화 모델</h4>
+              <ul class="transform-list future-list">
+                <li>학생마다 다른 성향과 진로에 맞춘 <b>‘초개인화 교육’</b> 실제 수업 구현</li>
+                <li>국·영·수·과·사 <b>과목과 무관하게</b> 학생별 고유 특성 정밀 반영</li>
+                <li>현장 데이터를 바탕으로 끊임없이 <b>스스로 진화하는 특화 AI 엔진</b></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 핵심 강조 바 -->
+        <div style="margin-top:20px;padding:14px 18px;background:rgba(47,107,255,0.04);border:1px solid rgba(47,107,255,0.14);border-radius:12px;font-size:13.5px;color:var(--ink);line-height:1.65;word-break:keep-all;">
+          <span>에듀바이브 AI는 단순 조언자가 아닙니다. <b>초개인화 교육의 모든 과정을 실제 수업과 운영 행정으로 직접 작동시키는 살아있는 엔진</b>입니다.</span>
         </div>
       </div>
 
@@ -852,6 +1280,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           </div>
           <p class="head-note">단순 출결·문자 발송만 하던 기존 ERP와 에듀바이브 AI의 결정적 차이입니다.</p>
         </div>
+        <p class="comp-table-hint">↔ 표를 좌우로 스와이프하여 상세 비교 항목을 확인하세요</p>
         <div class="comp-table-wrap">
           <table class="comp-table">
             <thead>
@@ -859,16 +1288,10 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
                 <th style="width:16%;">비교 항목</th>
                 <th style="width:25%;">기존 관리 프로그램 (ERP)</th>
                 <th style="width:23%;">단일 과목 AI 문제은행</th>
-                <th style="width:36%;" class="highlight">에듀바이브 AI (EduVibe AI)</th>
+                <th style="width:36%;" class="highlight">에듀바이브 AI</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><b>수업 설계 및 진도</b></td>
-                <td><div class="comp-cell"><span class="comp-icon">❌</span><span>불가 (강사가 수기로 수업안 준비)</span></div></td>
-                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>단순 문제 무작위 출제 수준</span></div></td>
-                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>학생 데이터 기반 1:1 맞춤 커리큘럼 자동 설계</b></div></td>
-              </tr>
               <tr>
                 <td><b>지원 과목 범위</b></td>
                 <td><div class="comp-cell"><span class="comp-icon">❌</span><span>지원 과목 없음 (단순 행정)</span></div></td>
@@ -926,7 +1349,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           <h3>수업 = 데이터 자동 기록</h3>
           <p class="dev-desc">학생이 문제를 풀고 필기하는 동안 AI가 실시간 이해도와 풀이 과정을 즉시 데이터화합니다.</p>
           <div class="feature-pill-box">
-            <span>⚡ 실시간 학생 화면 미러링 & 맞춤 힌트</span>
+            <span>⚡ 실시간 학생 화면 미러링</span>
           </div>
           <ul class="dev-checklist">
             <li><span class="chk">✔</span> <span><b>실시간 화면 확인:</b> 강사 화면에서 개별 학생 진도 실시간 모니터링</span></li>
@@ -1082,15 +1505,12 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
 
       <div class="interview-grid-pro">
         <div class="interview-card-pro">
-          <div class="interview-top-kpi">
-            <span>⚡ 상담 준비 시간 75% 단축</span>
-          </div>
           <div class="interview-stars">★★★★★ 5.0</div>
           <div class="interview-profile-row">
-            <div class="interview-pro-avatar">이</div>
+            <div class="interview-pro-avatar">김</div>
             <div class="interview-profile-info">
-              <h4>힐링수학 이○○ 원장</h4>
-              <span class="loc-tag">세종 1인 교습소 · 학생 38명 운영</span>
+              <h4>힐0수학 김○○ 원장</h4>
+              <span class="loc-tag">세종 1인 교습소</span>
             </div>
           </div>
           <div class="interview-quote-box">
@@ -1100,15 +1520,12 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         </div>
 
         <div class="interview-card-pro">
-          <div class="interview-top-kpi" style="color:var(--accent);border-color:rgba(47,107,255,0.25);">
-            <span>📈 전 강사 평가 기준 100% 일원화</span>
-          </div>
           <div class="interview-stars">★★★★★ 5.0</div>
           <div class="interview-profile-row">
-            <div class="interview-pro-avatar" style="background:linear-gradient(135deg, #2F6BFF, #6366F1);">박</div>
+            <div class="interview-pro-avatar" style="background:linear-gradient(135deg, #2F6BFF, #6366F1);">반</div>
             <div class="interview-profile-info">
-              <h4>스테디 잉글리쉬 박○○ 원장</h4>
-              <span class="loc-tag">서울 대치 어학원 · 강사 6인 체제</span>
+              <h4>스0디 잉글리쉬 반○○ 원장</h4>
+              <span class="loc-tag">세종 학원 · 강사 3인 체제</span>
             </div>
           </div>
           <div class="interview-quote-box">
@@ -1118,39 +1535,18 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         </div>
 
         <div class="interview-card-pro">
-          <div class="interview-top-kpi" style="color:#059669;border-color:rgba(16,185,129,0.25);">
-            <span>🔥 학부모 만족도 98% · 재등록 35%↑</span>
-          </div>
           <div class="interview-stars">★★★★★ 5.0</div>
           <div class="interview-profile-row">
             <div class="interview-pro-avatar" style="background:linear-gradient(135deg, #10B981, #059669);">최</div>
             <div class="interview-profile-info">
-              <h4>마일스톤 스터디 최○○ 대표</h4>
-              <span class="loc-tag">경기 분당 스터디카페 · 80석 관리형</span>
+              <h4>o스터디 최○○ 대표</h4>
+              <span class="loc-tag">대전 스터디카페 · 90석 관리형</span>
             </div>
           </div>
           <div class="interview-quote-box">
             “학생들의 순수 공부 시간과 과목별 집중 패턴이 <b>실시간 데이터화되어 매주 학부모 모바일로 자동 전송</b>되니, 학부모님들의 신뢰가 상상 이상입니다. <b>만족도 98%와 함께 재등록률이 35% 상승</b>했습니다.”
           </div>
           <div class="interview-takeaway-pill" style="color:#059669;border-color:rgba(16,185,129,0.2);">도입 효과: 재등록률 급상승 & 퇴원 방지</div>
-        </div>
-
-        <div class="interview-card-pro">
-          <div class="interview-top-kpi" style="color:#8b5cf6;border-color:rgba(139,92,246,0.25);">
-            <span>🎯 과목 간 연계 취약점 즉각 해결</span>
-          </div>
-          <div class="interview-stars">★★★★★ 5.0</div>
-          <div class="interview-profile-row">
-            <div class="interview-pro-avatar" style="background:linear-gradient(135deg, #8B5CF6, #6366F1);">정</div>
-            <div class="interview-profile-info">
-              <h4>포커스 코칭 정○○ 대표</h4>
-              <span class="loc-tag">서울 목동 코칭 공부방 · 다과목 1:1</span>
-            </div>
-          </div>
-          <div class="interview-quote-box">
-            “국어, 영어, 수학 등 과목이 달라도 한 학생의 <b>오답 성향과 개념 이해 패턴을 단 하나의 AI 엔진이 통합 분석</b>해 줍니다. 과목 간 연계 취약점을 즉각 해결하면서 학생들의 평균 성적이 가파르게 올랐습니다.”
-          </div>
-          <div class="interview-takeaway-pill" style="color:#8b5cf6;border-color:rgba(139,92,246,0.2);">도입 효과: 다과목 통합 취약점 즉시 개선</div>
         </div>
       </div>
     </div>
@@ -1177,7 +1573,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
         <div class="price-card">
           <p class="price-tag">Base</p>
           <h3>베이직 패키지</h3>
-          <p class="price-for">운영 형태에 따른 기본 구성 선택가능</p>
+          <p class="price-for">운영 형태에 따른 기본 구성 선택 가능</p>
           <div style="margin-top:20px;padding-bottom:20px;border-bottom:1px solid var(--line);">
             <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">
               <b style="color:var(--ink);">학생 학습 플랫폼</b>
@@ -1194,7 +1590,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
             </p>
             <ul class="dev-points" style="margin:10px 0 0;">
               <li>학생별 성취도·이해도·학습 패턴 분석</li>
-              <li>월간·주간·일일 레포트 자동 생성</li>
+              <li>월간·주간·일일 리포트 자동 생성</li>
               <li>상담 준비용 스크립트·체크리스트 자동화</li>
             </ul>
           </div>
@@ -1210,12 +1606,11 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
           </div>
           <div style="margin-top:20px;padding-bottom:20px;border-bottom:1px solid var(--line);">
             <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">
-              <b style="color:var(--ink);">행정 자동화 & 맞춤형 무료 개발 특전</b>
+              <b style="color:var(--ink);">행정 자동화</b>
             </p>
             <ul class="dev-points" style="margin:10px 0 0;">
               <li>내부결재시스템 및 학부모 안심 소통</li>
               <li>학생 일정·학습 진도 통합 관리</li>
-              <li><b style="color:#d9480f;">[특전] 학원 요청 맞춤 기능 100% 무료 개발 및 즉시 반영</b></li>
             </ul>
           </div>
           <a class="btn btn-primary" href="#contact" style="margin-top:22px;justify-content:center;">맞춤 견적 안내</a>
@@ -1228,7 +1623,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
             <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">
               <b style="color:var(--ink);">베이직 패키지 전체 기능 포함</b>
             </p>
-            <p style="font-size:13px;color:var(--ink-soft);margin:12px 0 0;">학생 학습 플랫폼 · 분석 및 인사이트 엔진 · 입시·진로 서비스 · 행정 자동화 · <b>무료 맞춤 개발 특전</b></p>
+            <p style="font-size:13px;color:var(--ink-soft);margin:12px 0 0;">학생 학습 플랫폼 · 분석 및 인사이트 엔진 · 입시·진로 서비스 · 행정 자동화</p>
           </div>
           <div style="margin-top:20px;padding-bottom:20px;border-bottom:1px solid var(--line);">
             <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">
@@ -1237,7 +1632,6 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
             <ul class="dev-points" style="margin:10px 0 0;">
               <li>다중 강사·지점 성적 통합 관리</li>
               <li>본사-지점 통합 대시보드</li>
-              <li><b style="color:#d9480f;">프랜차이즈/다지점 전용 커스텀 기능 무제한 무료 개발</b></li>
             </ul>
           </div>
           <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--line);">
@@ -1637,10 +2031,13 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     document.body.style.overflow = '';
   }
 
-  startBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    openWizard();
-  });
+  if (startBtn) {
+    startBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      openWizard();
+    });
+  }
+  window.openEduWizard = openWizard;
   closeBtn.addEventListener('click', closeWizard);
   overlay.addEventListener('click', function(e){
     if(e.target === overlay) closeWizard();
@@ -1701,9 +2098,13 @@ footer{border-top:1px solid var(--line);padding-block:26px;}
     }
   }, { passive: true });
 
-  if(floatWizardBtn && wizardStartBtn){
+  if(floatWizardBtn){
     floatWizardBtn.addEventListener('click', function(){
-      wizardStartBtn.click();
+      if(window.openEduWizard){
+        window.openEduWizard();
+      } else if(wizardStartBtn){
+        wizardStartBtn.click();
+      }
     });
   }
 })();

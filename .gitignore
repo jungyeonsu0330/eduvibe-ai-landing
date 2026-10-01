@@ -2,3 +2,6 @@
 *.bak_*
 .DS_Store
 Thumbs.db
+local_server.js
+update_site.js
+check_sections.js
