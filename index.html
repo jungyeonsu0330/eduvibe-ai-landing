@@ -45,18 +45,37 @@
   --font-mono:'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace;
 }
 *{box-sizing:border-box;}
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
 @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth;} }
 body{
   margin:0;background:var(--bg);color:var(--ink);
-  font-family:var(--font-display);line-height:1.65;
-  letter-spacing:-0.02em;
+  font-family:var(--font-display);line-height:1.68;
+  letter-spacing:-0.025em;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  word-wrap:break-word;
+  text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(520px 420px at 92% 4%,rgba(127,215,255,.55),transparent 70%),radial-gradient(460px 400px at 70% 48%,rgba(185,168,255,.38),transparent 70%),radial-gradient(520px 420px at 4% 96%,rgba(143,240,210,.5),transparent 70%);}
 .phil-card,.seg-card,.dev-card,.bento .card,.flow-step,.price-card,.case-card,.faq-item,.team-card,.contact-info,.contact-form,.legal-card,.expert-card,.interview-card,.stat{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:var(--shadow-glass);}
-img{max-width:100%;}
+img{max-width:100%;height:auto;}
 .wrap{max-width:1140px;margin:0 auto;padding-inline:24px;}
-h1,h2,h3{font-family:var(--font-display);font-weight:800;text-wrap:balance;color:var(--ink);margin:0;}
+h1,h2,h3,h4,h5,h6{
+  font-family:var(--font-display);font-weight:800;color:var(--ink);margin:0;
+  word-break:keep-all;overflow-wrap:anywhere;text-wrap:balance;line-height:1.32;
+}
+p,li,dd,dt,blockquote{
+  word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty;line-height:1.68;
+}
+.pc-br{display:inline;}
+@media (max-width:768px){
+  .pc-br{display:none !important;}
+}
 .eyebrow{
   font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;
   color:var(--accent-2);text-transform:uppercase;
@@ -1021,44 +1040,25 @@ img, video, canvas, iframe {
   height: auto;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, li, button, a {
+/* 1-2. Universal Responsive Typography (한글 띄어쓰기, 어절 줄바꿈, 디바이스별 자동 맞춤) */
+h1, h2, h3, h4, h5, h6, p, span, li, button, a, label, input, textarea, select, td, th {
   word-break: keep-all;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+p, li, dd, dt, blockquote {
+  text-wrap: pretty;
+}
+.btn, .badge, .pill, .hero-chip, .stat-badge, .item-tag {
+  white-space: nowrap;
 }
 
-/* 2. Mobile Nav Scroll Bar (900px 이하 모바일/태블릿용 가로 칩 메뉴) */
-.nav-mobile-bar {
-  display: none;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  white-space: nowrap;
-  background: rgba(245,249,255, 0.95);
-  border-top: 1px solid rgba(40,70,130,.08);
-  padding: 8px 16px;
-  gap: 8px;
-  scrollbar-width: none;
-}
-.nav-mobile-bar::-webkit-scrollbar {
-  display: none;
-}
-.nav-mobile-chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 13px;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--line);
-  color: var(--ink);
-  font-size: 12.5px;
-  font-weight: 600;
-  text-decoration: none;
-  flex-shrink: 0;
-  transition: all .2s;
-}
-.nav-mobile-chip:active, .nav-mobile-chip:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
+/* 모바일 바는 옵션 A에 따라 숨김 처리 */
+.nav-mobile-bar, .nav-mobile-chip {
+  display: none !important;
 }
 .comp-table-hint {
   display: none;
@@ -1273,29 +1273,10 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
 <header>
   <div class="wrap nav">
     <a class="logo" href="#" aria-label="에듀바이브 AI 홈으로 이동"><span class="dot"></span>EduVibe AI<span>AI LEARNING ENGINE</span></a>
-    <ul class="navlinks">
-      <li><a href="#philosophy">핵심비전</a></li>
-      <li><a href="#future-tech">앰비언트·AI에이전트</a></li>
-      <li><a href="#intro">소개영상</a></li>
-      <li><a href="#segments">서비스안내</a></li>
-      <li><a href="#platform">디바이스·스마트안경</a></li>
-      <li><a href="#operations">행정관리</a></li>
-      <li><a href="#pricing">요금안내</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#team">팀소개</a></li>
-    </ul>
+    <div class="header-actions">
+      <a href="#contact" class="btn btn-primary" style="padding: 9px 20px; font-size: 13.5px;">상담 신청</a>
+    </div>
   </div>
-  <nav class="nav-mobile-bar" aria-label="모바일 빠른 메뉴">
-    <a class="nav-mobile-chip" href="#philosophy">핵심비전</a>
-    <a class="nav-mobile-chip" href="#future-tech">앰비언트·AI에이전트</a>
-    <a class="nav-mobile-chip" href="#intro">소개영상</a>
-    <a class="nav-mobile-chip" href="#segments">서비스안내</a>
-    <a class="nav-mobile-chip" href="#platform">스마트안경·공간컴퓨팅</a>
-    <a class="nav-mobile-chip" href="#operations">행정관리</a>
-    <a class="nav-mobile-chip" href="#pricing">요금안내</a>
-    <a class="nav-mobile-chip" href="#faq">FAQ</a>
-    <a class="nav-mobile-chip" href="#contact">상담신청</a>
-  </nav>
 </header>
 
 <div class="wizard-overlay" id="wizardOverlay" aria-hidden="true">
@@ -1311,7 +1292,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
         <h3>운영 형태는 무엇인가요?</h3>
         <div class="wizard-options">
           <label class="wizard-opt"><input type="radio" name="q1" value="학원">학원</label>
-          <label class="wizard-opt"><input type="radio" name="q1" value="개인 교습소">개인 교습소</label>
+          <label class="wizard-opt"><input type="radio" name="q1" value="개인교습소">개인교습소</label>
           <label class="wizard-opt"><input type="radio" name="q1" value="공부방">공부방</label>
           <label class="wizard-opt"><input type="radio" name="q1" value="프랜차이즈">프랜차이즈</label>
           <label class="wizard-opt"><input type="radio" name="q1" value="관리형 스터디카페">관리형 스터디카페</label>
@@ -1383,8 +1364,8 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
       <div class="hero-badge-wrap">
         <span class="hero-chip primary"><span class="pulse-dot"></span> 2027 차세대 교육 AI 에이전트</span>
       </div>
-      <h1>학생의 데이터를<br><span class="grad">수업으로 설계</span>하는 AI</h1>
-      <p class="hero-lead">에듀바이브 AI는 학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페의 현장 데이터를 실시간으로 분석합니다. 과목에 상관없이 사용자가 의식하지 않아도 주변 환경에 자연스럽게 스며드는 <b>앰비언트 기술</b>을 통해, 학생과 교사를 능동적으로 돕습니다.<br>운영 방식을 진단해 드리는 컨설팅이 아니라, <b>실제 수업과 운영 행정을 책임지는 자율형 교육 AI 에이전트</b>입니다.</p>
+      <h1>학생의 데이터를 <br class="pc-br"><span class="grad">수업으로 설계</span>하는 AI</h1>
+      <p class="hero-lead">에듀바이브 AI는 학원·개인교습소·공부방·프랜차이즈·관리형 스터디카페의 현장 데이터를 실시간으로 분석합니다. 과목에 상관없이 사용자가 의식하지 않아도 주변 환경에 자연스럽게 스며드는 <b>앰비언트 기술</b>을 통해, 학생과 교사를 능동적으로 돕습니다. <br class="pc-br">운영 방식을 진단해 드리는 컨설팅이 아니라, <b>실제 수업과 운영 행정을 책임지는 자율형 교육 AI 에이전트</b>입니다.</p>
       <div class="stat-row-enhanced">
         <div class="stat-card-pro">
           <div class="stat-meta">
@@ -1424,10 +1405,9 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
 
       <div class="vision-grid">
         <div class="vision-pro-left">
-          <div style="margin-bottom:8px;">
+          <div style="margin-bottom:14px;">
             <p class="eyebrow" style="margin-bottom:8px;">Core Philosophy</p>
             <h3 style="font-size:22px;color:var(--ink);letter-spacing:-0.02em;">비전과 방향</h3>
-            <p style="font-family:-apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo', 'NanumSquareRound', sans-serif;font-size:15px;color:#435472;margin-top:10px;line-height:1.85;max-width:58ch;font-weight:400;letter-spacing:-0.01em;word-break:keep-all;">아이마다 다른 배움의 속도와 성향을 따뜻하게 이해하는 선생님이 더 많아지는 것 — 에듀바이브 AI가 현장에서 만들어가는 가장 소중한 변화입니다. 반복되는 서류와 기록 업무의 부담은 AI가 덜어내어, 선생님이 학생 한 명 한 명을 더 깊이 살피고 수업에 온전히 몰입할 수 있는 따뜻한 여유를 만듭니다.</p>
           </div>
 
           <div class="vision-pillar-card">
@@ -1510,7 +1490,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
       <div class="head-row">
         <div>
           <p class="eyebrow">Future Tech & Mission</p>
-          <h2>주변 환경에 스며드는 앰비언트 기술,<br>우리가 향하는 목표는 ‘교육 AI 에이전트’입니다</h2>
+          <h2>주변 환경에 스며드는 앰비언트 기술, <br class="pc-br">우리가 향하는 목표는 ‘교육 AI 에이전트’입니다</h2>
         </div>
         <p class="head-note">
           사용자가 기술을 의식하지 않아도 배움이 일어나는 공간, 그리고 학생을 주도적으로 이끄는 AI 에이전트를 만듭니다.
@@ -1524,13 +1504,13 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
             <span class="aa-badge ambient">AMBIENT INTELLIGENCE</span>
           </div>
 
-          <h3>의식하지 않아도 환경에 녹아있는<br>‘앰비언트(Ambient) 기술’ 도입</h3>
+          <h3>의식하지 않아도 환경에 녹아있는 <br class="pc-br">‘앰비언트(Ambient) 기술’ 도입</h3>
           <p class="aa-subtext">
             복잡한 기기 조작이나 앱 실행의 번거로움 없이, 공부하는 환경 자체가 학습 데이터를 자연스럽게 감지합니다.
           </p>
 
           <div class="aa-quote-callout">
-            “앰비언트 기술: 사용자가 의식하지 않아도 주변 환경에 녹아있는 기술”<br>
+            “앰비언트 기술: 사용자가 의식하지 않아도 주변 환경에 녹아있는 기술” <br class="pc-br">
             <span style="font-size:12px;font-weight:400;color:var(--ink-soft);">— 에듀바이브 AI는 이 철학을 교실과 학습 공간 전체에 그대로 도입하고 있습니다.</span>
           </div>
 
@@ -1555,13 +1535,13 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
             <span class="aa-badge agent">EDUCATIONAL AI AGENT</span>
           </div>
 
-          <h3>스스로 판단하고 이끄는<br>‘자율형 교육 AI 에이전트’ 목표</h3>
+          <h3>스스로 판단하고 이끄는 <br class="pc-br">‘자율형 교육 AI 에이전트’ 목표</h3>
           <p class="aa-subtext">
             단순히 묻는 말에만 답하는 수동적인 챗봇이 아닙니다. 학생의 성장을 능동적으로 설계하고 이끄는 에이전트를 목표로 합니다.
           </p>
 
           <div class="aa-quote-callout">
-            “학생에게는 24시간 개인 튜터 에이전트, 교사에게는 가장 유능한 코-티처(Co-Teacher) 에이전트”<br>
+            “학생에게는 24시간 개인 튜터 에이전트, 교사에게는 가장 유능한 코-티처(Co-Teacher) 에이전트” <br class="pc-br">
             <span style="font-size:12px;font-weight:400;color:var(--ink-soft);">— 에듀바이브 AI가 전력을 다해 개발하고 실증해 나가는 최종 목적지입니다.</span>
           </div>
 
@@ -1608,9 +1588,6 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
           <h3 style="font-size:clamp(19px,2.2vw,24px);line-height:1.45;color:var(--ink);">
             에듀바이브 AI는 “우리 학원이 이렇게 운영하면 좋겠다”고 조언해 드리는 <span style="color:#e03131;text-decoration:line-through;text-decoration-thickness:2px;">단순 컨설팅</span>이 아닙니다.
           </h3>
-          <p style="font-size:15px;color:var(--ink-soft);line-height:1.7;margin-top:8px;">
-            교육의 패러다임이 <b>‘획일화된 시험 중심’</b>에서 <b>‘초개인화 맞춤 수업’</b>으로 전환되고 있습니다. 에듀바이브 AI는 이 변화를 실제 수업 현장에서 직접 가동하는 엔진입니다.
-          </p>
         </div>
 
         <!-- 패러다임 전환 비주얼 인포그래픽 도식 -->
@@ -1648,10 +1625,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
           </div>
         </div>
 
-        <!-- 핵심 강조 바 -->
-        <div style="margin-top:20px;padding:14px 18px;background:rgba(47,107,255,0.04);border:1px solid rgba(47,107,255,0.14);border-radius:12px;font-size:13.5px;color:var(--ink);line-height:1.65;word-break:keep-all;">
-          <span>에듀바이브 AI는 단순 조언자가 아닙니다. <b>초개인화 교육의 모든 과정을 실제 수업과 운영 행정으로 직접 작동시키는 살아있는 엔진</b>입니다.</span>
-        </div>
+
       </div>
 
 
@@ -1745,7 +1719,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
   <section class="banner">
     <div class="wrap">
       <p class="eyebrow" style="justify-content:center;">EduVibe AI Engine</p>
-      <h2>AI를 통해 <span class="hl">우리 사업장에 맞는 과정</span>을 설계하고,<br>현장에 그대로 적용합니다.</h2>
+      <h2>AI를 통해 <span class="hl">우리 사업장에 맞는 과정</span>을 설계하고, <br class="pc-br">현장에 그대로 적용합니다.</h2>
     </div>
   </section>
 
@@ -1754,7 +1728,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
   <section class="block" id="operations">
     <div class="wrap">
       <div class="head-row">
-        <div><p class="eyebrow">Operations</p><h2>사업장 운영의 행정 업무를<br>AI가 자동으로 처리합니다</h2></div>
+        <div><p class="eyebrow">Operations</p><h2>사업장 운영의 행정 업무를 <br class="pc-br">AI가 자동으로 처리합니다</h2></div>
         <p class="head-note">세무·급여·감사·상담까지 모든 행정 업무를 실시간으로 자동화하고, 원장님은 수업 운영에만 집중합니다.</p>
       </div>
 
@@ -1842,7 +1816,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
           <div class="pricing-intro-item">
             <h4>운영 형태별 맞춤 기능 설계</h4>
             <p>
-              학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페 등 <b>운영 형태와 규모에 따라 필요한 기능과 최적 투자 규모</b>를 정밀하게 진단합니다.
+              학원·개인교습소·공부방·프랜차이즈·관리형 스터디카페 등 <b>운영 형태와 규모에 따라 필요한 기능과 최적 투자 규모</b>를 정밀하게 진단합니다.
             </p>
           </div>
 
@@ -2055,7 +2029,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
               <label for="f-type">운영 형태</label>
               <select id="f-type" name="type">
                 <option>학원</option>
-                <option>개인 교습소</option>
+                <option>개인교습소</option>
                 <option>공부방</option>
                 <option>프랜차이즈</option>
                 <option>관리형 스터디카페</option>
@@ -2086,7 +2060,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
             <summary>전문 보기</summary>
             <ol class="legal-clauses">
               <li><b>제1조(목적)</b> 이 약관은 꿈을 만드는 세상(에듀바이브 AI, 이하 "회사")이 제공하는 AI 맞춤수업 시스템 및 관련 서비스(이하 "서비스")의 이용 조건과 회사·이용자의 권리, 의무 및 책임사항을 정함을 목적으로 합니다.</li>
-              <li><b>제2조(대상)</b> 서비스는 학원, 개인 교습소, 공부방, 프랜차이즈, 관리형 스터디카페 등 교육 사업자를 대상으로 합니다.</li>
+              <li><b>제2조(대상)</b> 서비스는 학원, 개인교습소, 공부방, 프랜차이즈, 관리형 스터디카페 등 교육 사업자를 대상으로 합니다.</li>
               <li><b>제3조(계약의 성립)</b> 서비스의 범위, 이용 기간, 비용 등은 상담 후 회사와 이용자가 별도로 체결하는 개별 계약(견적서·계약서 등)으로 정하며, 개별 계약의 내용은 이 약관에 우선합니다.</li>
               <li><b>제4조(회사의 의무)</b> 회사는 서비스를 안정적으로 제공하기 위해 노력하고, 이용자의 문의와 요청을 성실히 처리하며, 관련 법령에 따라 개인정보를 보호합니다.</li>
               <li><b>제5조(이용자의 의무)</b> 이용자는 정확한 정보를 제공해야 하며, 학생의 학습 정보 등 개인정보를 서비스에 입력할 때에는 학생 및 보호자(법정대리인)의 동의 등 관련 법령상 적법한 절차를 갖출 책임이 있습니다. 이용자는 서비스와 소프트웨어를 무단으로 복제·배포·재판매할 수 없습니다.</li>
