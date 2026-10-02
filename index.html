@@ -114,6 +114,282 @@ section.block{padding-block:70px;}
 @media (max-width:920px){.seg-grid{grid-template-columns:repeat(2,1fr);}}
 @media (max-width:520px){.seg-grid{grid-template-columns:1fr;}}
 
+
+/* =======================================================
+   NEXT-GEN TECH: SPATIAL COMPUTING, SMART GLASS, AMBIENT AI & AGENT
+   ======================================================= */
+.spatial-showcase-box {
+  margin-top: 36px;
+  background: linear-gradient(135deg, #071124 0%, #0e1e3d 50%, #08142b 100%);
+  border: 1px solid rgba(47, 107, 255, 0.4);
+  border-radius: 22px;
+  padding: 38px 36px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -15px rgba(7, 17, 36, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.spatial-showcase-box::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(18, 179, 154, 0.3) 0%, rgba(47, 107, 255, 0.2) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.spatial-showcase-box::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: 20%;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.spatial-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 2;
+}
+.spatial-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+.spatial-chip.glass-chip {
+  background: rgba(18, 179, 154, 0.2);
+  color: #2ee5c8;
+  border: 1px solid rgba(18, 179, 154, 0.45);
+}
+.spatial-chip.vision-chip {
+  background: rgba(47, 107, 255, 0.22);
+  color: #96bbff;
+  border: 1px solid rgba(47, 107, 255, 0.45);
+}
+.spatial-title-wrap {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 28px;
+}
+.spatial-title-wrap h3 {
+  font-size: clamp(21px, 2.6vw, 29px);
+  font-weight: 800;
+  line-height: 1.35;
+  color: #ffffff;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+.spatial-title-wrap h3 .spatial-hl {
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #34d399);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.spatial-title-wrap p {
+  font-size: 15px;
+  color: #a3b8d8;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 82ch;
+  word-break: keep-all;
+}
+.spatial-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+.spatial-feat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  transition: all 0.22s ease;
+}
+.spatial-feat-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(56, 189, 248, 0.5);
+  transform: translateY(-3px);
+}
+.spatial-feat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.spatial-feat-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+.spatial-feat-card p {
+  font-size: 13px;
+  color: #9cb2ce;
+  line-height: 1.6;
+  margin: 0;
+  word-break: keep-all;
+  flex: 1;
+}
+.spatial-feat-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: block;
+}
+
+/* Ambient & Educational AI Agent Dual Showcase */
+.ambient-agent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+.ambient-agent-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 34px 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-glass);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.ambient-agent-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -15px rgba(47, 107, 255, 0.18);
+}
+.ambient-agent-card.ambient-theme {
+  border-top: 4px solid var(--accent);
+}
+.ambient-agent-card.agent-theme {
+  border-top: 4px solid #7c3aed;
+}
+.aa-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.aa-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.aa-badge.ambient {
+  background: rgba(18, 179, 154, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(18, 179, 154, 0.25);
+}
+.aa-badge.agent {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+}
+.aa-quote-callout {
+  background: rgba(47, 107, 255, 0.04);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 0 10px 10px 0;
+  padding: 12px 16px;
+  font-size: 13.5px;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+.ambient-theme .aa-quote-callout {
+  background: rgba(18, 179, 154, 0.06);
+  border-left-color: var(--accent);
+}
+.agent-theme .aa-quote-callout {
+  background: rgba(124, 58, 237, 0.05);
+  border-left-color: #7c3aed;
+}
+.ambient-agent-card h3 {
+  font-size: clamp(20px, 2.2vw, 24px);
+  color: var(--ink);
+  line-height: 1.35;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+.ambient-agent-card .aa-subtext {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 22px;
+  word-break: keep-all;
+}
+.aa-list {
+  list-style: none;
+  margin: 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.aa-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.aa-list li .aa-chk {
+  font-weight: 800;
+  flex: none;
+}
+.ambient-theme .aa-list li .aa-chk { color: var(--accent); }
+.agent-theme .aa-list li .aa-chk { color: #7c3aed; }
+.aa-list li b { color: var(--ink); font-weight: 700; }
+
+@media (max-width: 1024px) {
+  .spatial-features-grid { grid-template-columns: repeat(2, 1fr); }
+  .ambient-agent-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .spatial-features-grid { grid-template-columns: 1fr; }
+  .spatial-showcase-box { padding: 26px 20px; }
+  .ambient-agent-card { padding: 24px 20px; }
+}
+
 /* platform devices */
 .dev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .dev-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;position:relative;overflow:hidden;}
@@ -327,11 +603,10 @@ section.block{padding-block:70px;}
 .step-badge-status.current{background:rgba(47,107,255,0.1);color:var(--accent);}
 .step-badge-status.upcoming{background:rgba(18,179,154,0.1);color:var(--accent-2);}
 .roadmap-step-box h5{font-size:14px;font-weight:700;color:var(--ink);margin:0 0 4px;}
-.roadmap-step-box p{font-size:12px;color:var(--ink-soft);margin:0;line-height:1.5;}
-
-.dev-flow-banner{background:rgba(47,107,255,0.04);border:1px solid rgba(47,107,255,0.14);border-radius:12px;padding:12px 18px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:10px;font-family:var(--font-mono);font-size:12px;}
+.dev-flow-banner{background:rgba(47,107,255,0.04);border:1px solid rgba(47,107,255,0.14);border-radius:14px;padding:14px 20px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:12px;font-family:-apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo', sans-serif;font-size:13.5px;letter-spacing:-0.015em;}
 .dev-flow-banner .step{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);}
-.dev-flow-banner .arrow-sep{color:var(--accent);font-weight:800;}
+.dev-flow-banner .step.future-step{color:var(--accent);font-weight:700;}
+.dev-flow-banner .arrow-sep{color:var(--accent);font-weight:700;opacity:0.65;font-size:12px;}
 .dev-card-pro{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s;}
 .dev-card-pro:hover{transform:translateY(-3px);border-color:var(--accent);}
 .dev-card-pro .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
@@ -371,9 +646,28 @@ section.block{padding-block:70px;}
 .interview-pro-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2F6BFF,#12B39A);color:#fff;font-family:var(--font-mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 4px 10px rgba(47,107,255,0.25);}
 .interview-profile-info h4{font-size:14px;font-weight:700;color:var(--ink);margin:0;line-height:1.3;}
 .interview-profile-info .loc-tag{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-soft);display:block;margin-top:2px;}
-.interview-quote-box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.65;flex:1;margin-bottom:12px;position:relative;}
+.interview-quote-box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:12.8px;color:var(--ink-soft);line-height:1.7;flex:1;margin-bottom:0;position:relative;}
 .interview-quote-box b{color:var(--ink);font-weight:700;}
 .interview-takeaway-pill{font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--accent);background:rgba(47,107,255,0.06);border:1px solid rgba(47,107,255,0.15);padding:4px 8px;border-radius:6px;text-align:center;}
+
+/* Pricing Intro Banner */
+.pricing-intro-banner{background:linear-gradient(135deg,rgba(47,107,255,0.04) 0%,rgba(18,179,154,0.05) 100%),var(--surface);border:1px solid rgba(47,107,255,0.2);border-radius:20px;padding:28px;margin-bottom:34px;box-shadow:0 4px 20px -8px rgba(18,32,59,0.06);}
+.pricing-intro-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(47,107,255,0.1);}
+.pricing-intro-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:11.5px;font-weight:700;font-family:var(--font-mono);background:rgba(47,107,255,0.08);color:var(--accent);border:1px solid rgba(47,107,255,0.2);}
+.pricing-targets{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.pricing-target-chip{font-size:12px;font-weight:600;color:var(--ink-soft);background:#fff;border:1px solid var(--line);padding:4px 10px;border-radius:8px;}
+.pricing-intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media (max-width:860px){.pricing-intro-grid{grid-template-columns:1fr;}.pricing-intro-banner{padding:20px 16px;}}
+.pricing-intro-item{background:#ffffff;border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s;}
+.pricing-intro-item:hover{transform:translateY(-2px);border-color:var(--accent);}
+.pricing-intro-item .item-tag{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.pricing-intro-item h4{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 8px;line-height:1.35;}
+.pricing-intro-item p{font-size:13.5px;color:var(--ink-soft);line-height:1.68;margin:0;}
+.pricing-intro-item b{color:var(--ink);}
+.pricing-intro-item.highlight-item{border-color:rgba(47,107,255,0.35);background:linear-gradient(180deg,#ffffff 0%,rgba(47,107,255,0.02) 100%);box-shadow:0 6px 20px -8px rgba(47,107,255,0.18);}
+.pricing-intro-item.highlight-item .item-tag{color:var(--accent-2);}
+.pricing-intro-note{margin-top:18px;padding:12px 16px;background:rgba(47,107,255,0.04);border:1px dashed rgba(47,107,255,0.22);border-radius:10px;font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:10px;line-height:1.55;}
+.pricing-intro-note b{color:var(--accent);}
 
 footer{border-top:1px solid var(--line);padding-block:26px;}
 .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--ink-soft);font-family:var(--font-mono);}
@@ -981,11 +1275,11 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
     <a class="logo" href="#" aria-label="에듀바이브 AI 홈으로 이동"><span class="dot"></span>EduVibe AI<span>AI LEARNING ENGINE</span></a>
     <ul class="navlinks">
       <li><a href="#philosophy">핵심비전</a></li>
-      <li><a href="#segments">서비스안내</a></li>
-      <li><a href="#platform">디바이스연동</a></li>
+      <li><a href="#future-tech">앰비언트·AI에이전트</a></li>
       <li><a href="#intro">소개영상</a></li>
+      <li><a href="#segments">서비스안내</a></li>
+      <li><a href="#platform">디바이스·스마트안경</a></li>
       <li><a href="#operations">행정관리</a></li>
-      <li><a href="#tools">실증후기</a></li>
       <li><a href="#pricing">요금안내</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#team">팀소개</a></li>
@@ -993,10 +1287,11 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
   </div>
   <nav class="nav-mobile-bar" aria-label="모바일 빠른 메뉴">
     <a class="nav-mobile-chip" href="#philosophy">핵심비전</a>
+    <a class="nav-mobile-chip" href="#future-tech">앰비언트·AI에이전트</a>
+    <a class="nav-mobile-chip" href="#intro">소개영상</a>
     <a class="nav-mobile-chip" href="#segments">서비스안내</a>
-    <a class="nav-mobile-chip" href="#platform">디바이스연동</a>
+    <a class="nav-mobile-chip" href="#platform">스마트안경·공간컴퓨팅</a>
     <a class="nav-mobile-chip" href="#operations">행정관리</a>
-    <a class="nav-mobile-chip" href="#tools">실증후기</a>
     <a class="nav-mobile-chip" href="#pricing">요금안내</a>
     <a class="nav-mobile-chip" href="#faq">FAQ</a>
     <a class="nav-mobile-chip" href="#contact">상담신청</a>
@@ -1086,10 +1381,10 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
     <canvas id="net"></canvas>
     <div class="wrap hero-inner">
       <div class="hero-badge-wrap">
-        <span class="hero-chip primary"><span class="pulse-dot"></span> 2026 차세대 AI 교육 엔진</span>
+        <span class="hero-chip primary"><span class="pulse-dot"></span> 2027 차세대 교육 AI 에이전트</span>
       </div>
       <h1>학생의 데이터를<br><span class="grad">수업으로 설계</span>하는 AI</h1>
-      <p class="hero-lead">에듀바이브 AI는 학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페의 현장 데이터를 실시간으로 분석해, 과목에 상관없이 학생 개개인에게 꼭 맞는 <b>AI 맞춤수업 시스템</b>입니다.<br>운영 방식을 진단해 드리는 컨설팅이 아니라, <b>실제 수업과 운영 행정을 책임지는 엔진</b>입니다.</p>
+      <p class="hero-lead">에듀바이브 AI는 학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페의 현장 데이터를 실시간으로 분석합니다. 과목에 상관없이 사용자가 의식하지 않아도 주변 환경에 자연스럽게 스며드는 <b>앰비언트 기술</b>을 통해, 학생과 교사를 능동적으로 돕습니다.<br>운영 방식을 진단해 드리는 컨설팅이 아니라, <b>실제 수업과 운영 행정을 책임지는 자율형 교육 AI 에이전트</b>입니다.</p>
       <div class="stat-row-enhanced">
         <div class="stat-card-pro">
           <div class="stat-meta">
@@ -1101,11 +1396,11 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
         </div>
         <div class="stat-card-pro">
           <div class="stat-meta">
-            <span class="stat-badge">3-WAY SYNC</span>
-            <b>3 DEVICE</b>
+            <span class="stat-badge">ALL-SYNC</span>
+            <b>4 DEVICE</b>
           </div>
-          <span class="stat-title">태블릿 · 모바일 · PC 실시간 연동</span>
-          <p class="stat-desc">학생 수업 태블릿부터 학부모 알림톡, 원장 PC 행정까지 하나로</p>
+          <span class="stat-title">태블릿 · 모바일 · PC · 스마트 안경까지</span>
+          <p class="stat-desc">수업 태블릿과 스마트 안경부터 학부모 알림톡, 원장 PC 행정까지 하나로</p>
         </div>
         <div class="stat-card-pro">
           <div class="stat-meta">
@@ -1158,6 +1453,14 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
               <p>원장님의 고유 교육 철학과 검증된 수업 노하우를 AI 프롬프트와 표준 매뉴얼로 시스템화하여 학원의 브랜드 가치를 높입니다.</p>
             </div>
           </div>
+
+          <div class="vision-pillar-card">
+            <div class="pillar-num" style="background:linear-gradient(135deg,rgba(47,107,255,0.12),rgba(18,179,154,0.15));color:var(--accent-2);border-color:rgba(18,179,154,0.3);">04</div>
+            <div class="pillar-body">
+              <h4>앰비언트 기술 도입 & 자율형 ‘교육 AI 에이전트’ 목표</h4>
+              <p>사용자가 의식하지 않아도 주변 환경에 스며드는 앰비언트 기술을 통해, 학생과 교사를 능동적으로 돕는 자율형 교육 AI 에이전트로 진화합니다.</p>
+            </div>
+          </div>
         </div>
 
         <div class="roadmap-pro-card">
@@ -1184,17 +1487,17 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
                 <span class="step-year">2026.10 — IN PROGRESS</span>
                 <span class="step-badge-status upcoming">고도화 진행 중</span>
               </div>
-              <h5>초개인화·초지능 특화 모델 2.0 고도화</h5>
-              <p>전국 50+ 거점 파일럿 학원의 실증 데이터 기반 학습 및 과목별(수학/영어/국어/과학) 특화 AI 튜닝.</p>
+              <h5>초개인화 특화 모델 & 앰비언트 센싱 도입</h5>
+              <p>50+ 거점 파일럿 학원 실증 데이터를 학습하고, 사용자가 의식하지 않아도 환경에 녹아드는 앰비언트 AI 기술 1단계 적용.</p>
             </div>
 
             <div class="roadmap-step-box">
               <div class="step-meta-row">
                 <span class="step-year">2027+ — PLANNED</span>
-                <span class="step-badge-status upcoming">확장 예정</span>
+                <span class="step-badge-status upcoming">차세대 목표</span>
               </div>
-              <h5>프랜차이즈 표준 통합 행정·세무 ERP</h5>
-              <p>본사-지사 멀티캠퍼스 표준 커리큘럼 동기화 및 국세청·교육청 감사서류 원클릭 자동 연동 완성.</p>
+              <h5>스마트 안경 & 공간 컴퓨팅 교육 AI 에이전트</h5>
+              <p>메타버스를 넘어 물리적 현실 교실과 통합되는 공간 컴퓨팅(Spatial Computing) 및 스마트 안경(AR Glass) 연동 에이전트 완성.</p>
             </div>
           </div>
         </div>
@@ -1202,24 +1505,105 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
     </div>
   </section>
 
-  <section class="block" id="segments">
+  <section class="block" id="future-tech" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
     <div class="wrap">
       <div class="head-row">
-        <div><p class="eyebrow">Service</p><h2>학생 개인의 학습 특성에 맞춰<br>AI가 수업을 설계합니다</h2></div>
-        <p class="head-note">과목을 가리지 않고, 각 학생의 성취도와 진도에 맞는 맞춤형 수업이 자동으로 구성됩니다.</p>
+        <div>
+          <p class="eyebrow">Future Tech & Mission</p>
+          <h2>주변 환경에 스며드는 앰비언트 기술,<br>우리가 향하는 목표는 ‘교육 AI 에이전트’입니다</h2>
+        </div>
+        <p class="head-note">
+          사용자가 기술을 의식하지 않아도 배움이 일어나는 공간, 그리고 학생을 주도적으로 이끄는 AI 에이전트를 만듭니다.
+        </p>
       </div>
-      <!-- 재구성된 초개인화 AI 맞춤수업 핵심 쇼케이스 카드 -->
-      <div class="service-highlight-card" style="margin-bottom:36px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px 32px;position:relative;overflow:hidden;box-shadow:var(--shadow-glass);backdrop-filter:blur(14px);">
-        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
-          <span style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-family:var(--font-mono);font-size:11.5px;font-weight:700;padding:5px 13px;border-radius:999px;box-shadow:0 4px 14px -4px rgba(47,107,255,.6);">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            AI 맞춤수업 시스템
-          </span>
-          <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(47,107,255,.07);color:var(--accent-2);border:1px solid rgba(47,107,255,.2);font-family:var(--font-mono);font-size:11.5px;font-weight:600;padding:5px 12px;border-radius:999px;">
-            초개인화 · 초지능 교육 특화 모델
-          </span>
+
+      <div class="ambient-agent-grid">
+        <!-- 5번 사진: 앰비언트 기술 도입 -->
+        <div class="ambient-agent-card ambient-theme">
+          <div class="aa-badge-row">
+            <span class="aa-badge ambient">AMBIENT INTELLIGENCE</span>
+          </div>
+
+          <h3>의식하지 않아도 환경에 녹아있는<br>‘앰비언트(Ambient) 기술’ 도입</h3>
+          <p class="aa-subtext">
+            복잡한 기기 조작이나 앱 실행의 번거로움 없이, 공부하는 환경 자체가 학습 데이터를 자연스럽게 감지합니다.
+          </p>
+
+          <div class="aa-quote-callout">
+            “앰비언트 기술: 사용자가 의식하지 않아도 주변 환경에 녹아있는 기술”<br>
+            <span style="font-size:12px;font-weight:400;color:var(--ink-soft);">— 에듀바이브 AI는 이 철학을 교실과 학습 공간 전체에 그대로 도입하고 있습니다.</span>
+          </div>
+
+          <ul class="aa-list">
+            <li>
+              <span class="aa-chk">✔</span>
+              <span><b>무자각(Zero-Friction) 데이터 감지:</b> 학생이 책상에 앉아 펜을 잡는 순간, 앰비언트 센서와 AI가 필기 속도와 문제 풀이 리듬을 보이지 않는 곳에서 조용히 수집합니다.</span>
+            </li>
+            <li>
+              <span class="aa-chk">✔</span>
+              <span><b>기기 조작의 피로감 제로:</b> “어떤 메뉴를 눌러야 하지?”라는 고민 없이, 학생은 오직 배움에 몰입하고 선생님은 학생과의 눈 맞춤에 집중할 수 있습니다.</span>
+            </li>
+            <li>
+              <span class="aa-chk">✔</span>
+              <span><b>수업 환경 기반 자동 기록:</b> 마이크나 카메라와 같은 환경 센싱을 통해 수업 진행률과 출결, 질문 포인트를 배경에서 자동으로 감지해 행정 일지로 완성합니다.</span>
+            </li>
+          </ul>
         </div>
 
+        <div class="ambient-agent-card agent-theme">
+          <div class="aa-badge-row">
+            <span class="aa-badge agent">EDUCATIONAL AI AGENT</span>
+          </div>
+
+          <h3>스스로 판단하고 이끄는<br>‘자율형 교육 AI 에이전트’ 목표</h3>
+          <p class="aa-subtext">
+            단순히 묻는 말에만 답하는 수동적인 챗봇이 아닙니다. 학생의 성장을 능동적으로 설계하고 이끄는 에이전트를 목표로 합니다.
+          </p>
+
+          <div class="aa-quote-callout">
+            “학생에게는 24시간 개인 튜터 에이전트, 교사에게는 가장 유능한 코-티처(Co-Teacher) 에이전트”<br>
+            <span style="font-size:12px;font-weight:400;color:var(--ink-soft);">— 에듀바이브 AI가 전력을 다해 개발하고 실증해 나가는 최종 목적지입니다.</span>
+          </div>
+
+          <ul class="aa-list">
+            <li>
+              <span class="aa-chk">✔</span>
+              <span><b>선제적 맞춤 제안 (Proactive):</b> 학생이 막히거나 망각 주기가 도래했을 때, AI가 먼저 다가가 적절한 힌트를 던지고 개별 보완 커리큘럼을 주도적으로 제시합니다.</span>
+            </li>
+            <li>
+              <span class="aa-chk">✔</span>
+              <span><b>교사의 자율 코-티처 (Autonomous Co-Teacher):</b> 원장님과 선생님의 교육 철학을 학습하여, 다음 날 수업 안배·수준별 프린트·학부모 상담 브리핑을 스스로 작성해 대기합니다.</span>
+            </li>
+            <li>
+              <span class="aa-chk">✔</span>
+              <span><b>공간 컴퓨팅과 결합된 완전체:</b> 물리적 현실 공간, 스마트 안경, 앰비언트 센서가 하나로 맞물려 어디서든 학생과 교감하는 살아있는 교육 에이전트를 구현합니다.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="intro">
+    <div class="wrap">
+      <div class="head-row">
+        <div><h2>에듀바이브 AI 소개영상</h2></div>
+        <p class="head-note">에듀바이브 AI가 하는 일을 영상으로 확인해 보세요.</p>
+      </div>
+      <div class="intro-video">
+        <video controls playsinline preload="none" poster="img/video-poster.jpg" title="에듀바이브 AI 소개 영상">
+          <source src="video/intro-v3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="segments">
+    <div class="wrap">
+      <p class="eyebrow" style="margin-bottom:14px;">Hyper-Personalized Education</p>
+      <!-- 재구성된 초개인화 AI 맞춤수업 핵심 쇼케이스 카드 -->
+      <div class="service-highlight-card" style="margin-bottom:36px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px 32px;position:relative;overflow:hidden;box-shadow:var(--shadow-glass);backdrop-filter:blur(14px);">
         <div style="border-left:3px solid var(--accent-2);padding-left:18px;">
           <h3 style="font-size:clamp(19px,2.2vw,24px);line-height:1.45;color:var(--ink);">
             에듀바이브 AI는 “우리 학원이 이렇게 운영하면 좋겠다”고 조언해 드리는 <span style="color:#e03131;text-decoration:line-through;text-decoration-thickness:2px;">단순 컨설팅</span>이 아닙니다.
@@ -1271,62 +1655,15 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
       </div>
 
 
-      <!-- 비교표 섹션 -->
-      <div style="margin-top:54px;">
-        <div class="head-row" style="margin-bottom:18px;">
-          <div>
-            <p class="eyebrow">Comparison</p>
-            <h3 style="font-size:clamp(20px,2.5vw,26px);">왜 단순 관리 프로그램이 아닌,<br>‘AI 맞춤수업 엔진’이어야 할까요?</h3>
-          </div>
-          <p class="head-note">단순 출결·문자 발송만 하던 기존 ERP와 에듀바이브 AI의 결정적 차이입니다.</p>
-        </div>
-        <p class="comp-table-hint">↔ 표를 좌우로 스와이프하여 상세 비교 항목을 확인하세요</p>
-        <div class="comp-table-wrap">
-          <table class="comp-table">
-            <thead>
-              <tr>
-                <th style="width:16%;">비교 항목</th>
-                <th style="width:25%;">기존 관리 프로그램 (ERP)</th>
-                <th style="width:23%;">단일 과목 AI 문제은행</th>
-                <th style="width:36%;" class="highlight">에듀바이브 AI</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><b>지원 과목 범위</b></td>
-                <td><div class="comp-cell"><span class="comp-icon">❌</span><span>지원 과목 없음 (단순 행정)</span></div></td>
-                <td><div class="comp-cell"><span class="comp-icon">❌</span><span>수학 또는 영어 단일 과목 한정</span></div></td>
-                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>국·영·수·과·사 전 과목 Multi-Subject 엔진</b></div></td>
-              </tr>
-              <tr>
-                <td><b>학부모 리포트</b></td>
-                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>출결 및 점수 단순 SMS 문자</span></div></td>
-                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>단순 점수표/정답률 표</span></div></td>
-                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>AI 학습 패턴 분석 & 맞춤 상담 스크립트 자동화</b></div></td>
-              </tr>
-              <tr>
-                <td><b>행정 및 세무 자동화</b></td>
-                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>유료 부가서비스 또는 수기</span></div></td>
-                <td><div class="comp-cell"><span class="comp-icon">❌</span><span>기능 없음</span></div></td>
-                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>종합소득세 집계 + 교육청 6대 감사서류 자동 생성</b></div></td>
-              </tr>
-              <tr>
-                <td><b>디바이스 연동</b></td>
-                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>PC 데스크톱 웹 중심</span></div></td>
-                <td><div class="comp-cell"><span class="comp-icon">⚠️</span><span>학생용 문제풀이 앱 한정</span></div></td>
-                <td class="highlight"><div class="comp-cell"><span class="comp-icon">✔</span><b>태블릿(수업) · 모바일(소통) · PC(운영) 실시간 연동</b></div></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
     </div>
   </section>
 
   <section class="block" id="platform">
     <div class="wrap">
       <div class="head-row">
-        <div><p class="eyebrow">Cross-Device</p><h2>태블릿 · 모바일 · PC, 하나의 데이터로</h2></div>
-        <p class="head-note">학생 수업부터 학부모 리포트, 원장 PC 행정까지 실시간 하나의 데이터로 동기화됩니다.</p>
+        <div><p class="eyebrow">Cross-Device & Spatial Computing</p><h2>태블릿 · 모바일 · PC, 그리고 스마트 안경까지</h2></div>
+        <p class="head-note">현재의 3-디바이스 실시간 연동을 넘어, 물리적 현실과 AI가 결합하는 '공간 컴퓨팅' 학습 환경을 목표로 진행되고 있습니다.</p>
       </div>
 
       <div class="dev-flow-banner">
@@ -1401,20 +1738,9 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
     </div>
   </section>
 
-  <section class="block" id="intro">
-    <div class="wrap">
-      <div class="head-row">
-        <div><h2>에듀바이브 AI 소개영상</h2></div>
-        <p class="head-note">에듀바이브 AI가 하는 일을 영상으로 확인해 보세요.</p>
-      </div>
-      <div class="intro-video">
-        <video controls playsinline preload="none" poster="img/video-poster.jpg" title="에듀바이브 AI 소개 영상">
-          <source src="video/intro-v3.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </section>
+  
+
+  
 
   <section class="banner">
     <div class="wrap">
@@ -1496,61 +1822,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
     </div>
   </section>
 
-  <section class="block" id="tools" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-    <div class="wrap">
-      <div class="head-row">
-        <div><p class="eyebrow">Pilot Case Study</p><h2>실증 파일럿 도입 후기</h2></div>
-        <p class="head-note">현장에서 직접 에듀바이브 AI를 도입하고 검증한 원장님들의 생생한 후기입니다.</p>
-      </div>
 
-      <div class="interview-grid-pro">
-        <div class="interview-card-pro">
-          <div class="interview-stars">★★★★★ 5.0</div>
-          <div class="interview-profile-row">
-            <div class="interview-pro-avatar">김</div>
-            <div class="interview-profile-info">
-              <h4>힐0수학 김○○ 원장</h4>
-              <span class="loc-tag">세종 1인 교습소</span>
-            </div>
-          </div>
-          <div class="interview-quote-box">
-            “원장 혼자 모든 학생을 관리하다 보니 <b>학부모 리포트 쓰느라 매일 밤 11시까지 야근</b>했는데, AI가 학생별 학습 타임라인을 자동 생성해 줘서 <b>상담 준비 시간이 75%나 단축</b>되었습니다. 이제 아이들 수업 준비에만 전념할 수 있어요.”
-          </div>
-          <div class="interview-takeaway-pill">도입 효과: 야근 제로화 & 수업 집중</div>
-        </div>
-
-        <div class="interview-card-pro">
-          <div class="interview-stars">★★★★★ 5.0</div>
-          <div class="interview-profile-row">
-            <div class="interview-pro-avatar" style="background:linear-gradient(135deg, #2F6BFF, #6366F1);">반</div>
-            <div class="interview-profile-info">
-              <h4>스0디 잉글리쉬 반○○ 원장</h4>
-              <span class="loc-tag">세종 학원 · 강사 3인 체제</span>
-            </div>
-          </div>
-          <div class="interview-quote-box">
-            “강사마다 학생 평가 방식과 기록 양식이 달라 취합하는 데만 주말이 다 갔습니다. 에듀바이브 도입 후 <b>모든 강사의 평가 기준이 AI 엔진으로 일원화</b>되어 학원 전체 리포트의 신뢰도와 전문성이 크게 올라갔습니다.”
-          </div>
-          <div class="interview-takeaway-pill" style="color:var(--accent);border-color:rgba(47,107,255,0.2);">도입 효과: 학원 리포트 신뢰도 수직 상승</div>
-        </div>
-
-        <div class="interview-card-pro">
-          <div class="interview-stars">★★★★★ 5.0</div>
-          <div class="interview-profile-row">
-            <div class="interview-pro-avatar" style="background:linear-gradient(135deg, #10B981, #059669);">최</div>
-            <div class="interview-profile-info">
-              <h4>o스터디 최○○ 대표</h4>
-              <span class="loc-tag">대전 스터디카페 · 90석 관리형</span>
-            </div>
-          </div>
-          <div class="interview-quote-box">
-            “학생들의 순수 공부 시간과 과목별 집중 패턴이 <b>실시간 데이터화되어 매주 학부모 모바일로 자동 전송</b>되니, 학부모님들의 신뢰가 상상 이상입니다. <b>만족도 98%와 함께 재등록률이 35% 상승</b>했습니다.”
-          </div>
-          <div class="interview-takeaway-pill" style="color:#059669;border-color:rgba(16,185,129,0.2);">도입 효과: 재등록률 급상승 & 퇴원 방지</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
 
@@ -1561,13 +1833,33 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
         <div><p class="eyebrow">Plan</p><h2>운영 규모에 맞는 두 가지 패키지</h2></div>
         <p class="head-note">운영 형태별 맞춤형 구성으로 최적의 가치를 제공합니다.</p>
       </div>
-      <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;margin-bottom:32px;">
-        <p style="font-size:14px;color:var(--ink);line-height:1.8;max-width:900px;">
-          학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페 등 운영 형태와 규모에 따라 필요한 기능과 투자 규모가 다릅니다. 
-          에듀바이브 AI는 초기 진단을 통해 각 기관의 현황을 파악하고, <b>AI가 산출한 최적 도입 규모의 30%</b>를 기본 투자로 제안합니다. 
-          이는 도입 초기 리스크를 최소화하면서도 즉각적인 성과를 경험하도록 설계된 가격 모델입니다. 
-          정확한 견적은 1:1 상담 단계에서 현황 분석 후 안내드립니다.
-        </p>
+      <div class="pricing-intro-banner">
+        <div style="margin-bottom:16px;">
+          <span class="pricing-intro-badge"><span class="pulse-dot"></span> 맞춤 도입 및 투자 가이드</span>
+        </div>
+
+        <div class="pricing-intro-grid">
+          <div class="pricing-intro-item">
+            <h4>운영 형태별 맞춤 기능 설계</h4>
+            <p>
+              학원·개인 교습소·공부방·프랜차이즈·관리형 스터디카페 등 <b>운영 형태와 규모에 따라 필요한 기능과 최적 투자 규모</b>를 정밀하게 진단합니다.
+            </p>
+          </div>
+
+          <div class="pricing-intro-item highlight-item">
+            <h4>최적 도입 규모의 30% 기본 제안</h4>
+            <p>
+              초기 진단을 통해 <b>AI가 산출한 최적 도입 규모의 30%를 기본 투자로 제안</b>합니다. 도입 초기 리스크를 최소화하면서 <b>즉각적인 성과를 체감</b>하도록 설계되었습니다.
+            </p>
+          </div>
+
+          <div class="pricing-intro-item">
+            <h4>정확한 맞춤 견적 안내</h4>
+            <p>
+              기관별 운영 현황과 데이터를 정밀 분석한 후, 낭비 없는 <b>가장 정확한 견적을 1:1 상담 단계에서 투명하게 안내</b>해 드립니다.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="price-grid two">
         <div class="price-card">
@@ -1840,11 +2132,11 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, a {
     <span>© EDUVIBE AI LEARNING ENGINE. ALL RIGHTS RESERVED.</span>
     <span class="foot-links">
       <a href="#philosophy">핵심비전</a>
-      <a href="#segments">서비스안내</a>
-      <a href="#platform">디바이스연동</a>
+      <a href="#future-tech">앰비언트·AI에이전트</a>
       <a href="#intro">소개영상</a>
+      <a href="#segments">서비스안내</a>
+      <a href="#platform">디바이스·스마트안경</a>
       <a href="#operations">행정관리</a>
-      <a href="#tools">실증후기</a>
       <a href="#pricing">요금안내</a>
       <a href="#faq">FAQ</a>
       <a href="#team">팀소개</a>
