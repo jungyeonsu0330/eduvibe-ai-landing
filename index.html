@@ -682,8 +682,8 @@ section.block{padding-block:70px;}
 @media (max-width:700px){.team-grid{grid-template-columns:1fr;}}
 
 /* contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;}
-.contact-info{border:1px solid var(--line);background:var(--surface);border-radius:20px;padding:34px;}
+.contact-grid{display:flex;justify-content:center;max-width:620px;margin:0 auto;width:100%;}
+.contact-info{border:1px solid var(--line);background:var(--surface);border-radius:20px;padding:34px;width:100%;box-shadow:var(--shadow-glass);}
 .contact-info h2{font-size:24px;}
 .contact-info p{color:var(--ink-soft);font-size:14px;margin-top:12px;max-width:40ch;}
 .contact-list{list-style:none;margin:22px 0 0;padding:0;font-size:13.5px;font-family:var(--font-mono);}
@@ -2087,7 +2087,7 @@ p, li, dd, dt, blockquote {
       <div class="contact-grid">
         <div class="contact-info">
           <h2 style="font-size:22px;">문의 전 안내</h2>
-          <p>현재 운영 방식과 데이터 환경을 확인한 뒤, 학원에 맞는 AI 모듈과 도입 일정을 함께 설계합니다. 아래 양식을 작성하고 버튼을 누르면 문의 내용이 복사되고 카카오톡 오픈채팅이 열립니다. 채팅창에 붙여넣어 보내주시면 접수됩니다.</p>
+          <p>현재 운영 방식과 데이터 환경을 확인한 뒤, 운영에 맞는 AI 모듈과 도입 일정을 함께 설계합니다. 카카오톡 오픈채팅이나 유선 전화로 편하게 문의해 주시면 접수 및 맞춤 상담을 안내해 드립니다.</p>
           <ul class="contact-list">
             <li><span>KAKAO</span><b><a href="https://open.kakao.com/o/ssj1FMOi" target="_blank" rel="noopener" style="color:inherit;">오픈채팅 문의</a></b></li>
             <li><span>PHONE</span><b><a href="tel:01024617182" style="color:inherit;text-decoration:none;">010-2461-7182</a></b></li>
@@ -2095,44 +2095,10 @@ p, li, dd, dt, blockquote {
             <li><span>HOURS</span><b>MON–FRI 09:00–17:00</b></li>
             <li><span>REGION</span><b>전국 원격 / 방문</b></li>
           </ul>
+          <div style="margin-top:26px;">
+            <a href="https://open.kakao.com/o/ssj1FMOi" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px 20px;font-size:15px;font-weight:700;">💬 카카오톡 오픈채팅으로 문의하기</a>
+          </div>
         </div>
-        <form class="contact-form" id="leadForm">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="f-name">이름</label>
-              <input id="f-name" name="name" type="text" required>
-            </div>
-            <div class="form-field">
-              <label for="f-phone">연락처</label>
-              <input id="f-phone" name="phone" type="tel" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="f-academy">학원 · 교습소명</label>
-              <input id="f-academy" name="academy" type="text" required>
-            </div>
-            <div class="form-field">
-              <label for="f-type">운영 형태</label>
-              <select id="f-type" name="type">
-                <option>학원</option>
-                <option>개인교습소</option>
-                <option>공부방</option>
-                <option>프랜차이즈</option>
-                <option>관리형 스터디카페</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field full">
-              <label for="f-msg">문의 내용</label>
-              <textarea id="f-msg" name="message" placeholder="현재 운영 규모, 궁금한 점을 자유롭게 남겨주세요."></textarea>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit">카카오톡으로 상담 신청</button>
-          <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
-          <p class="form-note">* 카카오톡 링크는 문구를 미리 채워 보낼 수 없어, 문의 내용을 복사해 드립니다. 채팅창을 길게 눌러 붙여넣기 후 전송해 주세요. 카카오톡이 어려우면 전화(010-2461-7182)나 이메일로 문의하셔도 됩니다.</p>
-        </form>
       </div>
     </div>
   </section>
@@ -2314,26 +2280,21 @@ p, li, dd, dt, blockquote {
     var q5 = collect('q5');
     var q6 = collect('q6')[0] || '';
 
-    var typeSelect = document.getElementById('f-type');
-    if(q1 && Array.prototype.some.call(typeSelect.options, function(o){ return o.value === q1; })){
-      typeSelect.value = q1;
-    }
-
-    var summary = '[AI 맞춤설계 진단 결과]\n'
+    var summary = '[에듀바이브 AI 맞춤설계 진단 결과]\n'
       + '운영 형태: ' + q1 + '\n'
       + '담당 과목: ' + (q2.join(', ') || '미선택') + '\n'
       + '학생 수: ' + q3 + '\n'
       + '현재 관리 방식: ' + q4 + '\n'
       + '가장 시급한 문제: ' + (q5.join(', ') || '미선택') + '\n'
       + '도입 희망 시점: ' + q6 + '\n\n'
-      + '추가로 남기고 싶은 말씀을 이어서 적어주세요.';
-    document.getElementById('f-msg').value = summary;
+      + '상담 시 추가로 필요한 내용을 말씀해 주세요.';
 
     closeWizard();
-    var contact = document.getElementById('contact');
-    contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    var nameField = document.getElementById('f-name');
-    setTimeout(function(){ nameField.focus(); }, 400);
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(summary).catch(function(){});
+    }
+    alert('AI 맞춤설계 진단 결과가 클립보드에 복사되었습니다!\n\n열리는 카카오톡 오픈채팅 채팅창에 붙여넣어 보내주시면 담당 엔지니어와 1:1 맞춤 상담이 바로 연결됩니다.');
+    window.open('https://open.kakao.com/o/ssj1FMOi', '_blank', 'noopener');
   }
 
   function openWizard(){
