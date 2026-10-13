@@ -26,6 +26,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22%232F6BFF%22%2F%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%226%22%20fill%3D%22%2312B39A%22%2F%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap">
 </head>
 <body>
@@ -43,7 +44,7 @@
   --line:rgba(40,70,130,.16);
   --warn:#B86A10;
   --shadow-glass:0 10px 34px -16px rgba(47,107,255,.32);
-  --font-display:-apple-system, BlinkMacSystemFont, "Pretendard", "Pretendard Variable", "Gothic A1", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-display:"Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, "Malgun Gothic", sans-serif;
   --font-mono:'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace;
 }
 *{box-sizing:border-box;}
@@ -658,10 +659,26 @@ section.block{padding-block:70px;}
 .banner{
   background:radial-gradient(1200px 400px at 50% 0%, rgba(47,107,255,.14), transparent 60%), var(--bg2);
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding-block:90px;text-align:center;
+  padding-block:72px;text-align:center;
 }
-.banner h2{font-size:clamp(26px,4.2vw,44px);line-height:1.4;margin-top:18px;}
+.banner h2{font-size:clamp(24px,3.8vw,38px);line-height:1.42;margin-top:14px;word-break:keep-all;}
 .banner h2 .hl{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.banner-sub-pills{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px;}
+.banner-sub-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.85);border:1px solid rgba(47,107,255,0.22);color:var(--ink);font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:999px;box-shadow:0 2px 8px -2px rgba(47,107,255,0.1);}
+
+/* Pillar & Roadmap & Ethics Enhancements */
+.pillar-top-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.pillar-cat-tag{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--accent-2);background:rgba(18,179,154,0.08);border:1px solid rgba(18,179,154,0.22);padding:2px 8px;border-radius:6px;}
+.pillar-takeaway-pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--accent);background:rgba(47,107,255,0.07);border:1px solid rgba(47,107,255,0.18);padding:4px 10px;border-radius:6px;margin-top:8px;}
+.roadmap-step-points{margin:10px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px;}
+.roadmap-step-points li{display:flex;align-items:flex-start;gap:6px;font-size:12.5px;color:var(--ink-soft);line-height:1.55;}
+.roadmap-step-points li b{color:var(--ink);}
+.aa-takeaway-pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:6px 12px;border-radius:8px;margin-top:16px;}
+.ambient-theme .aa-takeaway-pill{color:var(--accent-2);background:rgba(18,179,154,0.08);border:1px solid rgba(18,179,154,0.2);}
+.agent-theme .aa-takeaway-pill{color:#7c3aed;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);}
+.ethics-top-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.ethics-tag{font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--accent);background:rgba(47,107,255,0.08);border:1px solid rgba(47,107,255,0.2);padding:3px 8px;border-radius:6px;}
+.ethics-takeaway-pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--accent-2);background:rgba(18,179,154,0.08);border:1px solid rgba(18,179,154,0.2);padding:4px 10px;border-radius:6px;margin-top:12px;}
 
 /* team */
 .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
@@ -1307,10 +1324,93 @@ p, li, dd, dt, blockquote {
     min-height: 48px;
   }
   .banner {
-    padding-block: 44px;
+    padding-block: 40px;
   }
   .banner h2 {
-    font-size: clamp(20px, 5.2vw, 26px);
+    font-size: clamp(19px, 5.2vw, 24px);
+    line-height: 1.38;
+  }
+  .banner-sub-pills {
+    margin-top: 12px;
+    gap: 6px;
+  }
+  .banner-sub-pill {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  /* Vision Pillar Cards on Mobile */
+  .vision-pillar-card {
+    padding: 16px 14px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+  .pillar-num {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  .pillar-body h4 {
+    font-size: 15px;
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+  .pillar-body p {
+    font-size: 13px;
+    line-height: 1.62;
+  }
+  .pillar-takeaway-pill {
+    font-size: 11px;
+    padding: 3px 8px;
+    margin-top: 8px;
+  }
+
+  /* Roadmap on Mobile */
+  .roadmap-pro-card {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+  .roadmap-step-box {
+    padding: 14px 12px;
+    border-radius: 10px;
+  }
+  .roadmap-step-box h5 {
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+  .roadmap-step-box p {
+    font-size: 12.5px;
+    line-height: 1.58;
+  }
+
+  /* Ethics Cards on Mobile */
+  .ethics-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .ethics-card {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+  .ethics-num {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  .ethics-card h3 {
+    font-size: 16px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .ethics-card p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .ethics-takeaway-pill {
+    font-size: 11px;
+    padding: 3px 8px;
+    margin-top: 10px;
   }
 
   /* AI 30% 산정 블록 모바일 최적화 */
@@ -1468,6 +1568,36 @@ p, li, dd, dt, blockquote {
   .ambient-agent-card {
     padding: 20px 16px;
     border-radius: 16px;
+  }
+  .ambient-agent-card h3 {
+    font-size: clamp(17px, 4.8vw, 20px);
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .ambient-agent-card .aa-subtext {
+    font-size: 13px;
+    line-height: 1.62;
+    margin-bottom: 14px;
+  }
+  .aa-quote-callout {
+    padding: 10px 12px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .aa-list {
+    padding-top: 14px;
+    gap: 10px;
+  }
+  .aa-list li {
+    font-size: 12.5px;
+    line-height: 1.55;
+    gap: 8px;
+  }
+  .aa-takeaway-pill {
+    font-size: 11px;
+    padding: 5px 10px;
+    margin-top: 14px;
   }
 }
 
@@ -1663,12 +1793,12 @@ p, li, dd, dt, blockquote {
         <span class="hero-chip primary"><span class="pulse-dot"></span> 2027 차세대 교육 AI 에이전트</span>
       </div>
       <h1>학생의 데이터를 <br class="pc-br"><span class="grad">수업으로 설계</span>하는 AI</h1>
-      <p class="hero-lead">에듀바이브 AI는 학원·개인교습소·공부방·프랜차이즈·관리형 스터디카페의 현장 데이터를 실시간으로 분석합니다. 과목에 상관없이 사용자가 의식하지 않아도 주변 환경에 자연스럽게 스며드는 <b>앰비언트 기술</b>을 통해, 학생과 교사를 능동적으로 돕습니다.</p>
+      <p class="hero-lead">에듀바이브 AI는 학원·교습소의 <b>현장 데이터를 실시간 분석</b>합니다. 과목 구분 없이 주변 환경에 자연스럽게 스며드는 <b>앰비언트 기술</b>을 통해, 학생 맞춤 수업과 교사 행정을 능동적으로 돕는 차세대 교육 환경을 완성합니다.</p>
       
       <div class="hero-paradigm-pill">
-        <span class="paradigm-tag old">기존 컨설팅이 아닙니다</span>
+        <span class="paradigm-tag old">단순 조언형 컨설팅 NO</span>
         <span class="paradigm-arrow">➔</span>
-        <span class="paradigm-tag new">실제 수업과 행정을 책임지는 <b>자율형 교육 AI 에이전트</b></span>
+        <span class="paradigm-tag new">수업과 행정을 직접 책임지는 <b>자율형 교육 AI 에이전트</b></span>
       </div>
 
       <div class="stat-row-enhanced">
@@ -1686,7 +1816,7 @@ p, li, dd, dt, blockquote {
             <b>4 DEVICE</b>
           </div>
           <span class="stat-title">태블릿 · 모바일 · PC · 스마트 안경까지</span>
-          <p class="stat-desc">수업 태블릿과 스마트 안경부터 학부모 알림톡, 원장 PC 행정까지 하나로</p>
+          <p class="stat-desc">수업 태블릿과 스마트 안경부터 학부모 알림톡, 원장 PC 행정까지 하나로 연동</p>
         </div>
         <div class="stat-card-pro">
           <div class="stat-meta">
@@ -1694,7 +1824,7 @@ p, li, dd, dt, blockquote {
             <b>ON-SITE</b>
           </div>
           <span class="stat-title">사업장 맞춤 과정 설계 · 현장 적용</span>
-          <p class="stat-desc">AI를 통해 우리 사업장에 맞는 과정을 설계하고, 현장에 그대로 적용합니다.</p>
+          <p class="stat-desc">원장님의 고유 교육 철학에 맞춘 커리큘럼을 현장에 즉시 반영</p>
         </div>
       </div>
     </div>
@@ -1702,55 +1832,85 @@ p, li, dd, dt, blockquote {
 
   <section class="banner">
     <div class="wrap">
-      <p class="eyebrow" style="justify-content:center;">EduVibe AI Engine</p>
+      <p class="eyebrow" style="justify-content:center;">// EDUVIBE AI ENGINE</p>
       <h2>AI를 통해 <span class="hl">우리 사업장에 맞는 과정</span>을 설계하고,<br class="pc-br">현장에 그대로 적용합니다.</h2>
+      <div class="banner-sub-pills">
+        <span class="banner-sub-pill">✔ 원장님 지도 방식 100% 반영</span>
+        <span class="banner-sub-pill">✔ 복잡한 시스템 교체 ZERO</span>
+        <span class="banner-sub-pill">✔ 도입 즉시 당일 현장 가동</span>
+      </div>
     </div>
   </section>
 
   <section class="block philosophy" id="philosophy">
     <div class="wrap">
-      <p class="eyebrow" style="margin-bottom:18px;">Vision & Philosophy</p>
+      <div class="head-row">
+        <div>
+          <p class="eyebrow">// CHAPTER 01 · CORE PHILOSOPHY & ROADMAP</p>
+          <h2>교육의 본질로 돌아가는 혁신, <br class="pc-br">에듀바이브 AI의 4대 비전과 실행 로드맵</h2>
+        </div>
+        <p class="head-note">
+          단순한 기술 도입을 넘어, 교육 현장의 고질적인 비효율을 걷어내고 학생과 교사가 배움에만 몰입하도록 설계되었습니다.
+        </p>
+      </div>
+
       <!-- 핵심 비주얼 시스템 다이어그램 배너 -->
-      <div style="border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-glass);background:#07101f;position:relative;">
+      <div style="border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-glass);background:#07101f;position:relative;margin-top:16px;">
         <img src="img/og-preview.jpg" alt="교육의 본질로 돌아가는 가장 현실적인 방법 - 학생 중심 교육을 실현하는 AI 맞춤수업 시스템 (3-디바이스 연동 및 행정 자동화)" style="width:100%;height:auto;display:block;" loading="lazy">
       </div>
 
       <div class="vision-grid">
         <div class="vision-pro-left">
-          <div style="margin-bottom:14px;">
-            <p class="eyebrow" style="margin-bottom:8px;">Core Philosophy</p>
-            <h3 style="font-size:22px;color:var(--ink);letter-spacing:-0.02em;">비전과 방향</h3>
+          <div style="margin-bottom:6px;">
+            <p class="eyebrow" style="margin-bottom:6px;">Core Philosophy</p>
+            <h3 style="font-size:20px;color:var(--ink);letter-spacing:-0.02em;">4대 핵심 비전</h3>
           </div>
 
           <div class="vision-pillar-card">
             <div class="pillar-num">01</div>
             <div class="pillar-body">
-              <h4>데이터 기반 초개인화 맞춤학습의 대중화</h4>
-              <p>과목과 점수에 상관없이 학생의 풀이 속도, 오답 원인, 개념 결손을 AI가 정밀 진단해 수업 결과를 자동 생성합니다.</p>
+              <div class="pillar-top-meta">
+                <span class="pillar-cat-tag">초개인화 맞춤 수업</span>
+              </div>
+              <h4>데이터 기반 맞춤학습의 대중화</h4>
+              <p>과목과 점수에 상관없이 학생의 <b>풀이 속도, 오답 원인, 개념 결손을 실시간 정밀 진단</b>하여 개별 맞춤 커리큘럼을 자동 생성합니다.</p>
+              <div class="pillar-takeaway-pill">🎯 취약점 조기 해소 & 개별 성취도 극대화</div>
             </div>
           </div>
 
           <div class="vision-pillar-card">
             <div class="pillar-num">02</div>
             <div class="pillar-body">
+              <div class="pillar-top-meta">
+                <span class="pillar-cat-tag">행정 자동화</span>
+              </div>
               <h4>현장 강사의 반복 행정 업무 완전 자동화</h4>
-              <p>출결 체크, 상담 일지, 리포트 작성 등 매일 2~3시간씩 소모되던 단순 반복 작업을 AI가 대신 처리해 수업 본질에 집중합니다.</p>
+              <p>출결 체크, 상담 일지, 리포트 작성 등 <b>매일 2~3시간씩 소모되던 단순 반복 작업</b>을 AI가 대신 처리해 수업 본질에만 집중합니다.</p>
+              <div class="pillar-takeaway-pill">⏱️ 매일 행정 시간 75% 절감 & 칼퇴 보장</div>
             </div>
           </div>
 
           <div class="vision-pillar-card">
             <div class="pillar-num">03</div>
             <div class="pillar-body">
+              <div class="pillar-top-meta">
+                <span class="pillar-cat-tag">운영 자산화</span>
+              </div>
               <h4>학원 운영 노하우와 커리큘럼의 자산화</h4>
-              <p>원장님의 고유 교육 철학과 검증된 수업 노하우를 AI 프롬프트와 표준 매뉴얼로 시스템화하여 학원의 브랜드 가치를 높입니다.</p>
+              <p>원장님의 고유 교육 철학과 검증된 수업 노하우를 <b>AI 프롬프트와 표준 매뉴얼로 시스템화</b>하여 학원의 브랜드 가치를 높입니다.</p>
+              <div class="pillar-takeaway-pill">📈 강사 교체에도 흔들림 없는 학원 시스템 자산화</div>
             </div>
           </div>
 
           <div class="vision-pillar-card">
             <div class="pillar-num" style="background:linear-gradient(135deg,rgba(47,107,255,0.12),rgba(18,179,154,0.15));color:var(--accent-2);border-color:rgba(18,179,154,0.3);">04</div>
             <div class="pillar-body">
-              <h4>앰비언트 기술 도입 & 자율형 ‘교육 AI 에이전트’ 목표</h4>
-              <p>사용자가 의식하지 않아도 주변 환경에 스며드는 앰비언트 기술을 통해, 학생과 교사를 능동적으로 돕는 자율형 교육 AI 에이전트로 진화합니다.</p>
+              <div class="pillar-top-meta">
+                <span class="pillar-cat-tag">차세대 도약</span>
+              </div>
+              <h4>앰비언트 기술 도입 & 자율형 ‘교육 AI 에이전트’</h4>
+              <p>사용자가 의식하지 않아도 주변 환경에 스며드는 <b>앰비언트 센싱</b>을 통해, 학생과 교사를 능동적으로 돕는 자율형 교육 AI 에이전트로 진화합니다.</p>
+              <div class="pillar-takeaway-pill">🚀 2027 차세대 공간 컴퓨팅 교육 환경 선점</div>
             </div>
           </div>
         </div>
@@ -1772,6 +1932,10 @@ p, li, dd, dt, blockquote {
               </div>
               <h5>에듀바이브 AI 엔진 & 3-디바이스 연동 출시</h5>
               <p>학생 화면 실시간 분석, AI 맞춤수업 자동 설계 및 학부모 리포트 자동 생성 시스템 정식 배포.</p>
+              <ul class="roadmap-step-points">
+                <li><span>✔</span> <span><b>학생 화면 미러링:</b> 실시간 풀이 타임라인 분석</span></li>
+                <li><span>✔</span> <span><b>원클릭 행정 연동:</b> 학부모 알림톡 & 상담 일지 자동화</span></li>
+              </ul>
             </div>
 
             <div class="roadmap-step-box">
@@ -1781,6 +1945,10 @@ p, li, dd, dt, blockquote {
               </div>
               <h5>초개인화 특화 모델 & 앰비언트 센싱 도입</h5>
               <p>50+ 거점 파일럿 학원 실증 데이터를 학습하고, 사용자가 의식하지 않아도 환경에 녹아드는 앰비언트 AI 기술 1단계 적용.</p>
+              <ul class="roadmap-step-points">
+                <li><span>✔</span> <span><b>현장 데이터 교차 검증:</b> 다과목 복합 취약점 분석</span></li>
+                <li><span>✔</span> <span><b>무자각 센싱 1단계:</b> 필기 속도 및 풀이 리듬 자동 감지</span></li>
+              </ul>
             </div>
 
             <div class="roadmap-step-box">
@@ -1790,6 +1958,10 @@ p, li, dd, dt, blockquote {
               </div>
               <h5>스마트 안경 & 공간 컴퓨팅 교육 AI 에이전트</h5>
               <p>메타버스를 넘어 물리적 현실 교실과 통합되는 공간 컴퓨팅(Spatial Computing) 및 스마트 안경(AR Glass) 연동 에이전트 완성.</p>
+              <ul class="roadmap-step-points">
+                <li><span>✔</span> <span><b>현실 공간 결합:</b> 스마트 안경 기반 1:1 실시간 코-티처</span></li>
+                <li><span>✔</span> <span><b>완전 자율형 에이전트:</b> 수업 안배부터 복습 루틴까지 자율 설계</span></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1801,7 +1973,7 @@ p, li, dd, dt, blockquote {
     <div class="wrap">
       <div class="head-row">
         <div>
-          <p class="eyebrow">Future Tech & Mission</p>
+          <p class="eyebrow">// CHAPTER 02 · FUTURE TECH & MISSION</p>
           <h2>주변 환경에 스며드는 앰비언트 기술, <br class="pc-br">우리가 향하는 목표는 ‘교육 AI 에이전트’입니다</h2>
         </div>
         <p class="head-note">
@@ -1810,7 +1982,7 @@ p, li, dd, dt, blockquote {
       </div>
 
       <div class="ambient-agent-grid">
-        <!-- 5번 사진: 앰비언트 기술 도입 -->
+        <!-- 앰비언트 기술 도입 -->
         <div class="ambient-agent-card ambient-theme">
           <div class="aa-badge-row">
             <span class="aa-badge ambient">AMBIENT INTELLIGENCE</span>
@@ -1823,7 +1995,7 @@ p, li, dd, dt, blockquote {
 
           <div class="aa-quote-callout">
             “앰비언트 기술: 사용자가 의식하지 않아도 주변 환경에 녹아있는 기술” <br class="pc-br">
-            <span style="font-size:12px;font-weight:400;color:var(--ink-soft);">— 에듀바이브 AI는 이 철학을 교실과 학습 공간 전체에 그대로 도입하고 있습니다.</span>
+            <span style="font-size:12px;font-weight:400;color:var(--ink-soft);display:block;margin-top:4px;">— 에듀바이브 AI는 이 철학을 교실과 학습 공간 전체에 그대로 도입하고 있습니다.</span>
           </div>
 
           <ul class="aa-list">
@@ -1840,6 +2012,8 @@ p, li, dd, dt, blockquote {
               <span><b>수업 환경 기반 자동 기록:</b> 마이크나 카메라와 같은 환경 센싱을 통해 수업 진행률과 출결, 질문 포인트를 배경에서 자동으로 감지해 행정 일지로 완성합니다.</span>
             </li>
           </ul>
+
+          <div class="aa-takeaway-pill">🌿 무자각 센싱 · 조작 피로도 0% · 수업 몰입 극대화</div>
         </div>
 
         <div class="ambient-agent-card agent-theme">
@@ -1854,7 +2028,7 @@ p, li, dd, dt, blockquote {
 
           <div class="aa-quote-callout">
             “학생에게는 24시간 개인 튜터 에이전트, 교사에게는 가장 유능한 코-티처(Co-Teacher) 에이전트” <br class="pc-br">
-            <span style="font-size:12px;font-weight:400;color:var(--ink-soft);">— 에듀바이브 AI가 전력을 다해 개발하고 실증해 나가는 최종 목적지입니다.</span>
+            <span style="font-size:12px;font-weight:400;color:var(--ink-soft);display:block;margin-top:4px;">— 에듀바이브 AI가 전력을 다해 개발하고 실증해 나가는 최종 목적지입니다.</span>
           </div>
 
           <ul class="aa-list">
@@ -1871,6 +2045,8 @@ p, li, dd, dt, blockquote {
               <span><b>공간 컴퓨팅과 결합된 완전체:</b> 물리적 현실 공간, 스마트 안경, 앰비언트 센서가 하나로 맞물려 어디서든 학생과 교감하는 살아있는 교육 에이전트를 구현합니다.</span>
             </li>
           </ul>
+
+          <div class="aa-takeaway-pill">🤖 선제적 맞춤 제안 · 자율 코-티처 · 공간 컴퓨팅 결합</div>
         </div>
       </div>
     </div>
@@ -1880,7 +2056,7 @@ p, li, dd, dt, blockquote {
     <div class="wrap">
       <div class="head-row">
         <div>
-          <p class="eyebrow">Pedagogy & Privacy Ethics</p>
+          <p class="eyebrow">// CHAPTER 03 · PEDAGOGY & PRIVACY ETHICS</p>
           <h2>교육 공학과 데이터 프라이버시 안심 원칙</h2>
         </div>
         <p class="head-note">
@@ -1890,21 +2066,33 @@ p, li, dd, dt, blockquote {
 
       <div class="ethics-grid">
         <div class="ethics-card">
-          <div class="ethics-num">01</div>
+          <div class="ethics-top-row">
+            <div class="ethics-num">01</div>
+            <span class="ethics-tag">ANTI-SURVEILLANCE</span>
+          </div>
           <h3>상시 감시 배제 (Anti-Surveillance)</h3>
-          <p>교실 내 앰비언트 센싱과 화면 데이터는 학생을 감시하거나 평가 잣대로 쓰이지 않습니다. 오직 <b>'어디서 개념 이해가 멈췄는가'</b>를 조기에 발견하여 맞춤형 도움을 주는 교육 지원용으로만 한정됩니다.</p>
+          <p>교실 내 앰비언트 센싱과 화면 데이터는 <b>학생을 감시하거나 평가 잣대로 쓰이지 않습니다.</b> 오직 <b>'어디서 개념 이해가 멈췄는가'</b>를 조기에 발견하여 맞춤형 도움을 주는 교육 지원용으로만 한정됩니다.</p>
+          <div class="ethics-takeaway-pill">🛡️ 감시 피로 ZERO · 안전한 학습 심리 보장</div>
         </div>
 
         <div class="ethics-card">
-          <div class="ethics-num">02</div>
+          <div class="ethics-top-row">
+            <div class="ethics-num">02</div>
+            <span class="ethics-tag">ON-DEVICE SECURITY</span>
+          </div>
           <h3>온디바이스 암호화 & 비식별 처리</h3>
-          <p>학생의 필기 흔적, 풀이 속도, 오답 데이터는 금융권 수준의 보안 규정에 맞춰 철저히 비식별 토큰화되어 처리됩니다. 외부 모델 학습에 학생 개인정보가 무단 활용되지 않습니다.</p>
+          <p>학생의 필기 흔적, 풀이 속도, 오답 데이터는 금융권 수준의 보안 규정에 맞춰 <b>철저히 비식별 토큰화되어 처리</b>됩니다. 외부 모델 학습에 학생 개인정보가 무단 활용되지 않습니다.</p>
+          <div class="ethics-takeaway-pill">🔐 금융권 수준 암호화 · 개인정보 유출 차단</div>
         </div>
 
         <div class="ethics-card">
-          <div class="ethics-num">03</div>
+          <div class="ethics-top-row">
+            <div class="ethics-num">03</div>
+            <span class="ethics-tag">METACOGNITION</span>
+          </div>
           <h3>기다림의 교육학 (메타인지 강화)</h3>
-          <p>AI가 학생의 사고 과정을 가로채지 않습니다. 오답이 발생했을 때 학생이 스스로 검토할 수 있는 충분한 사유 시간을 보장하며, 메타인지(내가 아는 것과 모르는 것을 구별하는 힘)를 기릅니다.</p>
+          <p>AI가 학생의 사고 과정을 가로채지 않습니다. 오답이 발생했을 때 학생이 스스로 검토할 수 있는 <b>충분한 사유 시간을 보장</b>하며, 메타인지(내가 아는 것과 모르는 것을 구별하는 힘)를 기릅니다.</p>
+          <div class="ethics-takeaway-pill">🧠 생각할 시간 보장 · 스스로 깨닫는 메타인지</div>
         </div>
       </div>
     </div>
@@ -1913,8 +2101,11 @@ p, li, dd, dt, blockquote {
   <section class="block" id="intro">
     <div class="wrap">
       <div class="head-row">
-        <div><h2>에듀바이브 AI 소개영상</h2></div>
-        <p class="head-note">에듀바이브 AI가 하는 일을 영상으로 확인해 보세요.</p>
+        <div>
+          <p class="eyebrow">// CHAPTER 04 · MEDIA DEMO</p>
+          <h2>에듀바이브 AI 소개영상</h2>
+        </div>
+        <p class="head-note">에듀바이브 AI가 실제 현장에서 작동하는 모습을 영상으로 확인해 보세요.</p>
       </div>
       <div class="intro-video">
         <video controls playsinline preload="none" poster="img/video-poster.jpg" title="에듀바이브 AI 소개 영상">
@@ -1933,7 +2124,7 @@ p, li, dd, dt, blockquote {
     <div class="wrap">
       <div class="head-row">
         <div>
-          <p class="eyebrow">AI-Driven Valuation & Investment</p>
+          <p class="eyebrow">// CHAPTER 05 · AI-DRIVEN VALUATION</p>
           <h2>인공지능(AI) 정밀 산정 가치 대비 <br class="pc-br"><span class="grad">30% 기준 금액 책정 모델</span></h2>
         </div>
       </div>
@@ -2024,7 +2215,7 @@ p, li, dd, dt, blockquote {
     <div class="wrap">
       <div class="head-row">
         <div>
-          <p class="eyebrow">// SELF-CHECK</p>
+          <p class="eyebrow">// CHAPTER 06 · FAQ & SELF-CHECK</p>
           <h2>이런 고민이 있다면, 에듀바이브 AI가 맞습니다</h2>
         </div>
       </div>
@@ -2067,7 +2258,7 @@ p, li, dd, dt, blockquote {
 
   <section class="block" id="contact">
     <div class="wrap">
-      <div class="head-row"><div><p class="eyebrow">Contact</p><h2>상담 신청</h2></div></div>
+      <div class="head-row"><div><p class="eyebrow">// CHAPTER 07 · CONSULTATION</p><h2>상담 신청</h2></div></div>
       <div class="contact-grid">
         <div class="contact-info">
           <h2 style="font-size:22px;">문의 전 안내</h2>
