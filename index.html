@@ -819,12 +819,7 @@ section.block{padding-block:70px;}
 .ai-ratio-bar-rest{background:rgba(47,107,255,0.05);display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:12px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;padding:0 14px;}
 .ai-ratio-meter-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.5;border-top:1px solid var(--line);padding-top:12px;}
 .ai-pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:32px;}
-@media (max-width:900px){
-  .ai-pricing-grid{grid-template-columns:1fr;}
-  .ai-ratio-bar-track{height:46px;}
-  .ai-ratio-bar-rest{display:none;}
-  .ai-ratio-bar-fill{width:100% !important;justify-content:center;}
-}
+
 .ai-pcard{background:#ffffff;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s;}
 .ai-pcard:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 28px -10px rgba(47,107,255,0.12);}
 .ai-pcard.highlight-pcard{border-color:rgba(47,107,255,0.4);background:linear-gradient(180deg,#ffffff 0%,rgba(47,107,255,0.02) 100%);box-shadow:0 0 0 1px rgba(47,107,255,0.2),0 12px 28px -10px rgba(47,107,255,0.15);}
@@ -837,6 +832,144 @@ section.block{padding-block:70px;}
 .ai-pcard-points li{font-size:12.5px;color:var(--ink);display:flex;align-items:center;gap:6px;font-weight:600;}
 .ai-pcard-points li::before{content:"✔";color:var(--accent-2);font-size:11px;}
 .ai-pricing-cta-wrap{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+/* Autonomous Screen & Font Size Scaler (자율 크기 조절 시스템) */
+:root {
+  --ui-scale-ratio: 1;
+}
+
+/* User Scale Modes */
+html[data-ui-scale="1.1"] {
+  --ui-scale-ratio: 1.1;
+  font-size: 108%;
+}
+html[data-ui-scale="1.1"] h1, html[data-ui-scale="1.1"] h2, html[data-ui-scale="1.1"] h3 {
+  font-size: 108% !important;
+}
+html[data-ui-scale="1.1"] p, html[data-ui-scale="1.1"] li, html[data-ui-scale="1.1"] summary {
+  font-size: 108% !important;
+}
+html[data-ui-scale="1.2"] {
+  --ui-scale-ratio: 1.2;
+  font-size: 116%;
+}
+html[data-ui-scale="1.2"] h1, html[data-ui-scale="1.2"] h2, html[data-ui-scale="1.2"] h3 {
+  font-size: 116% !important;
+}
+html[data-ui-scale="1.2"] p, html[data-ui-scale="1.2"] li, html[data-ui-scale="1.2"] summary {
+  font-size: 116% !important;
+}
+
+/* Scale Controller Buttons */
+.btn-size-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(47,107,255,0.08);
+  border: 1px solid rgba(47,107,255,0.22);
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s ease;
+  white-space: nowrap;
+}
+.btn-size-toggle:hover {
+  background: rgba(47,107,255,0.16);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.scale-icon {
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  font-size: 12px;
+}
+.scale-label {
+  font-size: 10.5px;
+  background: #ffffff;
+  padding: 1px 6px;
+  border-radius: 6px;
+  color: var(--ink);
+  font-weight: 800;
+  border: 1px solid rgba(47,107,255,0.2);
+}
+.float-btn-size {
+  background: #ffffff !important;
+  color: var(--accent) !important;
+  border: 1.5px solid rgba(47,107,255,0.3) !important;
+}
+
+/* Toast Message */
+.scale-toast {
+  position: fixed;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: rgba(18,32,59,0.92);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 999;
+  box-shadow: 0 10px 26px -6px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  backdrop-filter: blur(8px);
+}
+.scale-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Mobile & Tablet Quick Nav Ribbon */
+.mobile-subnav-bar {
+  display: none;
+  background: rgba(255,255,255,0.94);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.mobile-subnav-bar::-webkit-scrollbar {
+  display: none;
+}
+.mobile-subnav-track {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  margin: 0 auto;
+}
+.subnav-pill {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-decoration: none;
+  background: var(--bg);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+  transition: all .15s ease;
+}
+.subnav-pill:hover, .subnav-pill:active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+.subnav-pill.highlight-pill {
+  background: rgba(47,107,255,0.1);
+  color: var(--accent);
+  border-color: rgba(47,107,255,0.35);
+  font-weight: 700;
+}
+
 
 footer{border-top:1px solid var(--line);padding-block:26px;}
 .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--ink-soft);font-family:var(--font-mono);}
@@ -931,19 +1064,32 @@ p, li, dd, dt, blockquote {
   font-weight: 600;
 }
 
-/* 3. Tablet Breakpoint (1024px 이하) */
+/* =========================================================
+   3. Tablet Breakpoint (768px ~ 1024px 태블릿 맞춤 최적화)
+   ========================================================= */
 @media (max-width: 1024px) {
   .wrap {
-    padding-inline: 20px;
+    padding-inline: clamp(20px, 3.2vw, 28px);
+    max-width: 100%;
   }
   section.block {
-    padding-block: 56px;
+    padding-block: clamp(48px, 5.5vw, 64px);
   }
   .head-row {
     margin-bottom: 24px;
   }
-  .stat-row-enhanced {
-    gap: 12px;
+  .head-row h2 {
+    font-size: clamp(23px, 3.8vw, 30px);
+  }
+  .head-note {
+    font-size: 13.5px;
+  }
+  .mobile-subnav-bar {
+    display: flex;
+  }
+  .navlinks {
+    gap: 16px;
+    font-size: 13px;
   }
   .dev-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -952,15 +1098,111 @@ p, li, dd, dt, blockquote {
   .pricing-grid, .price-grid.two {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* AI 30% 산정 블록 태블릿 최적화 */
+  .ai-pricing-hero-card {
+    padding: clamp(26px, 3.2vw, 32px);
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .ai-pricing-quote-text {
+    font-size: clamp(19px, 2.4vw, 23px);
+    line-height: 1.48;
+  }
+  .ai-pricing-quote-desc {
+    font-size: 14px;
+    line-height: 1.72;
+  }
+  .ai-ratio-meter-box {
+    padding: 20px 22px;
+    border-radius: 14px;
+  }
+  .ai-ratio-bar-track {
+    height: 42px;
+    display: flex !important;
+  }
+  .ai-ratio-bar-fill {
+    width: 30% !important;
+    font-size: 12px;
+    display: flex !important;
+    justify-content: center;
+    padding: 0 8px;
+  }
+  .ai-ratio-bar-rest {
+    width: 70% !important;
+    font-size: 12px;
+    display: flex !important;
+    justify-content: center;
+    padding: 0 10px;
+  }
+  .ai-pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .ai-pcard {
+    padding: 20px 18px;
+    border-radius: 14px;
+  }
+  .ai-pcard h4 {
+    font-size: 16px;
+  }
+  .ai-pcard p {
+    font-size: 13px;
+    line-height: 1.62;
+  }
+  .ai-pricing-cta-wrap .btn {
+    padding: 13px 24px;
+    font-size: 14px;
+  }
+
+  /* Photo 1 FAQ 태블릿 최적화 */
+  .faq-list {
+    max-width: 100%;
+    gap: 10px;
+  }
+  .faq-item {
+    padding: 2px 20px;
+    border-radius: 14px;
+  }
+  .faq-item summary {
+    font-size: 15px;
+    padding-block: 16px;
+  }
+  .faq-item p {
+    font-size: 13.8px;
+    line-height: 1.72;
+    max-width: 100%;
+  }
+
+  /* Ethics & Future-Tech on Tablet */
+  .ethics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .ethics-card {
+    padding: 20px 16px;
+  }
+  .spatial-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .ambient-agent-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 }
 
-/* 4. Small Tablet & Phablet (900px 이하) */
+/* =========================================================
+   4. Small Tablet (900px 이하)
+   ========================================================= */
 @media (max-width: 900px) {
-  .nav-mobile-bar {
-    display: flex;
-  }
-  .comp-table-hint {
-    display: block;
+  .navlinks {
+    display: none;
   }
   .vision-grid {
     grid-template-columns: 1fr;
@@ -968,30 +1210,53 @@ p, li, dd, dt, blockquote {
   }
 }
 
-/* 5. Mobile & Small Tablet (768px 이하) */
+/* =========================================================
+   5. Mobile Breakpoint (768px 이하 모바일 맞춤 최적화)
+   ========================================================= */
 @media (max-width: 768px) {
+  .wrap {
+    padding-inline: clamp(14px, 4vw, 18px);
+  }
   section.block {
-    padding-block: 44px;
+    padding-block: clamp(38px, 6vw, 48px);
+  }
+  .nav {
+    padding-block: 12px;
+  }
+  .mobile-subnav-bar {
+    display: flex;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .header-actions .btn {
+    padding: 8px 14px;
+    font-size: 12.5px;
   }
   .hero {
-    padding-block: 40px 32px;
+    padding-block: 36px 28px;
   }
   .hero h1 {
-    font-size: clamp(25px, 6.8vw, 36px);
-    line-height: 1.3;
+    font-size: clamp(23px, 6.2vw, 32px);
+    line-height: 1.32;
+    word-break: keep-all;
   }
   .hero-lead {
-    font-size: 14.5px;
+    font-size: 14px;
     line-height: 1.68;
-    margin-top: 14px;
+    margin-top: 12px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
   }
   .stat-row-enhanced {
     grid-template-columns: 1fr;
     gap: 12px;
-    margin-top: 26px;
+    margin-top: 24px;
   }
   .stat-card-pro {
-    padding: 18px;
+    padding: 16px;
   }
   .dev-grid {
     grid-template-columns: 1fr;
@@ -1007,53 +1272,211 @@ p, li, dd, dt, blockquote {
     text-align: center;
   }
   .dev-card-pro {
-    padding: 20px;
+    padding: 18px;
   }
   .time-compare-grid, .student-grid, .ethics-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
   .time-card, .student-card, .ethics-card {
-    padding: 20px 18px;
+    padding: 18px 16px;
+    border-radius: 14px;
   }
   .price-grid.two, .price-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
   .price-card {
-    padding: 22px 18px;
+    padding: 20px 16px;
   }
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
   .contact-info, .contact-form {
-    padding: 22px 18px;
+    padding: 20px 16px;
     border-radius: 16px;
   }
   .form-row {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  /* iOS Safari 폼 포커스 자동 확대 방지 (최소 16px 보장) */
+  /* iOS Safari 폼 포커스 자동 확대 방지 (최소 16px 보장 및 48px 터치 영역) */
   .form-field input, .form-field select, .form-field textarea {
     font-size: 16px !important;
+    min-height: 48px;
   }
   .banner {
-    padding-block: 50px;
+    padding-block: 44px;
   }
   .banner h2 {
-    font-size: clamp(20px, 5.2vw, 28px);
+    font-size: clamp(20px, 5.2vw, 26px);
+  }
+
+  /* AI 30% 산정 블록 모바일 최적화 */
+  .ai-pricing-hero-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+  .ai-pricing-hero-badge-wrap {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .ai-pricing-tag {
+    font-size: 10.5px;
+    padding: 4px 10px;
+  }
+  .ai-pricing-ratio-pill {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+  .ai-pricing-quote-text {
+    font-size: clamp(16.5px, 4.4vw, 19.5px);
+    line-height: 1.52;
+    margin-bottom: 12px;
+  }
+  .ai-pricing-quote-desc {
+    font-size: 13.5px;
+    line-height: 1.68;
+  }
+  .ai-ratio-meter-box {
+    padding: 16px 14px;
+    border-radius: 14px;
+    margin-top: 16px;
+  }
+  .ai-ratio-meter-labels {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .meter-label-left {
+    font-size: 11.5px;
+  }
+  .meter-label-right {
+    font-size: 12px;
+  }
+
+  /* Mobile Dual Gauge Bar: 30% vs 70% contrast preserved */
+  .ai-ratio-bar-track {
+    height: 38px;
+    border-radius: 8px;
+    display: flex !important;
+    margin-bottom: 12px;
+  }
+  .ai-ratio-bar-fill {
+    width: 32% !important;
+    min-width: 76px;
+    font-size: 11px !important;
+    font-weight: 800;
+    padding: 0 4px !important;
+    display: flex !important;
+    justify-content: center;
+    letter-spacing: 0;
+  }
+  .ai-ratio-bar-rest {
+    width: 68% !important;
+    font-size: 10.5px !important;
+    display: flex !important;
+    padding: 0 4px !important;
+    justify-content: center;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .ai-ratio-meter-footer {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11.5px;
+    line-height: 1.55;
+    padding-top: 10px;
+  }
+
+  /* 3 Architecture Cards on Mobile */
+  .ai-pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .ai-pcard {
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+  .ai-pcard h4 {
+    font-size: 16px;
+  }
+  .ai-pcard p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .ai-pcard-points li {
+    font-size: 12px;
+  }
+
+  /* CTA Buttons Full Width on Mobile */
+  .ai-pricing-cta-wrap {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .ai-pricing-cta-wrap .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+
+  /* Photo 1 FAQ on Mobile */
+  .faq-list {
+    width: 100%;
+    gap: 10px;
+  }
+  .faq-item {
+    padding: 0 16px;
+    border-radius: 12px;
+  }
+  .faq-item summary {
+    font-size: 14px;
+    padding-block: 15px;
+    gap: 10px;
+    line-height: 1.45;
+  }
+  .faq-item .plus {
+    font-size: 18px;
+    width: 22px;
+    text-align: right;
+  }
+  .faq-item p {
+    font-size: 13px;
+    line-height: 1.68;
+    margin: 0 0 16px;
+    max-width: 100%;
+  }
+
+  /* Future-Tech Cards on Mobile */
+  .spatial-features-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .ambient-agent-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .ambient-agent-card {
+    padding: 20px 16px;
+    border-radius: 16px;
   }
 }
 
-/* 6. Mobile Portrait (600px 이하) */
+/* =========================================================
+   6. Mobile Portrait (600px 이하)
+   ========================================================= */
 @media (max-width: 600px) {
   .wrap {
     padding-inline: 16px;
-  }
-  .nav {
-    padding-block: 12px;
   }
   .logo {
     font-size: 17px;
@@ -1074,26 +1497,6 @@ p, li, dd, dt, blockquote {
     max-width: 100%;
     font-size: 13px;
   }
-  .btn {
-    padding: 11px 18px;
-    font-size: 13.5px;
-  }
-  .hero-cta .btn {
-    width: 100%;
-    justify-content: center;
-  }
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-  .team-card {
-    flex-direction: row;
-    gap: 14px;
-    padding: 16px;
-  }
-  .avatar {
-    width: 60px;
-    height: 60px;
-  }
   .wizard-card {
     padding: 22px 16px;
     border-radius: 14px;
@@ -1113,23 +1516,33 @@ p, li, dd, dt, blockquote {
   .float-btn {
     padding: 11px 8px;
     font-size: 12px;
-  }
-  /* 인라인 고정 패딩 요소 최적화 */
-  div[style*="padding:36px 32px"] {
-    padding: 20px 16px !important;
+    min-height: 44px;
   }
 }
 
-/* 7. Extra Small Mobile (360px 이하) */
+/* =========================================================
+   7. Extra Small Mobile (360px 이하)
+   ========================================================= */
 @media (max-width: 360px) {
   .wrap {
     padding-inline: 12px;
   }
   .float-btn {
-    font-size: 11.5px;
-    padding: 10px 6px;
+    font-size: 11px;
+    padding: 10px 4px;
+  }
+  .btn-size-toggle {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+  .ai-ratio-bar-fill {
+    font-size: 10px !important;
+  }
+  .ai-ratio-bar-rest {
+    font-size: 9.5px !important;
   }
 }
+
 
 </style>
 
@@ -1144,10 +1557,25 @@ p, li, dd, dt, blockquote {
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="header-actions">
+      <button type="button" class="btn-size-toggle" id="btnScaleToggle" title="화면 및 글자 크기 자율 조절 (기본/크게/더크게)">
+        <span class="scale-icon">가A</span>
+        <span class="scale-label" id="scaleLabel">100%</span>
+      </button>
       <a href="#contact" class="btn btn-primary" style="padding: 9px 20px; font-size: 13.5px;">상담 신청</a>
     </div>
   </div>
+  <nav class="mobile-subnav-bar" aria-label="모바일 빠른 이동">
+    <div class="mobile-subnav-track">
+      <a href="#philosophy" class="subnav-pill">핵심비전</a>
+      <a href="#future-tech" class="subnav-pill">앰비언트·AI</a>
+      <a href="#ethics" class="subnav-pill">안심원칙</a>
+      <a href="#pricing" class="subnav-pill highlight-pill">AI 산정(30%)</a>
+      <a href="#faq" class="subnav-pill">FAQ</a>
+      <a href="#contact" class="subnav-pill">상담신청</a>
+    </div>
+  </nav>
 </header>
+<div class="scale-toast" id="scaleToast" role="status" aria-live="polite"></div>
 
 <div class="wizard-overlay" id="wizardOverlay" aria-hidden="true">
   <div class="wizard-card" role="dialog" aria-modal="true" aria-label="AI 맞춤설계 진단">
@@ -1951,9 +2379,10 @@ p, li, dd, dt, blockquote {
 
 <!-- Floating CTA Bar -->
 <div class="floating-bar" id="floatingBar">
-  <button type="button" class="float-btn float-btn-share" id="btnShareKakao" style="background:#fff;color:var(--ink);border:1px solid var(--line);">📢 공유하기</button>
-  <button type="button" class="float-btn float-btn-primary" id="btnFloatWizard">⚡ 1분 맞춤 진단</button>
-  <a href="https://open.kakao.com/o/ssj1FMOi" target="_blank" rel="noopener" class="float-btn float-btn-kakao">💬 카카오 상담</a>
+  <button type="button" class="float-btn float-btn-share" id="btnShareKakao" style="background:#fff;color:var(--ink);border:1px solid var(--line);">📢 공유</button>
+  <button type="button" class="float-btn float-btn-size" id="btnFloatScale" title="화면 및 글자 크기 자율 조절">가A <span id="floatScaleLabel">100%</span></button>
+  <button type="button" class="float-btn float-btn-primary" id="btnFloatWizard">⚡ 1분 진단</button>
+  <a href="https://open.kakao.com/o/ssj1FMOi" target="_blank" rel="noopener" class="float-btn float-btn-kakao">💬 카톡</a>
 </div>
 
 <!-- Admin Leads Modal (백업 리드 확인용) -->
@@ -2198,6 +2627,73 @@ p, li, dd, dt, blockquote {
       }
     });
   }
+})();
+</script>
+
+<script>
+// Autonomous Screen & Font Size Controller (사이즈 자율 조절 시스템)
+(function(){
+  var scaleLevels = [1, 1.1, 1.2];
+  var scaleLabels = ['100%', '110%', '120%'];
+  var scaleNames = ['기본 크기 (100%)', '크게 (110%)', '아주 크게 (120%)'];
+  var currentIndex = 0;
+  var toastTimer = null;
+
+  try {
+    var saved = localStorage.getItem('eduvibe_ui_scale');
+    if(saved){
+      var idx = scaleLevels.indexOf(parseFloat(saved));
+      if(idx !== -1) currentIndex = idx;
+    }
+  } catch(e){}
+
+  function showToast(msg){
+    var toast = document.getElementById('scaleToast');
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toast.classList.remove('show');
+    }, 2000);
+  }
+
+  function applyScale(index, notify){
+    currentIndex = index;
+    var scale = scaleLevels[currentIndex];
+    var label = scaleLabels[currentIndex];
+
+    if(scale === 1){
+      document.documentElement.removeAttribute('data-ui-scale');
+    } else {
+      document.documentElement.setAttribute('data-ui-scale', scale.toString());
+    }
+
+    var labelEl = document.getElementById('scaleLabel');
+    if(labelEl) labelEl.textContent = label;
+    var floatLabelEl = document.getElementById('floatScaleLabel');
+    if(floatLabelEl) floatLabelEl.textContent = label;
+
+    try {
+      localStorage.setItem('eduvibe_ui_scale', scale);
+    } catch(e){}
+
+    if(notify){
+      showToast('화면 크기: ' + scaleNames[currentIndex] + '로 변경되었습니다');
+    }
+  }
+
+  function cycleScale(){
+    var next = (currentIndex + 1) % scaleLevels.length;
+    applyScale(next, true);
+  }
+
+  var btn = document.getElementById('btnScaleToggle');
+  if(btn) btn.addEventListener('click', cycleScale);
+  var floatBtn = document.getElementById('btnFloatScale');
+  if(floatBtn) floatBtn.addEventListener('click', cycleScale);
+
+  applyScale(currentIndex, false);
 })();
 </script>
 
